@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Scheduler" uploadOnCheckin="4c7aecf5-8323-4a74-98bf-8ab5a3c8c2bc">
+    <serverData>
+      <paths name="Scheduler">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="Scheduler" />
+  </component>
+</project>
