@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Dimitri
- * Date: 1/11/2016
- * Time: 8:51 AM
- */
+require_once "includes/dbc.php";
 ?>
 
 <!DOCTYPE HTML>
