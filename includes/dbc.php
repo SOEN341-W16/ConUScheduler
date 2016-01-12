@@ -11,5 +11,17 @@ spl_autoload_register('my_autoloader');
 // Set database configuration using MySql confi driver
 Registry::setConfig(new MySqlConfig(DatabaseManager::dbUser, DatabaseManager::dbPass, DatabaseManager::dbName, DatabaseManager::host,  DatabaseManager::dbPort ));
 
+
+
 // this file is to be include everywhere where a database connection is needed
+/*
+ * To use:
+ * $pdo = Registry::getConnection(); // this object is a singleton and can be accessed across the application
+ *
+ * $query = $pdo->prepare("SELECT * FROM table");
+ *
+ * and then use it accordingly
+ *
+ *
+ */
 ?>
