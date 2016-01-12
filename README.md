@@ -1,2 +1,0 @@
-# ConUScheduler
-SOEN 341
