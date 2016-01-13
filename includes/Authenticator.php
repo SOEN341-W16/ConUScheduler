@@ -25,6 +25,9 @@ class Authenticator  {
         }
     }
 
+    /**
+     * This method is called and determines if a user exists. If the user does not exist, it will append an error message to the errors array.
+     */
     private function checkUser()
     {
         $pdo = Registry::getConnection();
@@ -49,6 +52,9 @@ class Authenticator  {
         return $this->_error_messages;
     }
 
+    /**
+     * @return bool returns true if the authentication was successful and false otherwise
+     */
     public function login() {
         $this->checkUser();
         // if no errors are found
