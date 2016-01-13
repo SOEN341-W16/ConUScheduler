@@ -62,7 +62,7 @@ class Authenticator  {
             $_SESSION['user_id'] 	= $this->_userid;
             $_SESSION['http'] 		= md5($_SERVER['HTTP_USER_AGENT']);
             $_SESSION['start'] 		= time(); // taking now logged in time
-
+            return true;
         }
         return false;
 
