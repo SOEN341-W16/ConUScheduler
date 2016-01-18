@@ -1,6 +1,7 @@
 <?php
 class Authenticator  {
 
+    const Salt = "!*2-93V<.";
 
     private $_credentials;
 
@@ -31,9 +32,9 @@ class Authenticator  {
     private function checkUser()
     {
         $pdo = Registry::getConnection();
-        $query = $pdo->prepare("SELECT * FROM users WHERE binary user_name=:user AND password=:password LIMIT 1");
+        $query = $pdo->prepare("SELECT * FROM users WHERE binary username=:user AND password=:password LIMIT 1");
         $query->bindValue(":user",$this->_credentials['username']);
-        $query->bindValue(":password", $this->_credentials["password"]);
+        $query->bindValue(":password", hash('sha256', $this->_credentials["password"] . Authenticator::Salt ));  //sha256 alogorithm
         $query->execute();
         // if user was not found
         if ($query->rowCount()!=1)
