@@ -12,6 +12,6 @@
         </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="D:\DATA\S_SERVER\xampp\htdocs" />
+    <option name="cloneParentDir" value="/Applications/XAMPP/xamppfiles/htdocs" />
   </component>
 </application>
