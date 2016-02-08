@@ -228,3 +228,59 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/login
 HTTP_REFERER=http://conuscheduler.localhost/index.php?r=site/login
 ---
+2016/02/08 22:10:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "TestingForm" was not found.' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('TestingForm')
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('page')
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/page&view=TestingForm
+---
+2016/02/08 22:13:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "TestingForm" was not found.' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('TestingForm')
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('page')
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/page&view=TestingForm
+---
+2016/02/08 22:13:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view=TestingForm".' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('view=TestingFor...')
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('view=TestingFor...')
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('site/view=Testi...')
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/view=TestingForm
+---
+2016/02/08 22:43:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "models/Courselist".' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php:286
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('models/Courseli...')
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=models/Courselist
+HTTP_REFERER=http://localhost/index.php?r=courselist/index
+---
+2016/02/08 22:45:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "models/Courselist/index".' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php:286
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('models/Courseli...')
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=models/Courselist/index
+HTTP_REFERER=http://localhost/index.php?r=courselist/index
+---
