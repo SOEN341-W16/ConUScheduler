@@ -5,7 +5,7 @@ $this->pageTitle=Yii::app()->name;
 ?>
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?>!</i></h1>
-<div id="logo"><?php echo CHtml::image("logo.jpg","logo"); ?></div>
+<div id="logo"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/logo.jpg', "logo");  ?></div>
 
 <!--
 <p>Congratulations! You have successfully created your Yii application.</p>
