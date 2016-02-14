@@ -4,8 +4,13 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?>!</i></h1>
+<div id="login">
+    <p>Please <a href="index.php?r=site/login">click here</a> to log in.</p>
+</div>
+<div id="logo"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/logo.jpg', "logo");  ?></div>
 
+<!--
 <p>Congratulations! You have successfully created your Yii application.</p>
 
 <p>You may change the content of this page by modifying the following two files:</p>
@@ -17,4 +22,4 @@ $this->pageTitle=Yii::app()->name;
 <p>For more details on how to further develop this application, please read
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+should you have any questions.</p> -->
