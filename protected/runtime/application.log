@@ -376,3 +376,393 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/update&id=19
 HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user/admin
 ---
+2016/03/02 20:23:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'soen341.prerequisites' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `prerequisites`.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/02 20:46:26 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+JOIN `prerequisite` `p` ON c.ID=p.courseID
+WHERE id=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (11)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 20:46:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+JOIN `prerequisite` `p` ON c.ID=p.courseID
+WHERE id=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(11): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 20:49:54 [error] [php] implode(): Invalid arguments passed (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php:30)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CourselistController->renderFile()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#3 unknown(0): CListView->renderSection()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CListView->run()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CourselistController->widget()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CourselistController->renderFile()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CourselistController->renderPartial()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CourselistController->render()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CourselistController->runAction()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CourselistController->filterAccessControl()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CourselistController->runActionWithFilters()
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CourselistController->run()
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=Courselist/index
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (30)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 20:54:52 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.courseID' in 'on clause'. The SQL statement executed was: SELECT *
+FROM `prerequisite` `c`
+LEFT JOIN `courselist` `p` ON c.ID=p.courseID
+WHERE c.ID=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (11)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 20:54:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.courseID' in 'on clause'. The SQL statement executed was: SELECT *
+FROM `prerequisite` `c`
+LEFT JOIN `courselist` `p` ON c.ID=p.courseID
+WHERE c.ID=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(11): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 21:04:09 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `prerequisite` `p`
+WHERE prerequisite.prerequisiteID=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (10)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:04:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `prerequisite` `p`
+WHERE prerequisite.prerequisiteID=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(10): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 21:04:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (10)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:04:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(10): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 21:05:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (10)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:05:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(10): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 21:05:11 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id.
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (10)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:05:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prerequisite.prerequisiteID' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `courselist` `c`
+WHERE prerequisite.prerequisiteID=:id' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php(10): CDbCommand->queryRow()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(130): require('D:\\DATA\\S_SERVE...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, false)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array)
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('D:\\DATA\\S_SERVE...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\DATA\\S_SERVE...', Array, true)
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('D:\\DATA\\S_SERVE...', Array, true)
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CController->render('index', Array)
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('Courselist/inde...')
+#27 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#28 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=Courselist/index
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=user
+---
+2016/03/02 21:20:06 [error] [php] Array to string conversion (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php:32)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CourselistController->renderFile()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CListView->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CourselistController->widget()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CourselistController->renderFile()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CourselistController->renderPartial()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CourselistController->render()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CourselistController->runAction()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CourselistController->filterAccessControl()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CourselistController->runActionWithFilters()
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CourselistController->run()
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=Courselist/index
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (32)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:20:07 [error] [php] Array to string conversion (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php:32)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CourselistController->renderFile()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CListView->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CourselistController->widget()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CourselistController->renderFile()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CourselistController->renderPartial()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CourselistController->render()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CourselistController->runAction()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CourselistController->filterAccessControl()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CourselistController->runActionWithFilters()
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CourselistController->run()
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=Courselist/index
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (32)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
+2016/03/02 21:21:28 [error] [php] implode(): Invalid arguments passed (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php:29)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CListView.php(291): CourselistController->renderFile()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#3 unknown(0): CListView->renderSection()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(181): CListView->run()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php(20): CourselistController->widget()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CourselistController->renderInternal()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CourselistController->renderFile()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CourselistController->renderPartial()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php(128): CourselistController->render()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourselistController->actionIndex()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CourselistController->runAction()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CourselistController->filterAccessControl()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#20 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CourselistController->runActionWithFilters()
+#22 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CourselistController->run()
+#23 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#24 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=Courselist/index
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\_view.php (29)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\courselist\index.php (20)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\CourselistController.php (128)
