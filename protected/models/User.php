@@ -39,6 +39,13 @@ class User extends CActiveRecord
 		);
 	}
 
+	/**
+	 * Encrypts password to MD5
+	 */
+	public function encryptPassword()
+	{
+		$this->password = md5($this->password);
+	}
 
 	/**
 	 * @return array relational rules.
