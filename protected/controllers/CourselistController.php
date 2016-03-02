@@ -64,6 +64,7 @@ class CourselistController extends Controller
 	{
 		$model=new Courselist;
 
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

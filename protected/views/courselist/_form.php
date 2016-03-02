@@ -19,11 +19,6 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ID'); ?>
-		<?php echo $form->textField($model,'ID'); ?>
-		<?php echo $form->error($model,'ID'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'course_code'); ?>
