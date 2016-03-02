@@ -7,6 +7,11 @@ $this->pageTitle=Yii::app()->name;
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?>!</i></h1>
 <div id="login">
     <p>Please <a href="index.php?r=site/login">click here</a> to log in.</p>
+    <?php if(isset($_GET["logout"]) && $_GET["logout"]==1)
+    {?>
+    <div class="logoutSuccess">You have successfully logged out!</div>
+    <?php } ?>
+
 </div>
 <div id="logo"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/logo.jpg', "logo");  ?></div>
 
