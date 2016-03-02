@@ -30,12 +30,21 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, firstname, lastname, netName, password', 'required'),
+			array('username, netName', 'unique'),
 			array('username', 'length', 'max'=>20),
 			array('firstname, lastname', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('ID, username, firstname, lastname, netName, password', 'safe', 'on'=>'search'),
 		);
+	}
+
+	/**
+	 * Encrypts password to MD5
+	 */
+	public function encryptPassword()
+	{
+		$this->password = md5($this->password);
 	}
 
 	/**

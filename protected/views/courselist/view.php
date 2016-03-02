@@ -7,6 +7,7 @@ $this->breadcrumbs=array(
 	$model->ID,
 );
 
+
 $this->menu=array(
 	array('label'=>'List Courselist', 'url'=>array('index')),
 	array('label'=>'Create Courselist', 'url'=>array('create')),

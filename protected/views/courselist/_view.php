@@ -1,8 +1,17 @@
 <?php
 /* @var $this CourselistController */
 /* @var $data Courselist */
-?>
 
+
+$prerequisitesQuery = Yii::app()->db->createCommand()
+	->select('c.course_description, c.course_code, c.ID')
+	->from('courselist C')
+	->join('prerequisite p', 'p.prerequisiteID = c.ID')
+	->where('p.courseID=:id', array(':id'=>$data->ID))
+	->queryAll();
+
+
+?>
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ID')); ?>:</b>
@@ -17,5 +26,15 @@
 	<?php echo CHtml::encode($data->course_description); ?>
 	<br />
 
+	<b>Prerequisites:</b>
+	<?php
+	$prerequisites = array();
+		foreach($prerequisitesQuery as $courseData)
+		{
+			$prerequisites[] = CHtml::link(CHtml::encode($courseData["course_code"]), array('view', 'id'=>$courseData["ID"]));
+		}
+	echo (empty($prerequisites) ? "-" : implode(", ",$prerequisites));
+	?>
 
+	<br />
 </div>

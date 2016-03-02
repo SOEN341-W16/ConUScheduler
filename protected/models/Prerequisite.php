@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "courselist".
+ * This is the model class for table "prerequisite".
  *
- * The followings are the available columns in table 'courselist':
+ * The followings are the available columns in table 'prerequisite':
  * @property integer $ID
- * @property string $course_code
- * @property string $course_description
+ * @property integer $courseID
+ * @property string $prerequisiteID
  */
-class Courselist extends CActiveRecord
+class Prerequisite extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'courselist';
+		return 'prerequisite';
 	}
 
 	/**
@@ -26,12 +26,11 @@ class Courselist extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID', 'numerical', 'integerOnly'=>true),
-			array('course_code', 'length', 'max'=>8),
-			array('course_description', 'length', 'max'=>55),
+			array('courseID', 'numerical', 'integerOnly'=>true),
+			array('prerequisiteID', 'length', 'max'=>8),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, course_code, course_description', 'safe', 'on'=>'search'),
+			array('ID, courseID, prerequisiteID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,7 +42,6 @@ class Courselist extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ID' => array(self::HAS_MANY, 'Prerequisite', 'courseID')
 		);
 	}
 
@@ -54,8 +52,8 @@ class Courselist extends CActiveRecord
 	{
 		return array(
 			'ID' => 'ID',
-			'course_code' => 'Course Code',
-			'course_description' => 'Course Description',
+			'courseID' => 'Course',
+			'prerequisiteID' => 'Prerequisite',
 		);
 	}
 
@@ -78,8 +76,8 @@ class Courselist extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID',$this->ID);
-		$criteria->compare('course_code',$this->course_code,true);
-		$criteria->compare('course_description',$this->course_description,true);
+		$criteria->compare('courseID',$this->courseID);
+		$criteria->compare('prerequisiteID',$this->prerequisiteID,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -90,7 +88,7 @@ class Courselist extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Courselist the static model class
+	 * @return Prerequisite the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
