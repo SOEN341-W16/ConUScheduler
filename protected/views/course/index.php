@@ -1,18 +1,18 @@
 <?php
-/* @var $this CourselistController */
+/* @var $this CourseController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Courselists',
+	'Courses',
 );
 
 $this->menu=array(
-	array('label'=>'Create Courselist', 'url'=>array('create')),
-	array('label'=>'Manage Courselist', 'url'=>array('admin')),
+	array('label'=>'Create Course', 'url'=>array('create')),
+	array('label'=>'Manage Courses', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Courselists</h1>
+<h1>Courses</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
