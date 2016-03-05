@@ -31,7 +31,7 @@ return array(
 	),
 
 	// which theme?
-	'theme' => 'classic',
+	'theme' => 'gen',
 	// application components
 	'components'=>array(
 

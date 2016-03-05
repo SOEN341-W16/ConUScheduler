@@ -107,28 +107,4 @@ class SiteController extends Controller
 		$this->redirect(array('index','logout'=>1));
 	}
 
-	public function actionTestingForm()
-	{
-		$model=new Courselist;
-
-		// uncomment the following code to enable ajax-based validation
-		/*
-        if(isset($_POST['ajax']) && $_POST['ajax']==='courselist-TestingForm-form')
-        {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-        */
-
-		if(isset($_POST['Courselist']))
-		{
-			$model->attributes=$_POST['Courselist'];
-			if($model->validate())
-			{
-				// form inputs are valid, do something here
-				return;
-			}
-		}
-		$this->render('TestingForm',array('model'=>$model));
-	}
 }

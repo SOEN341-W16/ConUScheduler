@@ -1,6 +1,6 @@
 <?php
 
-class CourselistController extends Controller
+class CourseController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,15 +62,15 @@ class CourselistController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Courselist;
+		$model=new Course;
 
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courselist']))
+		if(isset($_POST['Course']))
 		{
-			$model->attributes=$_POST['Courselist'];
+			$model->attributes=$_POST['Course'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID));
 		}
@@ -92,9 +92,9 @@ class CourselistController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courselist']))
+		if(isset($_POST['Course']))
 		{
-			$model->attributes=$_POST['Courselist'];
+			$model->attributes=$_POST['Course'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID));
 		}
@@ -123,7 +123,7 @@ class CourselistController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Courselist');
+		$dataProvider=new CActiveDataProvider('Course');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -134,10 +134,10 @@ class CourselistController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Courselist('search');
+		$model=new Course('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Courselist']))
-			$model->attributes=$_GET['Courselist'];
+		if(isset($_GET['Course']))
+			$model->attributes=$_GET['Course'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -148,12 +148,12 @@ class CourselistController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Courselist the loaded model
+	 * @return Course the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Courselist::model()->findByPk($id);
+		$model=Course::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -161,11 +161,11 @@ class CourselistController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Courselist $model the model to be validated
+	 * @param Course $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='courselist-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='course-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
