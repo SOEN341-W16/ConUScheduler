@@ -37,7 +37,7 @@ class UserIdentity extends CUserIdentity
 			$this->_lastName = $record->lastname;
 
 			$this->setState('netName', $record->netName); // stores netname in user session variable
-			$this->setState('userID', $this->ID); // stores user's ID in user session variable
+			$this->setState('userID', $record->ID); // stores user's ID in user session variable
 
 			$this->errorCode=self::ERROR_NONE;
 		}
