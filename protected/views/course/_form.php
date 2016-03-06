@@ -32,6 +32,12 @@
 		<?php echo $form->error($model,'course_description'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'credits'); ?>
+		<?php echo $form->textField($model,'credits',array('size'=>10,'maxlength'=>2)); ?>
+		<?php echo $form->error($model,'credits'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

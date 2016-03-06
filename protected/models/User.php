@@ -10,6 +10,7 @@
  * @property string $lastname
  * @property string $netName
  * @property string $password
+ * @property integer $isAdmin
  */
 class User extends CActiveRecord
 {
@@ -31,20 +32,32 @@ class User extends CActiveRecord
 		return array(
 			array('username, firstname, lastname, netName, password', 'required'),
 			array('username, netName', 'unique'),
-			array('username', 'length', 'max'=>20),
+			array('isAdmin', 'numerical', 'integerOnly'=>true),
+			array('password', 'length', 'min' => 6),
+			array('username', 'length', 'max' => 20),
 			array('firstname, lastname', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, username, firstname, lastname, netName, password', 'safe', 'on'=>'search'),
+			array('ID, username, firstname, lastname, netName, password, isAdmin', 'safe', 'on'=>'search'),
 		);
 	}
 
 	/**
-	 * Encrypts password to MD5
+	 * Encrypts password to using MD5 hashing algorithm
 	 */
-	public function encryptPassword()
+	private function encryptPassword()
 	{
 		$this->password = md5($this->password);
+	}
+
+	/**
+	 * Override the beforeSave method to encrypt password prior to saving user
+	 */
+	public function beforeSave()
+	{
+		parent::beforeSave();
+		$this->encryptPassword();
+		return true;
 	}
 
 	/**
@@ -70,6 +83,7 @@ class User extends CActiveRecord
 			'lastname' => 'Lastname',
 			'netName' => 'Net Name',
 			'password' => 'Password',
+			'isAdmin' => 'Administrator'
 		);
 	}
 
@@ -97,6 +111,7 @@ class User extends CActiveRecord
 		$criteria->compare('lastname',$this->lastname,true);
 		$criteria->compare('netName',$this->netName,true);
 		$criteria->compare('password',$this->password,true);
+		$criteria->compare('isAdmin',$this->isAdmin);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

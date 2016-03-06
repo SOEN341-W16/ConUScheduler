@@ -26,14 +26,19 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+		<?php
+
+		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Courses', 'url'=>array('/Course/index'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Users', 'url'=>array('/user'), 'visible'=>!Yii::app()->user->isGuest),
+				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+
+				array('label'=>'Courses', 'url'=>array('/Course/index'), 'visible'=> !Yii::app()->user->isGuest && Yii::app()->user->isAdmin() ),
+				array('label'=>'Users', 'url'=>array('/user'), 'visible'=> !Yii::app()->user->isGuest &&  Yii::app()->user->isAdmin()),
+
 				array('label'=>'Schedule Planner', 'url'=>array('/scheduler'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Profile', 'url'=>array('/profile'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -50,9 +55,8 @@
 		<?php echo $content; ?>
 	</div>
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Team YAWD.<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->

@@ -45,9 +45,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->textArea($model,'password',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->passwordField($model,'password',array('size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
+
+	<div class="row">
+		<?php echo CHtml::label("Privelege",""); ?>
+		<?php echo $form->dropDownList($model,'isAdmin',
+			array('1' => 'Administrator', '0' => 'Student'));?>
+
+	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

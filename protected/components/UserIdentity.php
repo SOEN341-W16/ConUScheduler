@@ -17,9 +17,7 @@ class UserIdentity extends CUserIdentity
 	 */
 
 	private $_id;
-	private $_netName;
-	private $_firstName;
-	private $_lastName;
+
 
 	public function authenticate()
 	{
@@ -31,13 +29,10 @@ class UserIdentity extends CUserIdentity
 		else
 		{
 			$this->_id=$record->ID;
-
-			$this->_netName = $record->netName; // set net name
-			$this->_firstName = $record->firstname;
-			$this->_lastName = $record->lastname;
-
 			$this->setState('netName', $record->netName); // stores netname in user session variable
 			$this->setState('userID', $record->ID); // stores user's ID in user session variable
+
+
 
 			$this->errorCode=self::ERROR_NONE;
 		}
@@ -53,21 +48,4 @@ class UserIdentity extends CUserIdentity
 	}
 
 
-	/**
-	 * @return mixed returns user's net name
-	 */
-	public function getNameName()
-	{
-		return $this->_netName;
-	}
-
-	public function getFirstName()
-	{
-		return $this->_firstName;
-	}
-
-	public function getLastName()
-	{
-		return $this->_lastName;
-	}
 }
