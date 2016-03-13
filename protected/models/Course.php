@@ -45,6 +45,7 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'course' => array(self::HAS_MANY, 'Section','courseID'),
 		);
 	}
 

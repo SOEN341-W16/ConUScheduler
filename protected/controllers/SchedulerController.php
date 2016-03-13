@@ -25,11 +25,38 @@ class SchedulerController extends Controller
 	public function actionGenerate()
 	{
 		$model = new PreferenceForm();
-
 		$model->attributes = Yii::app()->request->getPost('PreferenceForm');
 
+		$Section = new Section();
+		$Prerequisite = new Prerequisite();
+
+		$okdays = array();
+		$nodays = array();
+		$sql = 'SELECT * FROM sections WHERE ';
+		($model->dayM == 1 ? $okdays[] = 'M' : $nodays[] = 'M' );
+		($model->dayT == 1 ? $okdays[] = 'T' : $nodays[] = 'T' );
+		($model->dayW == 1 ? $okdays[] = 'W' : $nodays[] = 'W' );
+		($model->dayJ == 1 ? $okdays[] = 'J' : $nodays[] = 'J' );
+		($model->dayF == 1 ? $okdays[] = 'F' : $nodays[] = 'F' );
+
+		//$a = implode()
+		foreach($okdays as $place => $day)
+		{
+			$sql .= " days LIKE '%".$place."%'";
+		}
+
+
+
+		$prerequisiteCriteria = new CDbCriteria;
+		$prerequisiteCriteria->select = '*';
+		$prerequisites = $Prerequisite->findAll($prerequisiteCriteria);
+
+
+
+
 		$this->render('index', array(
-				'model'=> $model
+				'model'=> $model,
+				'sections' => $sections,
 			)
 		);
 	}

@@ -3,6 +3,7 @@
  * @var $model PreferenceForm
  */
 
+//print_r($sections);
 
 $this->breadcrumbs=array(
 	'Scheduler',

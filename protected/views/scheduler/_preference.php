@@ -42,28 +42,16 @@
     <td><?php echo $form->dropDownList($model, 'toTimeW', $timeArray, array('empty' => '(Select a time)')); ?></td>
   </tr>
   <tr>
-    <td><?php echo $form->checkBox($model, 'dayR') ?></td>
-    <td><?php echo $form->label($model, 'dayR'); ?></td>
-    <td><?php echo $form->dropDownList($model, 'fromTimeR', $timeArray, array('empty' => '(Select a time)')); ?></td>
-    <td><?php echo $form->dropDownList($model, 'toTimeR', $timeArray, array('empty' => '(Select a time)')); ?></td>
+    <td><?php echo $form->checkBox($model, 'dayJ') ?></td>
+    <td><?php echo $form->label($model, 'dayJ'); ?></td>
+    <td><?php echo $form->dropDownList($model, 'fromTimeJ', $timeArray, array('empty' => '(Select a time)')); ?></td>
+    <td><?php echo $form->dropDownList($model, 'toTimeJ', $timeArray, array('empty' => '(Select a time)')); ?></td>
   </tr>
   <tr>
     <td><?php echo $form->checkBox($model, 'dayF') ?></td>
     <td><?php echo $form->label($model, 'dayF'); ?></td>
     <td><?php echo $form->dropDownList($model, 'fromTimeF', $timeArray, array('empty' => '(Select a time)')); ?></td>
     <td><?php echo $form->dropDownList($model, 'toTimeF', $timeArray, array('empty' => '(Select a time)')); ?></td>
-  </tr>
-  <tr>
-    <td><?php echo $form->checkBox($model, 'dayS') ?></td>
-    <td><?php echo $form->label($model, 'dayS'); ?></td>
-    <td><?php echo $form->dropDownList($model, 'fromTimeS', $timeArray, array('empty' => '(Select a time)')); ?></td>
-    <td><?php echo $form->dropDownList($model, 'toTimeS', $timeArray, array('empty' => '(Select a time)')); ?></td>
-  </tr>
-  <tr>
-    <td><?php echo $form->checkBox($model, 'dayU'); ?></td>
-    <td><?php echo $form->label($model, 'dayU'); ?></td>
-    <td><?php echo $form->dropDownList($model, 'fromTimeU', $timeArray, array('empty' => '(Select a time)')); ?></td>
-    <td><?php echo $form->dropDownList($model, 'toTimeU', $timeArray, array('empty' => '(Select a time)')); ?></td>
   </tr>
   </tbody>
 </table>

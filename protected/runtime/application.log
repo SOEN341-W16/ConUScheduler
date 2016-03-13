@@ -5024,3 +5024,323 @@ Stack trace:
 REQUEST_URI=/index.php?r=SchedulerController/generate
 HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler
 ---
+2016/03/13 07:07:36 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:07:43 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:07:44 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:07:44 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:07:57 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:08:05 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:08:06 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.dayJ" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('dayJ')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1923): CHtml::resolveValue(Object(PreferenceForm), 'dayJ')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(898): CHtml::activeCheckBox(Object(PreferenceForm), 'dayJ', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(45): CActiveForm->checkBox(Object(PreferenceForm), 'dayJ')
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:08:39 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.fromTimeM" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('fromTimeM')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1982): CHtml::resolveValue(Object(PreferenceForm), 'fromTimeM')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(29): CActiveForm->dropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:08:40 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.fromTimeM" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('fromTimeM')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1982): CHtml::resolveValue(Object(PreferenceForm), 'fromTimeM')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(29): CActiveForm->dropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
+2016/03/13 07:08:40 [error] [exception.CException] exception 'CException' with message 'Property "PreferenceForm.fromTimeM" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(2729): CComponent->__get('fromTimeM')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\helpers\CHtml.php(1982): CHtml::resolveValue(Object(PreferenceForm), 'fromTimeM')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_preference.php(29): CActiveForm->dropDownList(Object(PreferenceForm), 'fromTimeM', Array, Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(29): CController->renderPartial('_preference', Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(14): CController->render('index', Array)
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionIndex()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler')
+#24 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=scheduler
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---
