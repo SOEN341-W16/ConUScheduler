@@ -64,11 +64,6 @@ foreach($sequence as $year => $sequenceData)
     <?php
     foreach($schedule as $id => $scheduleData)
     {
-        if($scheduleData["course_type"] == "nat" && $year == 1)
-        {
-            $semester[1]["fall"][] =  $scheduleData["course_code"];
-        }
-
         foreach($sequenceData as $semester => $courses)
         {
             foreach($courses as $i => $course_code)
