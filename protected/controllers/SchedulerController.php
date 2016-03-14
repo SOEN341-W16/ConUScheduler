@@ -60,7 +60,7 @@ class SchedulerController extends Controller
 			course.*
 				FROM section
 				LEFT JOIN subsection ON subsection.sectionID = section.ID AND subsection.semester=section.semester
-				LEFT JOIN course ON section.courseID=course.ID";
+				LEFT JOIN course ON section.courseID=course.ID ";
 		//which days were selected?
 		($model->dayM == 1 ? $okdays['M'] = array("start_time"=>$model->fromTimeM, "end_time"=> $model->toTimeM) : $nodays[] = 'M' );
 		($model->dayT == 1 ? $okdays['T'] = array("start_time"=>$model->fromTimeT, "end_time"=> $model->toTimeT) : $nodays[] = 'T' );
@@ -106,7 +106,7 @@ class SchedulerController extends Controller
 		}
 
 
-
+		$sql .= " ORDER BY course.course_code ASC ";
 
 
 		// get lectures
@@ -128,6 +128,7 @@ class SchedulerController extends Controller
 			$schedule[$sectionId]["start_time"] = $lectureData["LECTURE_start_time"];
 			$schedule[$sectionId]["end_time"] = $lectureData["LECTURE_end_time"];
 			$schedule[$sectionId]["section"] = $lectureData["LECTURE_section"];
+			$schedule[$sectionId]["course_type"] = $lectureData["cType"];
 			$schedule[$sectionId]["description"] = $lectureData["course_description"];
 
 

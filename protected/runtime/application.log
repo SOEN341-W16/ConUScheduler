@@ -6386,3 +6386,325 @@ REQUEST_URI=/index.php?r=scheduler/generate
 in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (42)
 in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
 in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/14 05:18:14 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE (
+			(section.days like '%W%'
+				AND subsection.days LIKE '%W%'
+				AN' at line 16. The SQL statement executed was: SELECT section.ID AS LECTURE_id,
+			section.days AS LECTURE_days,
+			section.start_time AS LECTURE_start_time,
+			section.end_time AS LECTURE_end_time,
+			section.sections AS LECTURE_section,
+			section.semester AS LECTURE_semester,
+			subsection.ID AS TUT_LAB_id,
+			subsection.days AS TUT_LAB_days,
+			subsection.sections AS TUT_LAB_section,
+			subsection.start_time AS TUT_LAB_start_time,
+			subsection.end_time AS TUT_LAB_end_time,
+			subsection.kind AS TUT_LAB_kind,
+			course.*
+				FROM section
+				LEFT JOIN subsection ON subsection.sectionID = section.ID AND subsection.semester=section.semester
+				LEFT JOIN course ON section.courseID=course.ID ORDER BY course.course_code ASC WHERE (
+			(section.days like :W
+				AND subsection.days LIKE :W
+				AND section.start_time>=:start_W
+				AND subsection.start_time>=:start_W
+				AND section.end_time<=:end_W
+				AND subsection.end_time<=:end_W
+			)  OR 
+			(section.days like :F
+				AND subsection.days LIKE :F
+				AND section.start_time>=:start_F
+				AND subsection.start_time>=:start_F
+				AND section.end_time<=:end_F
+				AND subsection.end_time<=:end_F
+			) ) AND ( (section.days NOT LIKE :M AND subsection.days NOT LIKE :M)  AND  (section.days NOT LIKE :T AND subsection.days NOT LIKE :T)  AND  (section.days NOT LIKE :J AND subsection.days NOT LIKE :J) ).
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (114)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/14 05:18:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE (
+			(section.days like '%W%'
+				AND subsection.days LIKE '%W%'
+				AN' at line 16. The SQL statement executed was: SELECT section.ID AS LECTURE_id,
+			section.days AS LECTURE_days,
+			section.start_time AS LECTURE_start_time,
+			section.end_time AS LECTURE_end_time,
+			section.sections AS LECTURE_section,
+			section.semester AS LECTURE_semester,
+			subsection.ID AS TUT_LAB_id,
+			subsection.days AS TUT_LAB_days,
+			subsection.sections AS TUT_LAB_section,
+			subsection.start_time AS TUT_LAB_start_time,
+			subsection.end_time AS TUT_LAB_end_time,
+			subsection.kind AS TUT_LAB_kind,
+			course.*
+				FROM section
+				LEFT JOIN subsection ON subsection.sectionID = section.ID AND subsection.semester=section.semester
+				LEFT JOIN course ON section.courseID=course.ID ORDER BY course.course_code ASC WHERE (
+			(section.days like :W
+				AND subsection.days LIKE :W
+				AND section.start_time>=:start_W
+				AND subsection.start_time>=:start_W
+				AND section.end_time<=:end_W
+				AND subsection.end_time<=:end_W
+			)  OR 
+			(section.days like :F
+				AND subsection.days LIKE :F
+				AND section.start_time>=:start_F
+				AND subsection.start_time>=:start_F
+				AND section.end_time<=:end_F
+				AND subsection.end_time<=:end_F
+			) ) AND ( (section.days NOT LIKE :M AND subsection.days NOT LIKE :M)  AND  (section.days NOT LIKE :T AND subsection.days NOT LIKE :T)  AND  (section.days NOT LIKE :J AND subsection.days NOT LIKE :J) )' in C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(114): CDbCommand->query(Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#13 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/14 05:35:11 [error] [php] Undefined index: course_code (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:44)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (44)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 05:53:12 [error] [php] Undefined index: semester (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (36)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 05:55:54 [error] [php] Array to string conversion (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (41)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 05:56:22 [error] [php] Array to string conversion (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 05:57:02 [error] [php] Array to string conversion (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 05:58:10 [error] [php] Undefined variable: i (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 06:02:06 [error] [php] Undefined variable: semester (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (36)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 06:34:45 [error] [php] Undefined index: cType (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(154): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (10)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (154)
+2016/03/14 06:42:52 [error] [php] Undefined variable: year (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:8)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(38): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(155): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (8)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (155)
