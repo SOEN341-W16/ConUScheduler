@@ -20,24 +20,7 @@ class SchedulerController extends Controller
             'accessControl',
         );
     }
-	function array_merge_recursive_new() {
 
-		$arrays = func_get_args();
-		$base = array_shift($arrays);
-
-		foreach ($arrays as $array) {
-			reset($base); //important
-			while (list($key, $value) = @each($array)) {
-				if (is_array($value) && @is_array($base[$key])) {
-					$base[$key] = array_merge_recursive_new($base[$key], $value);
-				} else {
-					$base[$key] = $value;
-				}
-			}
-		}
-
-		return $base;
-	}
 	public function actionGenerate()
 	{
 		$model = new PreferenceForm();
@@ -61,6 +44,9 @@ class SchedulerController extends Controller
 				FROM section
 				LEFT JOIN subsection ON subsection.sectionID = section.ID AND subsection.semester=section.semester
 				LEFT JOIN course ON section.courseID=course.ID ";
+
+
+
 		//which days were selected?
 		($model->dayM == 1 ? $okdays['M'] = array("start_time"=>$model->fromTimeM, "end_time"=> $model->toTimeM) : $nodays[] = 'M' );
 		($model->dayT == 1 ? $okdays['T'] = array("start_time"=>$model->fromTimeT, "end_time"=> $model->toTimeT) : $nodays[] = 'T' );
