@@ -1,3 +1,4 @@
+
 <table>
     <thead>
     <th>Lecture ID</th>
@@ -7,19 +8,21 @@
     <th>Start Time</th>
     <th>End Time</th>
     <th>Semester</th>
+    <th>Year</th>
     </thead>
     
     <tbody>
     <?php
-    foreach($lectures as $i => $lectureData) { ?>
+    foreach($schedule as $id => $scheduleData) { ?>
         <tr>
-            <th><?php echo $lectureData["LECTURE_id"]?></th>
-            <th><?php echo $lectureData["course_code"];?></th>
-            <th><?php echo $lectureData["LECTURE_section"];?></th>
-            <th><?php echo $lectureData["LECTURE_days"];?></th>
-            <th><?php echo $lectureData["LECTURE_start_time"];?></th>
-            <th><?php echo $lectureData["LECTURE_end_time"];?></th>
-            <th><?php echo $lectureData["LECTURE_semester"];?></th>
+            <th><?php echo $id; ?></th>
+            <th><?php echo $scheduleData["course_code"];?></th>
+            <th><?php echo $scheduleData["section"];?></th>
+            <th><?php echo $scheduleData["days"];?></th>
+            <th><?php echo $scheduleData["start_time"];?></th>
+            <th><?php echo $scheduleData["end_time"];?></th>
+            <th><?php echo $scheduleData["semester"];?></th>
+            <th></th>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -33,13 +36,20 @@
                     <td>End Time</td>
                     </thead>
                     <tbody>
+                    <?php
+
+                    foreach($scheduleData["labs_tut"] as $labdata)
+                    {
+                    ?>
                     <tr>
-                        <td><?php echo $lectureData["TUT_LAB_kind"];?></td>
-                        <td><?php echo $lectureData["TUT_LAB_section"];?></td>
-                        <td><?php echo $lectureData["TUT_LAB_days"];?></td>
-                        <td><?php echo $lectureData["TUT_LAB_start_time"];?></td>
-                        <td><?php echo $lectureData["TUT_LAB_end_time"];?></td>
+                        <td><?php echo $labdata["kind"];?></td>
+                        <td><?php echo $labdata["section"];?></td>
+                        <td><?php echo $labdata["days"];?></td>
+                        <td><?php echo $labdata["start_time"];?></td>
+                        <td><?php echo $labdata["end_time"];?></td>
                     </tr>
+                    <?php
+                    } ?>
 
                     </tbody>
 

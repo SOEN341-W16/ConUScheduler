@@ -28,6 +28,16 @@ $this->menu=array(
         'model' => $model,
 
     ));
+
+    if(isset($schedule))
+    {
+        echo "<hr>";
+        $this->renderPartial('_gen', array(
+            'schedule' => $schedule,
+
+        ));
+
+    }
     ?>
 </div>
 
