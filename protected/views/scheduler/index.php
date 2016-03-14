@@ -5,6 +5,10 @@
 
 //print_r($sections);
 
+
+	Yii::app()->clientScript->registerCssFile('assets/63b1294f/jui/css/base/jquery-ui.css');
+
+	Yii::app()->clientScript->registerCoreScript('jquery.ui');
 $this->breadcrumbs=array(
 	'Scheduler',
 );
@@ -17,7 +21,7 @@ $this->menu=array(
 
 <script>
     $(function(){
-        console.log($('#yt0').serializeArray());
+        //console.log($('#yt0').serializeArray());
     })
 </script>
 <div id="user-preferences">
@@ -28,15 +32,19 @@ $this->menu=array(
         'model' => $model,
 
     ));
-
-    if(isset($schedule))
+    echo "<br><hr>";
+    if(isset($schedule) && !empty($schedule))
     {
-        echo "<hr>";
+
         $this->renderPartial('_gen', array(
             'schedule' => $schedule,
 
         ));
 
+    }
+    else
+    {
+        echo "no results";
     }
     ?>
 </div>

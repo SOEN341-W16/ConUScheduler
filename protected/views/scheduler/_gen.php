@@ -41,18 +41,24 @@ foreach ($sequence as $year => $sequenceData)
     <?php
     foreach ($sequenceData as $semester => $courses)
     {
+
         ?>
+
         <h1><?php echo $semester; ?></h1>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" >
 
             <?php
             foreach ($courses as $i => $course)
             {
                 foreach ($schedule as $id => $courseData)
                 {
+                    $foundCourses = 0;
                     if ($semester == $courseData["semester"] && $course == $courseData["course_code"])
                     {
+                        $foundCourses++;
+
                         ?>
+
+                        <table id="section_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
                         <thead>
                         <tr>
                             <th>Lecture</th>
@@ -61,7 +67,7 @@ foreach ($sequence as $year => $sequenceData)
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Days</th>
-                            <th>&nbsp;</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -73,14 +79,14 @@ foreach ($sequence as $year => $sequenceData)
                             <td><?php echo $courseData["start_time"]; ?></td>
                             <td><?php echo $courseData["end_time"]; ?></td>
                             <td><?php echo $courseData["days"]; ?></td>
-                            
+
                         </tr>
                         <tr>
                             <td colspan="6"><h6>Labs/Tutorials</h6></td>
                         </tr>
                         <tr>
                             <td colspan="6">
-                                <table>
+                                <table id="subsection_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
                                     <thead>
                                     <td>Type</td>
                                     <td>Sub Section</td>
@@ -98,7 +104,7 @@ foreach ($sequence as $year => $sequenceData)
                                             <td><?php echo $labdata["days"]; ?></td>
                                             <td><?php echo $labdata["start_time"]; ?></td>
                                             <td><?php echo $labdata["end_time"]; ?></td>
-                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-sectionid="<?php echo $id;?>" value="<?php echo $subsectionID ;?>"></td>
+                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
                                         </tr>
                                         <?php
                                     } ?>
@@ -107,13 +113,99 @@ foreach ($sequence as $year => $sequenceData)
                             </td>
                         </tr>
                         </tbody>
+                        </table>
                         <?php
                     }
                 }
             } ?>
-        </table>
+
         <?php
     }
 
 }
 ?>
+<div class="row buttons">
+    <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
+</div>
+<div id="dialog"></div>
+<script>
+    $(function(){
+
+        $(":checkbox").on('click',function(){
+            var sectionId = $(this).data('sectionid');
+            var subsectionId = $(this).val();
+            var kind = $(this).data('kind');
+            var course = $(this).data('course');
+            var checkboxes = 0; // total number of checkboxes (subsections)
+            var checked = 0; // how many boxes are checked in the subsection
+            var $checkobx = $(this); // cache the checkbox
+
+            $("table#subsection_table :checkbox").each(function(){
+
+
+                if($(this).data('sectionid') == sectionId)
+                {
+                    checkboxes++;
+                    if($(this).is(':checked'))
+                        checked++;
+                }
+
+
+                // disable similar kinds since there can only be one lab or one tutorial at a time
+                if($(this).data('sectionid') == sectionId && $(this).data('kind') == kind && subsectionId != $(this).val())
+                {
+
+                    if($checkobx.is(':checked'))
+                        $(this).prop('disabled',true);
+                    else
+                        $(this).prop('disabled',false);
+                }
+
+
+            });
+
+            // disable all other sections
+            $("table#subsection_table").each(function(){
+                if($(this).data('sectionid') != sectionId && $(this).data('course') == course)
+                {
+
+                    var $table = $(this);
+                    $table.find(':checkbox').each(function(){
+                        // if the number of checkboxes that are checked is more than zero, disable, if not re-enable
+                        if(checked>0)
+                            $(this).prop('disabled',true);
+                        else
+                            $(this).prop('disabled',false);
+                    })
+
+                }
+            });
+
+
+
+        });
+
+        // collect all the checkboxes
+        $('#validate').on('click',function(){
+
+
+
+            var data = [];
+            $("table#subsection_table input[type='checkbox']:checked").each(function(){
+                data.push({
+                    subsectionid : $(this).val(),
+                    sectionid : $(this).data('sectionid'),
+                    year : $(this).data('year')
+               })
+           });
+            // JSON it so that it can be passed via Ajax call
+            var data = JSON.stringify(data);
+
+
+            console.log(JSON.stringify(data));
+
+
+            $('#dialog').html(data).dialog({ width: 500, heigh: 500});
+        });
+    });
+</script>
