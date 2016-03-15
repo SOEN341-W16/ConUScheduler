@@ -24,11 +24,40 @@ $sequence[2]["winter"][] = "SOEN 331";
 $sequence[2]["winter"][] = "SOEN 341";
 
 
-foreach ($schedule as $id => $scheduleData) {
-    if ($scheduleData["course_type"] == "nat") {
+$sequence[3]["fall"][] = "COMP 335";
+$sequence[3]["fall"][] = "SOEN 342";
+$sequence[3]["fall"][] = "SOEN 343";
+$sequence[3]["fall"][] = "SOEN 384";
+$sequence[3]["fall"][] = "ENGR 391";
 
+$sequence[3]["winter"][] = "SOEN 344";
+$sequence[3]["winter"][] = "SOEN 345";
+$sequence[3]["winter"][] = "SOEN 357";
+$sequence[3]["winter"][] = "SOEN 390";
+
+
+$sequence[4]["fall"][] = "SOEN 490";
+$sequence[4]["fall"][] = "ENGR 301";
+$sequence[4]["fall"][] = "SOEN 321";
+
+
+$sequence[4]["winter"][] = "SOEN 385";
+$sequence[4]["winter"][] = "ENGR 392";
+$sequence[4]["winter"][] = "SOEN 490";
+
+
+
+
+foreach ($schedule as $id => $scheduleData)
+{
+    if ($scheduleData["course_type"] == "nat")
+    {
         $sequence[1]["winter"][] = $scheduleData["course_code"];
         $sequence[2]["fall"][] = $scheduleData["course_code"];
+    }
+    if ($scheduleData["course_type"] == "gen")
+    {
+        $sequence[1]["fall"][] = $scheduleData["course_code"];
     }
 }
 
