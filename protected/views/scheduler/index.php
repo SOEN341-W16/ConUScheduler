@@ -1,29 +1,26 @@
 <?php
 /* @var $this SchedulerController
  * @var $model PreferenceForm
+ * @var $yearsToShow
+/* @var $model
  */
 
-//print_r($sections);
+Yii::app()->clientScript->registerCssFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css');
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
 
-
-	Yii::app()->clientScript->registerCssFile('assets/63b1294f/jui/css/base/jquery-ui.css');
-
-	Yii::app()->clientScript->registerCoreScript('jquery.ui');
+//Yii::app()->clientScript->registerCoreScript('fullcalendar');
 $this->breadcrumbs=array(
 	'Scheduler',
 );
-
-
 $this->menu=array(
     array('label'=>'View Saved Schedules', 'url'=>array('create')),
 );
 ?>
+<script src=""></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.print.css">
 
-<script>
-    $(function(){
-        //console.log($('#yt0').serializeArray());
-    })
-</script>
+
 <div id="user-preferences">
     <h3>Select Preferences</h3>
     <?php
@@ -33,11 +30,12 @@ $this->menu=array(
 
     ));
     echo "<br><hr>";
-    if(isset($schedule) && !empty($schedule))
+    if(isset($schedule) && !empty($schedule) && !empty($yearsToShow))
     {
 
         $this->renderPartial('_gen', array(
             'schedule' => $schedule,
+            'yearsToShow' => $yearsToShow
 
         ));
 

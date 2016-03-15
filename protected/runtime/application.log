@@ -6970,3 +6970,401 @@ REQUEST_URI=/index.php?r=scheduler/generate
 in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (63)
 in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (38)
 in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (141)
+2016/03/15 06:06:58 [error] [php] Undefined variable: yearsToShow (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:69)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(42): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(148): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (69)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (148)
+2016/03/15 06:07:28 [error] [php] Undefined variable: yearsToShow (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:69)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(42): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(148): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (69)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (148)
+2016/03/15 06:07:29 [error] [php] Undefined variable: yearsToShow (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:69)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(42): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(148): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (69)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (42)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (148)
+2016/03/15 06:09:41 [error] [php] in_array() expects parameter 2 to be array, integer given (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#2 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(45): SchedulerController->renderPartial()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#7 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(148): SchedulerController->render()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (68)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (45)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (148)
+2016/03/15 06:10:05 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:05 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:05 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:05 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:07 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:07 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:07 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:07 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:20 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:20 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:20 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:20 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:22 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:37 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:37 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:37 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:37 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:47 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:47 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:47 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:10:47 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:05 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:05 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:05 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:05 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:10 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:10 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:10 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:10 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:17 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:17 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:17 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:17 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:52 [warning] [application] Failed to set unsafe attribute "year1" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:52 [warning] [application] Failed to set unsafe attribute "year2" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:52 [warning] [application] Failed to set unsafe attribute "year3" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:11:52 [warning] [application] Failed to set unsafe attribute "year4" of "PreferenceForm".
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (27)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/15 06:13:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/creat...')
+#3 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/create
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/15 06:50:17 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: //cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('//cdnjs.cloudfl...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---
+2016/03/15 06:50:18 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: //cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('//cdnjs.cloudfl...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---
+2016/03/15 06:50:47 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('fullcalendar.mi...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---
+2016/03/15 06:50:55 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('fullcalendar.mi...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---
+2016/03/15 06:50:55 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('fullcalendar.mi...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---
+2016/03/15 06:50:56 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: fullcalendar.min.js' in C:\xampp\htdocs\ConUScheduler\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(11): CClientScript->registerCoreScript('fullcalendar.mi...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(150): CController->render('index', Array)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('generate')
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/gener...')
+#17 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=scheduler/generate
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler
+---

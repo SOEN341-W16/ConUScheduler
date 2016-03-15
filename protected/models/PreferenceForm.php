@@ -25,10 +25,17 @@ class PreferenceForm extends CFormModel
     public $toTimeW;
     public $toTimeJ;
     public $toTimeF;
+
+    public $year1;
+    public $year2;
+    public $year3;
+    public $year4;
+
+
     public function rules()
     {
         return array(
-            array('dayM, dayT, dayW, dayJ, dayF, fromTimeM, fromTimeT, fromTimeW, fromTimeJ, fromTimeF,toTimeM, toTimeT, toTimeW, toTimeJ, toTimeF', 'required'),
+            array('dayM, dayT, dayW, dayJ, dayF, fromTimeM, fromTimeT, fromTimeW, fromTimeJ, fromTimeF,toTimeM, toTimeT, toTimeW, toTimeJ, toTimeF, year1, year2, year3, year4', 'required'),
         );
     }
     public function attributeLabels()
@@ -40,6 +47,10 @@ class PreferenceForm extends CFormModel
             'dayW' => 'WED',
             'dayJ' => 'THU',
             'dayF' => 'FRI',
+            'year1' => 'Year 1',
+            'year2' => 'Year 2',
+            'year3' => 'Year 3',
+            'year4' => 'Year 4'
         );
     }
 }

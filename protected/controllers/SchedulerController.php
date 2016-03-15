@@ -134,11 +134,33 @@ class SchedulerController extends Controller
 
 		//print_r($schedule);
 
+		$yearsToShow = array();
+
+
+		($model->year1==1 ? $yearsToShow[] = 1 : "");
+		($model->year2==1 ? $yearsToShow[] = 2 : "");
+		($model->year3==1 ? $yearsToShow[] = 3 : "");
+		($model->year4==1 ? $yearsToShow[] = 4 : "");
+
 		$this->render('index', array(
 				'model'=> $model,
 				'schedule' => $schedule,
+				'yearsToShow' =>$yearsToShow
 			)
 		);
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param Course $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='preference_form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
 	}
 
 }

@@ -1,4 +1,5 @@
 <?php
+/* @var $schedule */
 
 $sequence[1]["fall"][] = "COMP 248";
 $sequence[1]["fall"][] = "COMP 232";
@@ -64,6 +65,8 @@ foreach ($schedule as $id => $scheduleData)
 
 foreach ($sequence as $year => $sequenceData)
 {
+    if(!in_array($year, $yearsToShow))
+        continue;
     ?>
 
     <h1>Year <?php echo $year; ?></h1>
