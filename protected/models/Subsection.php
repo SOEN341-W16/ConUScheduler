@@ -1,22 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "course".
+ * This is the model class for table "subsection".
  *
- * The followings are the available columns in table 'course':
+ * The followings are the available columns in table 'subsection':
  * @property integer $ID
- * @property string $course_code
- * @property string $course_description
- * @property integer $credits
+ * @property integer $sectionID
+ * @property integer $courseID
+ * @property string $kind
+ * @property string $sections
+ * @property string $days
+ * @property string $start_time
+ * @property string $end_time
+ * @property string $semester
  */
-class Course extends CActiveRecord
+class Subsection extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'course';
+		return 'subsection';
 	}
 
 	/**
@@ -27,13 +32,16 @@ class Course extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('course_code, course_description, credits', 'required'),
-			array('ID, credits', 'numerical', 'integerOnly'=>true),
-			array('course_code', 'length', 'max'=>8),
-			array('course_description', 'length', 'max'=>55),
+			array('sectionID, courseID', 'required'),
+			array('sectionID, courseID', 'numerical', 'integerOnly'=>true),
+			array('kind', 'length', 'max'=>3),
+			array('sections', 'length', 'max'=>4),
+			array('days', 'length', 'max'=>2),
+			array('start_time, end_time', 'length', 'max'=>5),
+			array('semester', 'length', 'max'=>6),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, course_code, course_description, credits', 'safe', 'on'=>'search'),
+			array('ID, sectionID, courseID, kind, sections, days, start_time, end_time, semester', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,7 +53,8 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'course' => array(self::HAS_MANY, 'Section','courseID'),
+			'sectionID' => array(self::BELONGS_TO, 'Section', 'ID'),
+			'courseID'=>array(self::BELONGS_TO,'Course')
 		);
 	}
 
@@ -56,9 +65,14 @@ class Course extends CActiveRecord
 	{
 		return array(
 			'ID' => 'ID',
-			'course_code' => 'Course Code',
-			'course_description' => 'Course Description',
-			'credits' => 'Credits',
+			'sectionID' => 'Section',
+			'courseID' => 'Course',
+			'kind' => 'Kind',
+			'sections' => 'Sections',
+			'days' => 'Days',
+			'start_time' => 'Start Time',
+			'end_time' => 'End Time',
+			'semester' => 'Semester',
 		);
 	}
 
@@ -81,9 +95,14 @@ class Course extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID',$this->ID);
-		$criteria->compare('course_code',$this->course_code,true);
-		$criteria->compare('course_description',$this->course_description,true);
-		$criteria->compare('credits',$this->credits);
+		$criteria->compare('sectionID',$this->sectionID);
+		$criteria->compare('courseID',$this->courseID);
+		$criteria->compare('kind',$this->kind,true);
+		$criteria->compare('sections',$this->sections,true);
+		$criteria->compare('days',$this->days,true);
+		$criteria->compare('start_time',$this->start_time,true);
+		$criteria->compare('end_time',$this->end_time,true);
+		$criteria->compare('semester',$this->semester,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +113,7 @@ class Course extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Course the static model class
+	 * @return Subsection the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

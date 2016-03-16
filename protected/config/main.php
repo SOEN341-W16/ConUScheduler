@@ -40,6 +40,14 @@ return array(
 			'allowAutoLogin'=>true,
 			'class' => 'WebUser'
 		),
+		'clientScript'=>array(
+			'packages'=>array(
+				'fullcalendar'=>array(
+					'baseUrl'=>'//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/',
+					'js'=>array('fullcalendar.js'),
+				)
+			),
+		),
 
 		// uncomment the following to enable URLs in path-format
 		/*

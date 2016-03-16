@@ -13,28 +13,29 @@ class PreferenceForm extends CFormModel
     public $dayM;
     public $dayT;
     public $dayW;
-    public $dayR;
+    public $dayJ;
     public $dayF;
-    public $dayS;
-    public $dayU;
     public $fromTimeM;
     public $fromTimeT;
     public $fromTimeW;
-    public $fromTimeR;
+    public $fromTimeJ;
     public $fromTimeF;
-    public $fromTimeS;
-    public $fromTimeU;
     public $toTimeM;
     public $toTimeT;
     public $toTimeW;
-    public $toTimeR;
+    public $toTimeJ;
     public $toTimeF;
-    public $toTimeS;
-    public $toTimeU;
+
+    public $year1;
+    public $year2;
+    public $year3;
+    public $year4;
+
+
     public function rules()
     {
         return array(
-            array('dayM, dayT, dayW, dayR, dayF, dayS, dayU, fromTimeM, fromTimeT, fromTimeW, fromTimeR, fromTimeF, fromTimeS, fromTimeU, toTimeM, toTimeT, toTimeW, toTimeR, toTimeF, toTimeS, toTimeU', 'required'),
+            array('dayM, dayT, dayW, dayJ, dayF, fromTimeM, fromTimeT, fromTimeW, fromTimeJ, fromTimeF,toTimeM, toTimeT, toTimeW, toTimeJ, toTimeF, year1, year2, year3, year4', 'required'),
         );
     }
     public function attributeLabels()
@@ -44,10 +45,12 @@ class PreferenceForm extends CFormModel
             'dayM' => 'MON',
             'dayT' => 'TUE',
             'dayW' => 'WED',
-            'dayR' => 'THU',
+            'dayJ' => 'THU',
             'dayF' => 'FRI',
-            'dayS' => 'SAT',
-            'dayU' => 'SUN',
+            'year1' => 'Year 1',
+            'year2' => 'Year 2',
+            'year3' => 'Year 3',
+            'year4' => 'Year 4'
         );
     }
 }
