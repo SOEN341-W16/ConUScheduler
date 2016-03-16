@@ -162,67 +162,51 @@ foreach ($sequence as $year => $sequenceData)
 <div id="dialog"></div>
 <script>
     $(function(){
-
         $(":checkbox").on('click',function(){
-            var sectionId = $(this).data('sectionid');
-            var subsectionId = $(this).val();
-            var kind = $(this).data('kind');
-            var course = $(this).data('course');
+            var $checkobx = $(this); // cache the checkbox that has just been checked
+            var sectionId = $checkobx.data('sectionid');
+            var subsectionId = $checkobx.val();
+            var kind = $checkobx.data('kind');
+            var course = $checkobx.data('course');
             var checkboxes = 0; // total number of checkboxes (subsections)
             var checked = 0; // how many boxes are checked in the subsection
-            var $checkobx = $(this); // cache the checkbox
 
             $("table#subsection_table :checkbox").each(function(){
-
-
                 if($(this).data('sectionid') == sectionId)
                 {
-                    checkboxes++;
+                    checkboxes++; // calcualte number of checkboxes
                     if($(this).is(':checked'))
-                        checked++;
+                        checked++; // calculate how many checkboxes are checked
                 }
-
-
                 // disable similar kinds since there can only be one lab or one tutorial at a time
                 if($(this).data('sectionid') == sectionId && $(this).data('kind') == kind && subsectionId != $(this).val())
                 {
-
                     if($checkobx.is(':checked'))
                         $(this).prop('disabled',true);
                     else
                         $(this).prop('disabled',false);
                 }
-
-
             });
-
             // disable all other sections
             $("table#subsection_table").each(function(){
                 if($(this).data('sectionid') != sectionId && $(this).data('course') == course)
                 {
-
-                    var $table = $(this);
+                    var $table = $(this); // cache table
                     $table.find(':checkbox').each(function(){
                         // if the number of checkboxes that are checked is more than zero, disable, if not re-enable
                         if(checked>0)
                             $(this).prop('disabled',true);
                         else
                             $(this).prop('disabled',false);
-                    })
-
+                    });
                 }
             });
-
-
-
         });
 
         // collect all the checkboxes
         $('#validate').on('click',function(){
-
-
-
-            var data = [];
+            var data = []; // data container
+            // collect all the checked checkboxes and their associated attributes
             $("table#subsection_table input[type='checkbox']:checked").each(function(){
                 data.push({
                     subsectionid : $(this).val(),
@@ -230,12 +214,10 @@ foreach ($sequence as $year => $sequenceData)
                     year : $(this).data('year')
                })
            });
-            // JSON it so that it can be passed via Ajax call
+            // JSON it so that it can be passed via Ajax call to a php page
             var data = JSON.stringify(data);
 
-
             console.log(JSON.stringify(data));
-
 
             $('#dialog').html(data).dialog({ width: 500, heigh: 500});
         });
