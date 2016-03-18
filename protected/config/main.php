@@ -45,7 +45,12 @@ return array(
 				'fullcalendar'=>array(
 					'baseUrl'=>'//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/',
 					'js'=>array('fullcalendar.js'),
+				),
+				'moment' => array(
+					'baseUrl'=>'//cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/',
+					'js'=>array('moment.min.js'),
 				)
+
 			),
 		),
 

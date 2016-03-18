@@ -160,6 +160,7 @@ foreach ($sequence as $year => $sequenceData)
     <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
 </div>
 <div id="dialog"></div>
+<div id="calendar" style="display: none;"></div>
 <script>
     $(function(){
         $(":checkbox").on('click',function(){
@@ -221,5 +222,15 @@ foreach ($sequence as $year => $sequenceData)
 
             $('#dialog').html(data).dialog({ width: 500, heigh: 500});
         });
+
+
+        $('#calendar').fullCalendar({
+            events : [
+                {
+                    title : 'Testing stuff out',
+                    start: '2016-01-01T17:30:00'
+                }
+            ]
+        })
     });
 </script>
