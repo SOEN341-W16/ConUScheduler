@@ -21,6 +21,142 @@ class SchedulerController extends Controller
         );
     }
 
+	public function actionViewSaved()
+	{
+		$sql = "
+				SELECT
+
+
+									user_schedules.date_created,
+									user_schedules.userID,
+									user_schedule.scheduleID AS saveId,
+									user_schedule.courseID AS courseID,
+									user_schedule.sectionID AS lecture_id,
+									user_schedule.subsectionID,
+									user_schedule.year,
+
+
+
+									subsection.kind AS sub_kind,
+									subsection.days AS sub_days,
+									subsection.start_time AS sub_start_time,
+									subsection.end_time AS sub_end_time,
+									subsection.sections AS sub_section_name,
+									subsection.kind AS sub_kind,
+									subsection.semester,
+
+									section.ID AS lecture_id,
+									section.kind AS section_kind,
+									section.sections AS section_name,
+									section.days AS lecture_days,
+									section.start_time AS lecture_start_time,
+									section.end_time AS lecture_end_time,
+
+									course.course_code,
+									course.ctype,
+									course.credits,
+									course.course_description
+				FROM `user_schedule`
+					LEFT JOIN user_schedules ON user_schedule.scheduleID = user_schedules.ID
+					LEFT JOIN section ON section.ID = user_schedule.sectionID
+					LEFT JOIN subsection ON subsection.ID = user_schedule.subsectionID
+					LEFT JOIN course ON course.ID = user_schedule.courseID
+														 WHERE userID= :userID 	";
+
+		$pat[":userID"] =  Yii::app()->user->userID;
+
+		$command = Yii::app()->db->createCommand($sql);
+		$data = $command->query($pat); // query with placeholders
+		$uSchedule = $data->readAll(); // an array of all filtered lectures with given dates
+
+		$sched= array();
+
+		//print_r($uSchedule);
+		//exit;
+
+		foreach($uSchedule as $i => $schedule)
+		{
+			$saveID = $schedule['saveId'];
+			$save = &$sched[$saveID];
+			$save['date_created'] = $schedule['date_created'];
+			$save['schedule'] = array();
+
+			foreach ($uSchedule as $schedule_)
+			{
+				$year = $schedule_['year'];
+				$semester = $schedule_['semester'];
+				$save['schedule'][$year][$semester] = array();
+			}
+		}
+
+		foreach($uSchedule as $i => $schedule)
+		{
+			foreach ($sched as $saveID => $saveData)
+			{
+				foreach ($saveData['schedule'] as $year => $semesters)
+				{
+					foreach ($semesters as $semester => $courses)
+					{
+						$course = &$sched[$saveID]['schedule'][$year][$semester];
+						if ($schedule['semester'] == $semester && $schedule['year'] == $year)
+						{
+							$course[$schedule['courseID']]['course_code'] = $schedule['course_code'];
+							$course[$schedule['courseID']]['course_description'] = $schedule['course_description'];
+							$course[$schedule['courseID']]['lecture_days'] = $schedule['lecture_days'];
+							$course[$schedule['courseID']]['lecture_id'] = $schedule['lecture_id'];
+							$course[$schedule['courseID']]['section_kind'] = $schedule['section_kind'];
+							$course[$schedule['courseID']]['section_name'] = $schedule['section_name'];
+							$course[$schedule['courseID']]['lecture_start_time'] = $schedule['lecture_start_time'];
+							$course[$schedule['courseID']]['lecture_end_time'] = $schedule['lecture_end_time'];
+							$course[$schedule['courseID']]['credits'] = $schedule['credits'];
+							$course[$schedule['courseID']]['labs'] = array();
+						}
+					}
+				}
+			}
+		}
+
+
+			foreach ($sched as $saveID => $saveData)
+			{
+				foreach ($saveData['schedule'] as $year => $yearData)
+				{
+					foreach ($yearData as $semester => $semesterData)
+					{
+						foreach ($semesterData as $courseID => $courseData)
+						{
+							$course = &$sched[$saveID]['schedule'][$year][$semester][$courseID];
+							foreach($uSchedule as $i => $schedule)
+							{
+								if ($schedule['courseID'] == $courseID && $courseData['lecture_id'] == $schedule['lecture_id'] && $schedule['sub_kind'] != $courseData['section_kind'])
+								{
+									$lab = &$course['labs'][$schedule['subsectionID']];
+									$lab['sub_kind'] = $schedule['sub_kind'];
+									$lab['sub_section_name'] = $schedule['sub_section_name'];
+									$lab['sub_days'] = $schedule['sub_days'];
+									$lab['sub_start_time'] = $schedule['sub_start_time'];
+									$lab['sub_end_time'] = $schedule['sub_end_time'];
+								}
+							}
+						}
+
+					}
+
+				}
+			}
+
+
+		//print_r($sched);
+		//print_r($uSchedule);
+
+		///exit;
+
+		$this->render('saved',array(
+			'schedule'=>$sched,
+		));
+
+	}
+
 	public function actionGenerate()
 	{
 		$model = new PreferenceForm();
@@ -148,6 +284,15 @@ class SchedulerController extends Controller
 				'yearsToShow' =>$yearsToShow
 			)
 		);
+	}
+
+	public function actionscheduleAjax()
+	{
+		$id = $_POST["id"];
+		$this->renderPartial('scb', array(
+			'model' => $model,
+
+		));
 	}
 
 	/**
