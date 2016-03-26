@@ -5,20 +5,14 @@
 /* @var $model
  */
 
-Yii::app()->clientScript->registerCssFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css');
-Yii::app()->clientScript->registerCoreScript('jquery.ui');
-Yii::app()->clientScript->registerCoreScript('moment');
-Yii::app()->clientScript->registerCoreScript('fullcalendar');
 $this->breadcrumbs=array(
 	'Scheduler',
 );
 $this->menu=array(
-    array('label'=>'View Saved Schedules', 'url'=>array('create')),
+    array('label'=>'View Saved Schedules', 'url'=>array('ViewSaved')),
 );
 ?>
 <script src=""></script>
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css">
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.print.css">
 
 
 <div id="user-preferences">

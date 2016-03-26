@@ -46,8 +46,9 @@ $sequence[4]["winter"][] = "SOEN 385";
 $sequence[4]["winter"][] = "ENGR 392";
 $sequence[4]["winter"][] = "SOEN 490";
 
-
-
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
 
 foreach ($schedule as $id => $scheduleData)
 {
@@ -224,13 +225,6 @@ foreach ($sequence as $year => $sequenceData)
         });
 
 
-        $('#calendar').fullCalendar({
-            events : [
-                {
-                    title : 'Testing stuff out',
-                    start: '2016-01-01T17:30:00'
-                }
-            ]
-        })
+
     });
 </script>
