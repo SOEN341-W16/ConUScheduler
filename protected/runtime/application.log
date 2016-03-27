@@ -10449,3 +10449,14 @@ Stack trace:
 REQUEST_URI=/index.php?r=scheduler/ViewSaved
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/index
 ---
+2016/03/27 21:30:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "AjaxExample".' in C:\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('AjaxExample')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('AjaxExample')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/AjaxE...')
+#3 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/AjaxExample
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---

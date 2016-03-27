@@ -294,6 +294,18 @@ class SchedulerController extends Controller
 
 		));
 	}
+    public function actionAjaxExample()
+ 	{
+ 		$post_data = $_POST['myData'];
+
+
+
+ 		$this->renderPartial('_ajax', array(
+ 				'data'=> $post_data,
+ 			)
+ 		);
+
+ 	}
 
 
 	/**

@@ -219,6 +219,21 @@ foreach ($sequence as $year => $sequenceData)
             // JSON it so that it can be passed via Ajax call to a php page
             var data = JSON.stringify(data);
 
+
+            $.ajax({
+                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/AjaxExample"); ?>",
+                type: "POST",
+                data : "myData="+ data,
+                success : function(data)
+                {
+                    $("#ajax-results").html(data);
+                    $("#ajax-results").dialog({ width: 500, height: 500})
+                },
+                error: function()
+                {
+                    alert("there was an error")
+                }
+            })
             console.log(JSON.stringify(data));
 
             $('#dialog').html(data).dialog({ width: 500, heigh: 500});
