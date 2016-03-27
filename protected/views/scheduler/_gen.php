@@ -63,110 +63,127 @@ foreach ($schedule as $id => $scheduleData)
     }
 }
 
+?>
 
+
+<div class="row buttons">
+    <?php echo CHtml::button('Validate Schedule', array('id' => 'validate')); ?>
+    <?php echo CHtml::button('Save Schedule', array('id' => 'save')); ?>
+</div>
+<div id="dialog"></div>
+<div id="calendar" style="display: none;"></div>
+<div id="savedialog" style="display: none;"></div>
+<br>
+
+<div id="tabs">
+    <ul>
+    <?php foreach($yearsToShow as $year)
+    {?>
+        <li><a href='#tabs-<?php echo $year; ?>'><h1>Year <?php echo $year; ?></h1></a></li>
+    <?php
+    }
+    ?>
+    </ul>
+
+<?php
 foreach ($sequence as $year => $sequenceData)
 {
     if(!in_array($year, $yearsToShow))
         continue;
     ?>
+    <div id="tabs-<?php echo $year; ?>">
 
-    <h1>Year <?php echo $year; ?></h1>
     <?php
     foreach ($sequenceData as $semester => $courses)
     {
-
+        $foundCoursesSemester = 0;
         ?>
-
         <h1><?php echo $semester; ?></h1>
-
-            <?php
-            foreach ($courses as $i => $course)
-            {
-                foreach ($schedule as $id => $courseData)
-                {
-                    $foundCourses = 0;
-                    if ($semester == $courseData["semester"] && $course == $courseData["course_code"])
-                    {
-
-                        $foundCourses++;
-
-                        ?>
-
-                        <table id="section_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
-                        <thead>
-                        <tr>
-                            <th>Lecture</th>
-                            <th>Course</th>
-                            <th>Section</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
-                            <th>Days</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <tr courserow-id="<?php echo $id;?>">
-                            <td><?php echo $id; ?></td>
-                            <td><?php echo $courseData["course_code"]; ?></td>
-                            <td><?php echo $courseData["section"]; ?></td>
-                            <td><?php echo $courseData["start_time"]; ?></td>
-                            <td><?php echo $courseData["end_time"]; ?></td>
-                            <td><?php echo $courseData["days"]; ?></td>
-
-                        </tr>
-                        <tr>
-                            <td colspan="6"><h6>Labs/Tutorials</h6></td>
-                        </tr>
-                        <tr>
-                            <td colspan="6">
-                                <table id="subsection_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
-                                    <thead>
-                                    <td>Type</td>
-                                    <td>Sub Section</td>
-                                    <td>Days</td>
-                                    <td>Start Time</td>
-                                    <td>End Time</td>
-                                    <tbody>
-                                    <?php
-                                    foreach ($courseData["labs_tut"] as $subsectionID => $labdata)
-                                    {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $labdata["kind"]; ?></td>
-                                            <td><?php echo $labdata["section"]; ?></td>
-                                            <td><?php echo $labdata["days"]; ?></td>
-                                            <td><?php echo $labdata["start_time"]; ?></td>
-                                            <td><?php echo $labdata["end_time"]; ?></td>
-                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-courseid="<?php echo $courseData['courseID']; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
-                                        </tr>
-                                        <?php
-                                    } ?>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
-                        <?php
-                    }
-                }
-            } ?>
-
         <?php
-    }
+        foreach ($courses as $i => $course)
+        {
+            foreach ($schedule as $id => $courseData)
+            {
 
+                if ($semester == $courseData["semester"] && $course == $courseData["course_code"])
+                {
+                    ?>
+
+                    <table id="section_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
+                    <thead>
+                    <tr>
+                        <th>Lecture</th>
+                        <th>Course</th>
+                        <th>Section</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Days</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr courserow-id="<?php echo $id;?>">
+                        <td><?php echo $id; ?></td>
+                        <td><?php echo $courseData["course_code"]; ?></td>
+                        <td><?php echo $courseData["section"]; ?></td>
+                        <td><?php echo $courseData["start_time"]; ?></td>
+                        <td><?php echo $courseData["end_time"]; ?></td>
+                        <td><?php echo $courseData["days"]; ?></td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="6"><h6>Labs/Tutorials</h6></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <table id="subsection_table" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>">
+                                <thead>
+                                <td>Type</td>
+                                <td>Sub Section</td>
+                                <td>Days</td>
+                                <td>Start Time</td>
+                                <td>End Time</td>
+                                <tbody>
+                                <?php
+                                foreach ($courseData["labs_tut"] as $subsectionID => $labdata)
+                                {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $labdata["kind"]; ?></td>
+                                        <td><?php echo $labdata["section"]; ?></td>
+                                        <td><?php echo $labdata["days"]; ?></td>
+                                        <td><?php echo $labdata["start_time"]; ?></td>
+                                        <td><?php echo $labdata["end_time"]; ?></td>
+                                        <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-courseid="<?php echo $courseData['courseID']; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
+                                    </tr>
+                                    <?php
+                                } ?>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <?php
+                }
+            }
+        }
+    }
+    ?>
+    </div>
+    <?php
 }
 ?>
-<div class="row buttons">
-    <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
-    <?php echo CHtml::button('Save', array('id' => 'save')); ?>
 </div>
-<div id="dialog"></div>
-<div id="calendar" style="display: none;"></div>
-<div id="savedialog" style="display: none;"></div>
+
 <script>
+
     $(function(){
+
+        $( "#tabs" ).tabs(); // create tabs
+
+        // event when checkbox is clicked
         $(":checkbox").on('click',function(){
             var $checkobx = $(this); // cache the checkbox that has just been checked
             var sectionId = $checkobx.data('sectionid');
@@ -230,7 +247,7 @@ foreach ($sequence as $year => $sequenceData)
         });
 
 
-        /// SAVE ///
+        // when user selects to save schedule
         $('#save').on('click',function() {
 
             $('#savedialog').dialog().html("Saving...");
@@ -245,13 +262,13 @@ foreach ($sequence as $year => $sequenceData)
                     year: $(this).data('year')
                 });
             });
+
             var _data = JSON.stringify(_data);
 
             $.ajax({
                 url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/SaveSchedule"); ?>",
                 type: "POST",
                 cache: false,
-
                 data : 'data=' + _data,
                 success : function(data)
                 {
@@ -265,6 +282,9 @@ foreach ($sequence as $year => $sequenceData)
             })
 
         });
+
+
+
 
     });
 </script>

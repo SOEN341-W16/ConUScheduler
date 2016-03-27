@@ -28,22 +28,16 @@ Below is a list of your saved schedules
     <th>Action</th>
     </thead>
     <tbody>
-
     <?php
-    //print_r($schedule);
-
     foreach($schedule as $saveId => $data)
     {
         $day_format = "<strong>%s</strong> %s - %s";
     ?>
-
         <tr>
             <td><?php echo $saveId;?></td>
             <td><?php echo $data["date_created"];?></td>
             <td><a id="view" data-sch="<?php echo json_encode($data);?>" data-saveid="<?php echo $saveId;?>">View</a></td>
         </tr>
-
-        <!--- hide this -->
         <tr>
             <td colspan="3">
                 <div style="display: none;" id="save_id<?php echo $saveId;?>">
@@ -53,12 +47,11 @@ Below is a list of your saved schedules
                     ?>
 
                     <h2>Year <?php echo $year;?></h2>
-
                     <?php
                     foreach ($yearData as $semester => $semesterData)
                     {
                         ?>
-                        <div><h3><?php echo $semester;?></h3></div>
+                        <h3><?php echo $semester;?></h3>
                         <table>
                             <thead>
 
@@ -98,9 +91,7 @@ Below is a list of your saved schedules
                                 { ?>
 
                                     <tr>
-
                                         <td>
-
                                         </td>
                                         <td>
                                             <?php echo $lab['sub_kind'];?>
@@ -118,32 +109,17 @@ Below is a list of your saved schedules
                                     </tr>
                                     <?php
                                 }
-
                                 ?>
-
                                 <?php
                             }?>
-
                             </tbody>
                         </table>
                         <?php
                     }
-                    ?>
-
-
-                    <?php
                 }?>
                 </div>
             </td>
-
         </tr>
-
-
-
-
-
-
-
     <?php
     }?>
     </tbody>
@@ -164,7 +140,6 @@ Below is a list of your saved schedules
                     }
                 }
             });
-
         });
     });
 </script>
