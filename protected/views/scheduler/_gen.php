@@ -87,6 +87,7 @@ foreach ($sequence as $year => $sequenceData)
                     $foundCourses = 0;
                     if ($semester == $courseData["semester"] && $course == $courseData["course_code"])
                     {
+
                         $foundCourses++;
 
                         ?>
@@ -137,7 +138,7 @@ foreach ($sequence as $year => $sequenceData)
                                             <td><?php echo $labdata["days"]; ?></td>
                                             <td><?php echo $labdata["start_time"]; ?></td>
                                             <td><?php echo $labdata["end_time"]; ?></td>
-                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
+                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-courseid="<?php echo $courseData['courseID']; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
                                         </tr>
                                         <?php
                                     } ?>
@@ -159,9 +160,11 @@ foreach ($sequence as $year => $sequenceData)
 ?>
 <div class="row buttons">
     <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
+    <?php echo CHtml::button('Save', array('id' => 'save')); ?>
 </div>
 <div id="dialog"></div>
 <div id="calendar" style="display: none;"></div>
+<div id="savedialog" style="display: none;"></div>
 <script>
     $(function(){
         $(":checkbox").on('click',function(){
@@ -211,11 +214,13 @@ foreach ($sequence as $year => $sequenceData)
             // collect all the checked checkboxes and their associated attributes
             $("table#subsection_table input[type='checkbox']:checked").each(function(){
                 data.push({
+                    courseID : $(this).data('courseid'),
                     subsectionid : $(this).val(),
                     sectionid : $(this).data('sectionid'),
                     year : $(this).data('year')
                })
            });
+
             // JSON it so that it can be passed via Ajax call to a php page
             var data = JSON.stringify(data);
 
@@ -225,6 +230,41 @@ foreach ($sequence as $year => $sequenceData)
         });
 
 
+        /// SAVE ///
+        $('#save').on('click',function() {
+
+            $('#savedialog').dialog().html("Saving...");
+
+            var _data = []; // data container
+            // collect all the checked checkboxes and their associated attributes
+            $("table#subsection_table input[type='checkbox']:checked").each(function () {
+                _data.push({
+                    courseID: $(this).data('courseid'),
+                    subsectionid: $(this).val(),
+                    sectionid: $(this).data('sectionid'),
+                    year: $(this).data('year')
+                });
+            });
+            var _data = JSON.stringify(_data);
+
+            $.ajax({
+                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/SaveSchedule"); ?>",
+                type: "POST",
+                cache: false,
+
+                data : 'data=' + _data,
+                success : function(data)
+                {
+                    $('#savedialog').html(data);
+
+                },
+                error: function()
+                {
+                    $("#savedialog").html("There was an error saving your schedule...");
+                }
+            })
+
+        });
 
     });
 </script>
