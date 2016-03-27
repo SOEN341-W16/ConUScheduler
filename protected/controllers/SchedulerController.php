@@ -295,6 +295,7 @@ class SchedulerController extends Controller
 		));
 	}
 
+
 	/**
 	 * Performs the AJAX validation.
 	 * @param Course $model the model to be validated
