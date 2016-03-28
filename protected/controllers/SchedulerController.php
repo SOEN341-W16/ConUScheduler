@@ -23,56 +23,42 @@ class SchedulerController extends Controller
 
 	public function actionViewSaved()
 	{
-		$sql = "
-				SELECT
+		$data = Yii::app()->db->createCommand()
+			->select('user_schedules.date_created,
+				user_schedules.userID,
+				user_schedule.scheduleID AS saveId,
+				user_schedule.courseID AS courseID,
+				user_schedule.sectionID AS lecture_id,
+				user_schedule.subsectionID,
+				user_schedule.year,
+				subsection.kind AS sub_kind,
+				subsection.days AS sub_days,
+				subsection.start_time AS sub_start_time,
+				subsection.end_time AS sub_end_time,
+				subsection.sections AS sub_section_name,
+				subsection.kind AS sub_kind,
+				subsection.semester,
+				section.ID AS lecture_id,
+				section.kind AS section_kind,
+				section.sections AS section_name,
+				section.days AS lecture_days,
+				section.start_time AS lecture_start_time,
+				section.end_time AS lecture_end_time,
+				course.course_code,
+				course.ctype,
+				course.credits,
+				course.course_description')
+			->from('user_schedule')
+			->leftJoin('user_schedules', 'user_schedule.scheduleID = user_schedules.ID')
+			->leftJoin('section', 'section.ID = user_schedule.sectionID')
+			->leftJoin('subsection', 'subsection.ID = user_schedule.subsectionID')
+			->leftJoin('course','course.ID = user_schedule.courseID')
+			->where('userID=:userID')
+			->queryAll(true,array(':userID' => Yii::app()->user->userID));
 
-
-									user_schedules.date_created,
-									user_schedules.userID,
-									user_schedule.scheduleID AS saveId,
-									user_schedule.courseID AS courseID,
-									user_schedule.sectionID AS lecture_id,
-									user_schedule.subsectionID,
-									user_schedule.year,
-
-
-
-									subsection.kind AS sub_kind,
-									subsection.days AS sub_days,
-									subsection.start_time AS sub_start_time,
-									subsection.end_time AS sub_end_time,
-									subsection.sections AS sub_section_name,
-									subsection.kind AS sub_kind,
-									subsection.semester,
-
-									section.ID AS lecture_id,
-									section.kind AS section_kind,
-									section.sections AS section_name,
-									section.days AS lecture_days,
-									section.start_time AS lecture_start_time,
-									section.end_time AS lecture_end_time,
-
-									course.course_code,
-									course.ctype,
-									course.credits,
-									course.course_description
-				FROM `user_schedule`
-					LEFT JOIN user_schedules ON user_schedule.scheduleID = user_schedules.ID
-					LEFT JOIN section ON section.ID = user_schedule.sectionID
-					LEFT JOIN subsection ON subsection.ID = user_schedule.subsectionID
-					LEFT JOIN course ON course.ID = user_schedule.courseID
-														 WHERE userID= :userID 	";
-
-		$pat[":userID"] =  Yii::app()->user->userID;
-
-		$command = Yii::app()->db->createCommand($sql);
-		$data = $command->query($pat); // query with placeholders
-		$uSchedule = $data->readAll(); //
+		$uSchedule = $data;
 
 		$sched= array();
-
-		//print_r($uSchedule);
-		//exit;
 
 		foreach($uSchedule as $i => $schedule)
 		{
@@ -150,9 +136,6 @@ class SchedulerController extends Controller
 
 			}
 		}
-		//print_r($sched);
-		//exit;
-
 
 		$this->render('saved',array(
 			'schedule'=>$sched,
@@ -337,7 +320,7 @@ class SchedulerController extends Controller
 			{
 				$model = new UserSchedule();
 				$model->courseID = $data[$i]->courseID;
-				$model->subsectionID = $data[$i]->courseID;
+				$model->subsectionID = $data[$i]->subsectionid;
 				$model->sectionID = $data[$i]->sectionid;
 				$model->year = $data[$i]->year;
 				$model->scheduleID = $lastId;
