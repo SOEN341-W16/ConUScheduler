@@ -137,7 +137,7 @@ foreach ($sequence as $year => $sequenceData)
                                             <td><?php echo $labdata["days"]; ?></td>
                                             <td><?php echo $labdata["start_time"]; ?></td>
                                             <td><?php echo $labdata["end_time"]; ?></td>
-                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
+                                            <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-endTime="<?php echo $labdata["end_time"]; ?>" data-startTime="<?php echo $labdata["start_time"]; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
                                         </tr>
                                         <?php
                                     } ?>
@@ -147,6 +147,7 @@ foreach ($sequence as $year => $sequenceData)
                         </tr>
                         </tbody>
                         </table>
+                        <div id="#ajax-results"><</div>
                         <?php
                     }
                 }
@@ -211,9 +212,11 @@ foreach ($sequence as $year => $sequenceData)
             // collect all the checked checkboxes and their associated attributes
             $("table#subsection_table input[type='checkbox']:checked").each(function(){
                 data.push({
-                    subsectionid : $(this).val(),
-                    sectionid : $(this).data('sectionid'),
+                    section : $(this).data('sectionid'),
+                    subsection : $(this).val(),
                     year : $(this).data('year')
+
+
                })
            });
             // JSON it so that it can be passed via Ajax call to a php page
@@ -223,9 +226,11 @@ foreach ($sequence as $year => $sequenceData)
             $.ajax({
                 url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/AjaxExample"); ?>",
                 type: "POST",
-                data : "myData="+ data,
+                data : "myData=" + data,
                 success : function(data)
                 {
+                    alert("in success");
+                    alert(data);
                     $("#ajax-results").html(data);
                     $("#ajax-results").dialog({ width: 500, height: 500})
                 },

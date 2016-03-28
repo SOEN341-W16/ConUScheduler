@@ -166,7 +166,7 @@ class SchedulerController extends Controller
 		$nodays = array(); // days not selected
 		$sql = "SELECT section.ID AS LECTURE_id,
 			section.days AS LECTURE_days,
-			section.start_time AS LECTURE_start_time,
+			section.start_time     AS LECTURE_start_time,
 			section.end_time AS LECTURE_end_time,
 			section.sections AS LECTURE_section,
 			section.semester AS LECTURE_semester,
@@ -286,27 +286,58 @@ class SchedulerController extends Controller
 		);
 	}
 
-	public function actionscheduleAjax()
-	{
-		$id = $_POST["id"];
-		$this->renderPartial('scb', array(
-			'model' => $model,
 
-		));
-	}
-    public function actionAjaxExample()
- 	{
- 		$post_data = $_POST['myData'];
+    public function actionScheduleValidation()
+    {
+
+        $post_data = $_POST['myData'];
+        $decodedData = json_decode($post_data, true);
+        $course = [[[]]];
+        $counter = 0;
+        //Save the years associated to sections chosen
+
+        foreach ($decodedData as $key) {
+            $tutOrLab = null;
+            $lec = null;
+            $currentYear = null;
+            foreach ($key as $id => $number) {
+                if ($id == 'year') {
+                    $currentYear = $number;
+                } elseif ($id == 'subsection') {
+                    $tutOrLab = Yii::app()->db->createCommand()
+                        ->select('courseID,kind,days,start_time,end_time,semester')
+                        ->from($id)
+                        ->where('id=' . $number)
+                        ->queryRow();
+                } else
+                    $lec = Yii::app()->db->createCommand()
+                        ->select('courseID,kind,days,start_time,end_time,semester')
+                        ->from($id)
+                        ->where('id=' . $number)
+                        ->queryRow();
+
+            }
+            $course[$counter][0]= $lec;
+            $course[$counter][1]= $tutOrLab;
+            $course[$counter][2]= $currentYear;
+            print_r($course);
+            $counter++;
+            }
+            $year1course = [];
+            foreach($course as $key){
+                if($course[$key][3] == 1){
+
+                }
+            }
+            print_r($course);
+
+            $this->renderPartial('_ajax', array(
+                    'data' => $post_data,
+                )
+            );
 
 
-
- 		$this->renderPartial('_ajax', array(
- 				'data'=> $post_data,
- 			)
- 		);
-
- 	}
-
+    }
 
 	/**
 	 * Performs the AJAX validation.
