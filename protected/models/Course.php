@@ -7,7 +7,8 @@
  * @property integer $ID
  * @property string $course_code
  * @property string $course_description
- * @property integer $credits
+ * @property string $cType
+ * @property string $credits
  */
 class Course extends CActiveRecord
 {
@@ -27,13 +28,15 @@ class Course extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('course_code, course_description, credits', 'required'),
-			array('ID, credits', 'numerical', 'integerOnly'=>true),
+			array('cType, credits', 'required'),
+			array('ID', 'numerical', 'integerOnly'=>true),
 			array('course_code', 'length', 'max'=>8),
 			array('course_description', 'length', 'max'=>55),
+			array('cType', 'length', 'max'=>10),
+			array('credits', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, course_code, course_description, credits', 'safe', 'on'=>'search'),
+			array('ID, course_code, course_description, cType, credits', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,7 +48,6 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'course' => array(self::HAS_MANY, 'Section','courseID'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class Course extends CActiveRecord
 			'ID' => 'ID',
 			'course_code' => 'Course Code',
 			'course_description' => 'Course Description',
+			'cType' => 'C Type',
 			'credits' => 'Credits',
 		);
 	}
@@ -83,7 +86,8 @@ class Course extends CActiveRecord
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('course_code',$this->course_code,true);
 		$criteria->compare('course_description',$this->course_description,true);
-		$criteria->compare('credits',$this->credits);
+		$criteria->compare('cType',$this->cType,true);
+		$criteria->compare('credits',$this->credits,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
