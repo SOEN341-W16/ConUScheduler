@@ -11,6 +11,11 @@ $this->breadcrumbs=array(
 $this->menu=array(
     array('label'=>'View Saved Schedules', 'url'=>array('ViewSaved')),
 );
+
+
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
 ?>
 <script src=""></script>
 
@@ -40,6 +45,13 @@ $this->menu=array(
     }
     ?>
 </div>
+<script>
+    $(function(){
+        $(':button').button(); // create UI buttons
 
+        $(':checkbox').css({ cursor: 'pointer'}); // create UI buttons
+    });
+
+</script>
 
 

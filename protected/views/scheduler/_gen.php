@@ -46,9 +46,6 @@ $sequence[4]["winter"][] = "SOEN 385";
 $sequence[4]["winter"][] = "ENGR 392";
 $sequence[4]["winter"][] = "SOEN 490";
 
-Yii::app()->clientScript->registerCoreScript('jquery.ui');
-Yii::app()->clientScript->registerCssFile(
-    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
 
 foreach ($schedule as $id => $scheduleData)
 {
@@ -98,7 +95,7 @@ foreach ($sequence as $year => $sequenceData)
     {
         $foundCoursesSemester = 0;
         ?>
-        <h1><?php echo $semester; ?></h1>
+        <h1><?php echo ucfirst($semester); ?></h1>
         <?php
         foreach ($courses as $i => $course)
         {
@@ -183,8 +180,11 @@ foreach ($sequence as $year => $sequenceData)
 
         $( "#tabs" ).tabs(); // create tabs
 
+
+
         // event when checkbox is clicked
-        $(":checkbox").on('click',function(){
+        $("table#section_table :checkbox").on('click',function(){
+
             var $checkobx = $(this); // cache the checkbox that has just been checked
             var sectionId = $checkobx.data('sectionid');
             var subsectionId = $checkobx.val();
@@ -192,6 +192,8 @@ foreach ($sequence as $year => $sequenceData)
             var course = $checkobx.data('course');
             var checkboxes = 0; // total number of checkboxes (subsections)
             var checked = 0; // how many boxes are checked in the subsection
+
+            $(this).closest('tr').toggleClass('selectedRow');
 
             $("table#subsection_table :checkbox").each(function(){
                 if($(this).data('sectionid') == sectionId)
