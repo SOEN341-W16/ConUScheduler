@@ -14,7 +14,7 @@ class SchedulerController extends Controller
 		);
 	}
 
-		public function filters()
+	public function filters()
     {
         return array(
             'accessControl',
@@ -294,29 +294,37 @@ class SchedulerController extends Controller
 	{
 
 		$saveid = $_POST['saveid'];
-		$sql[] = "DELETE FROM user_schedules WHERE ID=:ID LIMIT 1";
-		$sql[] = "DELETE FROM user_schedule WHERE scheduleID=:ID";
-
-		$deleted = false;
-		foreach($sql as $query)
+		try
 		{
-			$deleted = Yii::app()->db->createCommand($query)->execute(
-				array(":ID" => $saveid)
-			);
+			$UserSchedule = new UserSchedule();
+			$UserSchedules = new UserSchedules();
+			$UserSchedule->deleteAllByAttributes(array(
+				'scheduleID' => $saveid
+			));
+
+			$UserSchedules->deleteAllByAttributes(array(
+				'ID' => $saveid
+			));
+		}
+		catch(Exception $e)
+		{
+
+			throw $e;
+			echo 0;
 		}
 
-		echo $deleted;
+		echo 1;
+
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	public function actionSaveSchedule()
 	{
 		$data = json_decode($_POST['data']);
-
-		//print_r($data);
-
 		$transaction = Yii::app()->db->beginTransaction();
 		$connection =  Yii::app()->db;
-
 		try {
 
 			$sql1 = "INSERT INTO user_schedules (ID,userID,date_created) VALUE(NULL, :userID, NOW())";
@@ -325,32 +333,23 @@ class SchedulerController extends Controller
 
 			$lastId = Yii::app()->db->getLastInsertID(); // schedule id
 
-
 			foreach($data as $i => $schedule)
 			{
-				$pat = array();  // bind values
-				$pat[":courseID$i"] = $data[$i]->courseID;
-				$pat[":subsectionID$i"] = $data[$i]->subsectionid;
-				$pat[":sectionID$i"] = $data[$i]->sectionid;
-				$pat[":year$i"] = $data[$i]->year;
-				$pat[":saveid$i"] = $lastId;
-
-				$sql = "INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid$i, :courseID$i, :sectionID$i, :subsectionID$i, :year$i) ";
-				$connection->createCommand($sql)->execute($pat);
-
+				$model = new UserSchedule();
+				$model->courseID = $data[$i]->courseID;
+				$model->subsectionID = $data[$i]->courseID;
+				$model->sectionID = $data[$i]->sectionid;
+				$model->year = $data[$i]->year;
+				$model->scheduleID = $lastId;
+				$model->save();
 			}
-
-			//.... other SQL executions
 
 			$okay = $transaction->commit();
 			echo "Your schedule has been saved under ID# " . $lastId;
 		} catch (\Exception $e) {
 			$transaction->rollBack();
-
 			throw $e;
 		}
-
-
 	}
 
 	/**

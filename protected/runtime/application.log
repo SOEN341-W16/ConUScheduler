@@ -11592,3 +11592,11 @@ REQUEST_URI=/index.php?r=scheduler/generate
 in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (102)
 in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
 in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (290)
+2016/03/28 05:30:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sgii".' in C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('sgii')
+#1 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=sgii
+---
