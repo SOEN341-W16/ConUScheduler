@@ -36,7 +36,7 @@ Below is a list of your saved schedules
         <tr>
             <td><?php echo $saveId;?></td>
             <td><?php echo $data["date_created"];?></td>
-            <td><a id="view" data-sch="<?php echo json_encode($data);?>" data-saveid="<?php echo $saveId;?>">View</a></td>
+            <td><a data-saveid="<?php echo $saveId;?>" href="javascript:void(0);" id="view">View</a> | <a data-saveid="<?php echo $saveId;?>" href="javascript:void(0);" id="delete">Delete</a></td>
         </tr>
         <tr>
             <td colspan="3">
@@ -124,10 +124,13 @@ Below is a list of your saved schedules
     }?>
     </tbody>
 </table>
-<div id="calendar"></div>
-<script type="text/javascript">
+<div id="delete-dialog" title="Delete Schedule" style="display: none;">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div id="delete-dialog-notice"></div></p>
+</div>
+<script>
     $(function(){
         $('a#view').on('click',function(){
+
             var saveid = $(this).data('saveid');
             $('div#save_id' +saveid).dialog({
                 title : 'Schedule ID# ' +saveid,
@@ -138,6 +141,55 @@ Below is a list of your saved schedules
                     Okay: function() {
                         $( this ).dialog( "close" );
                     }
+                }
+            });
+        });
+
+        $('a#delete').on('click',function(){
+
+            var saveid = $(this).data('saveid');
+            $row = $(this).closest('tr'); // cache the row so we can remove it
+            $('#delete-dialog-notice').html('Are you sure you want to delete this schedule?');
+            $('#delete-dialog').dialog({
+                resizable: false,
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Delete": function() {
+                        $('#delete-dialog-notice').html('Deleting...please wait.')
+                        $.ajax({
+                            url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/DeleteSchedule"); ?>",
+                            type: "POST",
+                            cache: false,
+                            data : 'saveid=' + saveid,
+                            success : function(data)
+                            {
+                                if(data)
+                                {
+                                    $('#delete-dialog').dialog('close');
+                                    $row.remove();
+                                }
+                                else
+                                {
+                                    $('#delete-dialog-notice').html(data);
+                                }
+
+                            },
+                            error: function()
+                            {
+                                $("#delete-dialog-notice").html("There was an error saving your schedule...");
+                            }
+                        });
+
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                close : function()
+                {
+                    $('#delete-dialog-notice').html("");
                 }
             });
         });

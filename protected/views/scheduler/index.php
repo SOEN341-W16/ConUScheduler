@@ -6,7 +6,7 @@
  */
 
 $this->breadcrumbs=array(
-	'Scheduler',
+	'Scheduler Planner',
 );
 $this->menu=array(
     array('label'=>'View Saved Schedules', 'url'=>array('ViewSaved')),

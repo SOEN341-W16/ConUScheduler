@@ -290,13 +290,22 @@ class SchedulerController extends Controller
 		);
 	}
 
-	public function actionscheduleAjax()
+	public function actionDeleteSchedule()
 	{
-		$id = $_POST["id"];
-		$this->renderPartial('scb', array(
-			'model' => $model,
 
-		));
+		$saveid = $_POST['saveid'];
+		$sql[] = "DELETE FROM user_schedules WHERE ID=:ID LIMIT 1";
+		$sql[] = "DELETE FROM user_schedule WHERE scheduleID=:ID";
+
+		$deleted = false;
+		foreach($sql as $query)
+		{
+			$deleted = Yii::app()->db->createCommand($query)->execute(
+				array(":ID" => $saveid)
+			);
+		}
+
+		echo $deleted;
 	}
 
 	public function actionSaveSchedule()

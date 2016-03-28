@@ -173,6 +173,10 @@ foreach ($sequence as $year => $sequenceData)
 }
 ?>
 </div>
+<!-- DIALOGS -->
+<div id="dialog-noselection" title="Error" style="display: none;">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You haven't selected any courses to save!</p>
+</div>
 
 <script>
 
@@ -245,14 +249,34 @@ foreach ($sequence as $year => $sequenceData)
 
             console.log(JSON.stringify(data));
 
-            $('#dialog').html(data).dialog({ width: 500, heigh: 500});
+            $('#dialog').html(data).dialog({ width: 500, height: 500});
         });
 
 
         // when user selects to save schedule
         $('#save').on('click',function() {
 
-            $('#savedialog').dialog().html("Saving...");
+            // count how many checkboxes clicked
+            var selected = 0;
+            $("table#subsection_table input[type='checkbox']:checked").each(function(){
+                selected++;
+            });
+
+            if(selected == 0)
+            {
+                $('#dialog-noselection').dialog({ modal: true});
+                return false;
+            }
+
+            $('#savedialog').dialog({
+                modal : true,
+                title : 'Save Schedule',
+                buttons: {
+                    Close: function () {
+                        $(this).dialog('close');
+                    }
+                }
+            }).html("Saving your schedule...please wait.");
 
             var _data = []; // data container
             // collect all the checked checkboxes and their associated attributes
@@ -265,28 +289,22 @@ foreach ($sequence as $year => $sequenceData)
                 });
             });
 
-            var _data = JSON.stringify(_data);
-
+            // call ajax
             $.ajax({
                 url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/SaveSchedule"); ?>",
                 type: "POST",
                 cache: false,
-                data : 'data=' + _data,
+                data : 'data=' + JSON.stringify(_data),
                 success : function(data)
                 {
                     $('#savedialog').html(data);
-
                 },
                 error: function()
                 {
                     $("#savedialog").html("There was an error saving your schedule...");
                 }
-            })
+            });
 
         });
-
-
-
-
     });
 </script>
