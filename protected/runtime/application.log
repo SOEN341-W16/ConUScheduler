@@ -11592,3 +11592,83 @@ REQUEST_URI=/index.php?r=scheduler/generate
 in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (102)
 in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
 in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (290)
+2016/03/28 05:30:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sgii".' in C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('sgii')
+#1 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=sgii
+---
+2016/03/28 06:11:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `user_schedules`.`date_created`, `user_schedules`.`userID`, `user_schedule`.`scheduleID` AS `saveId`, `user_schedule`.`courseID` AS `courseID`, `user_schedule`.`sectionID` AS `lecture_id`, `user_schedule`.`subsectionID`, `user_schedule`.`year`, `subsection`.`kind` AS `sub_kind`, `subsection`.`days` AS `sub_days`, `subsection`.`start_time` AS `sub_start_time`, `subsection`.`end_time` AS `sub_end_time`, `subsection`.`sections` AS `sub_section_name`, `subsection`.`kind` AS `sub_kind`, `subsection`.`semester`, `section`.`ID` AS `lecture_id`, `section`.`kind` AS `section_kind`, `section`.`sections` AS `section_name`, `section`.`days` AS `lecture_days`, `section`.`start_time` AS `lecture_start_time`, `section`.`end_time` AS `lecture_end_time`, `course`.`course_code`, `course`.`ctype`, `course`.`credits`, `course`.`course_description`
+FROM `user_schedule`
+LEFT JOIN `user_schedules` ON user_schedule.scheduleID = user_schedules.ID
+LEFT JOIN `section` ON section.ID = user_schedule.sectionID
+LEFT JOIN `subsection` ON subsection.ID = user_schedule.subsectionID
+LEFT JOIN `course` ON course.ID = user_schedule.courseID
+WHERE userID=:userID.
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (97)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/28 06:11:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `user_schedules`.`date_created`, `user_schedules`.`userID`, `user_schedule`.`scheduleID` AS `saveId`, `user_schedule`.`courseID` AS `courseID`, `user_schedule`.`sectionID` AS `lecture_id`, `user_schedule`.`subsectionID`, `user_schedule`.`year`, `subsection`.`kind` AS `sub_kind`, `subsection`.`days` AS `sub_days`, `subsection`.`start_time` AS `sub_start_time`, `subsection`.`end_time` AS `sub_end_time`, `subsection`.`sections` AS `sub_section_name`, `subsection`.`kind` AS `sub_kind`, `subsection`.`semester`, `section`.`ID` AS `lecture_id`, `section`.`kind` AS `section_kind`, `section`.`sections` AS `section_name`, `section`.`days` AS `lecture_days`, `section`.`start_time` AS `lecture_start_time`, `section`.`end_time` AS `lecture_end_time`, `course`.`course_code`, `course`.`ctype`, `course`.`credits`, `course`.`course_description`
+FROM `user_schedule`
+LEFT JOIN `user_schedules` ON user_schedule.scheduleID = user_schedules.ID
+LEFT JOIN `section` ON section.ID = user_schedule.sectionID
+LEFT JOIN `subsection` ON subsection.ID = user_schedule.subsectionID
+LEFT JOIN `course` ON course.ID = user_schedule.courseID
+WHERE userID=:userID' in C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(97): CDbCommand->queryAll(Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionViewSaved()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('ViewSaved')
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/ViewS...')
+#13 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/index
+---
+2016/03/28 06:11:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `user_schedules`.`date_created`, `user_schedules`.`userID`, `user_schedule`.`scheduleID` AS `saveId`, `user_schedule`.`courseID` AS `courseID`, `user_schedule`.`sectionID` AS `lecture_id`, `user_schedule`.`subsectionID`, `user_schedule`.`year`, `subsection`.`kind` AS `sub_kind`, `subsection`.`days` AS `sub_days`, `subsection`.`start_time` AS `sub_start_time`, `subsection`.`end_time` AS `sub_end_time`, `subsection`.`sections` AS `sub_section_name`, `subsection`.`kind` AS `sub_kind`, `subsection`.`semester`, `section`.`ID` AS `lecture_id`, `section`.`kind` AS `section_kind`, `section`.`sections` AS `section_name`, `section`.`days` AS `lecture_days`, `section`.`start_time` AS `lecture_start_time`, `section`.`end_time` AS `lecture_end_time`, `course`.`course_code`, `course`.`ctype`, `course`.`credits`, `course`.`course_description`
+FROM `user_schedule`
+LEFT JOIN `user_schedules` ON user_schedule.scheduleID = user_schedules.ID
+LEFT JOIN `section` ON section.ID = user_schedule.sectionID
+LEFT JOIN `subsection` ON subsection.ID = user_schedule.subsectionID
+LEFT JOIN `course` ON course.ID = user_schedule.courseID
+WHERE userID=:userID.
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (97)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/28 06:11:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `user_schedules`.`date_created`, `user_schedules`.`userID`, `user_schedule`.`scheduleID` AS `saveId`, `user_schedule`.`courseID` AS `courseID`, `user_schedule`.`sectionID` AS `lecture_id`, `user_schedule`.`subsectionID`, `user_schedule`.`year`, `subsection`.`kind` AS `sub_kind`, `subsection`.`days` AS `sub_days`, `subsection`.`start_time` AS `sub_start_time`, `subsection`.`end_time` AS `sub_end_time`, `subsection`.`sections` AS `sub_section_name`, `subsection`.`kind` AS `sub_kind`, `subsection`.`semester`, `section`.`ID` AS `lecture_id`, `section`.`kind` AS `section_kind`, `section`.`sections` AS `section_name`, `section`.`days` AS `lecture_days`, `section`.`start_time` AS `lecture_start_time`, `section`.`end_time` AS `lecture_end_time`, `course`.`course_code`, `course`.`ctype`, `course`.`credits`, `course`.`course_description`
+FROM `user_schedule`
+LEFT JOIN `user_schedules` ON user_schedule.scheduleID = user_schedules.ID
+LEFT JOIN `section` ON section.ID = user_schedule.sectionID
+LEFT JOIN `subsection` ON subsection.ID = user_schedule.subsectionID
+LEFT JOIN `course` ON course.ID = user_schedule.courseID
+WHERE userID=:userID' in C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(97): CDbCommand->queryAll(Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionViewSaved()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('ViewSaved')
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/ViewS...')
+#13 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/index
+---
