@@ -415,3 +415,18 @@ div#mainmenu ul li a:hover {
 }
 
 */
+
+
+
+.logoutSuccess {
+	color: #006dcc;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.selectedRow
+{
+	background-color: #faa732;
+
+
+}

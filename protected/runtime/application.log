@@ -10449,3 +10449,1146 @@ Stack trace:
 REQUEST_URI=/index.php?r=scheduler/ViewSaved
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/index
 ---
+2016/03/27 20:18:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('create')
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/creat...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/create
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/index
+---
+2016/03/27 20:18:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('create')
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/creat...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/create
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/index
+---
+2016/03/27 20:18:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('create')
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/creat...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/create
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/index
+---
+2016/03/27 20:18:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('create')
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/creat...')
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=scheduler/create
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/index
+---
+2016/03/27 20:47:55 [error] [php] Undefined index: ID (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:140)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(34): SchedulerController->renderPartial()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(286): SchedulerController->render()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (140)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (286)
+2016/03/27 20:48:13 [error] [php] Undefined index: courseID (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:140)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(34): SchedulerController->renderPartial()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(286): SchedulerController->render()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (140)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (286)
+2016/03/27 20:51:43 [error] [php] Undefined index: courseID (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:247)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (247)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 20:59:03 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:16:08 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "beginTransaction".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CComponent->__call('beginTransactio...', Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CDbCommand->beginTransaction()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:16:22 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "beginTransaction".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CComponent->__call('beginTransactio...', Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CDbCommand->beginTransaction()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:20:52 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "beginTransaction".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CComponent->__call('beginTransactio...', Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CDbCommand->beginTransaction()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:21:00 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "beginTransaction".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CComponent->__call('beginTransactio...', Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CDbCommand->beginTransaction()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:21:31 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "beginTransaction".' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CComponent->__call('beginTransactio...', Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(305): CDbCommand->beginTransaction()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:25:29 [error] [php] Undefined variable: sql (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:314)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (314)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:25:54 [error] [php] Invalid argument supplied for foreach() (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:322)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (322)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:31:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (337)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:31:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(337): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:31:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:31:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:32:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:32:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:33:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:33:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:33:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:33:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:33:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:33:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:34:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:34:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid1, :courseID1, :sectionID1, :subsectionID1, :year1)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:34:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (338)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:34:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(338): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:35:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (339)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:35:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(339): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:35:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (339)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:35:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(339): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:35:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0).
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (339)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:35:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0)' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(339): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:36:54 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (340)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:36:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(340): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:38:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (336)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:38:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(336): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:39:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (334)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:39:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(334): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:39:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (335)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:39:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :savid0, :courseID0, :sectionID0, :subsectionID0, :year0) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(335): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:55:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:55:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:55:38 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:56:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:56:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:57:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:57:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid3, :courseID3, :sectionID3, :subsectionID3, :year3) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid4, :courseID4, :sectionID4, :subsectionID4, :year4) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid5, :courseID5, :sectionID5, :subsectionID5, :year5) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid6, :courseID6, :sectionID6, :subsectionID6, :year6) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid7, :courseID7, :sectionID7, :subsectionID7, :year7) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid8, :courseID8, :sectionID8, :subsectionID8, :year8) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid9, :courseID9, :sectionID9, :subsectionID9, :year9) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid10, :courseID10, :sectionID10, :subsectionID10, :year10) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:57:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:57:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:58:25 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:58:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid2, :courseID2, :sectionID2, :subsectionID2, :year2) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 21:58:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 21:58:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:00:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:00:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:01:43 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:03:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:03:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:04:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:04:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:06:35 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:07:06 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:07:15 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:07:21 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:07:27 [error] [php] Undefined index: data (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:301)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (301)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:08:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (329)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:08:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(329): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:08:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) .
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (331)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:08:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, ye' at line 1. The SQL statement executed was: INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid0, :courseID0, :sectionID0, :subsectionID0, :year0) INSERT INTO user_schedule (ID, scheduleID, courseID, sectionID, subsectionID, year) VALUES (NULL, :saveid1, :courseID1, :sectionID1, :subsectionID1, :year1) ' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(331): CDbCommand->execute(Array)
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:14:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbTransaction is inactive and cannot perform commit or roll back operations.' in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\db\CDbTransaction.php:84
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(336): CDbTransaction->rollback()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionSaveSchedule()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('SaveSchedule')
+#11 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/SaveS...')
+#12 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=scheduler/SaveSchedule
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/03/27 22:27:47 [error] [php] Undefined offset: 1 (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:82)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (82)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:27:47 [error] [php] Undefined offset: 1 (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:82)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (82)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:28:15 [error] [php] Undefined offset: 1 (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:82)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (82)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:28:15 [error] [php] Undefined offset: 1 (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:82)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (82)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:29:11 [error] [php] Undefined index: saveId (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:85)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (85)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/27 22:29:12 [error] [php] Undefined index: saveId (D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:85)
+Stack trace:
+#0 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ViewSaved
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (85)
+in D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\index.php (13)
+2016/03/28 00:16:02 [error] [php] Undefined variable: year (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:72)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(34): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(290): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (72)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (290)
+2016/03/28 00:21:51 [error] [php] Undefined variable: foundCourses (C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php(34): SchedulerController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): SchedulerController->renderInternal()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): SchedulerController->renderFile()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): SchedulerController->renderPartial()
+#6 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(290): SchedulerController->render()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionGenerate()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/generate
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php (102)
+in C:\xampp\htdocs\ConUScheduler\protected\views\scheduler\index.php (34)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (290)
