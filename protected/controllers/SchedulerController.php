@@ -289,52 +289,60 @@ class SchedulerController extends Controller
 
     public function actionScheduleValidation()
     {
-
+		print_r("in ajax");
         $post_data = $_POST['myData'];
         $decodedData = json_decode($post_data, true);
-        $course = [[[]]];
+        //$course = [[[]]];
+		$curse=[];
         $counter = 0;
         //Save the years associated to sections chosen
 
         foreach ($decodedData as $key) {
-            $tutOrLab = null;
-            $lec = null;
-            $currentYear = null;
-            foreach ($key as $id => $number) {
-                if ($id == 'year') {
-                    $currentYear = $number;
-                } elseif ($id == 'subsection') {
-                    $tutOrLab = Yii::app()->db->createCommand()
-                        ->select('courseID,kind,days,start_time,end_time,semester')
-                        ->from($id)
-                        ->where('id=' . $number)
-                        ->queryRow();
-                } else
-                    $lec = Yii::app()->db->createCommand()
-                        ->select('courseID,kind,days,start_time,end_time,semester')
-                        ->from($id)
-                        ->where('id=' . $number)
-                        ->queryRow();
+			$tutOrLab = null;
+			$lec = null;
+			$currentYear = null;
+			foreach ($key as $id => $number) {
+				if ($id == 'year') {
+					$currentYear = $number;
+				} elseif ($id == 'subsection') {
+					$tutOrLab = Yii::app()->db->createCommand()
+						->select('courseID,kind,days,start_time,end_time,semester')
+						->from($id)
+						->where('id=' . $number)
+						->queryRow();
+				} else
+					$lec = Yii::app()->db->createCommand()
+						->select('courseID,kind,days,start_time,end_time,semester')
+						->from($id)
+						->where('id=' . $number)
+						->queryRow();
 
-            }
-            $course[$counter][0]= $lec;
+			}
+			/*$course[$counter][0]= $lec;
             $course[$counter][1]= $tutOrLab;
             $course[$counter][2]= $currentYear;
             print_r($course);
             $counter++;
             }
-            $year1course = [];
+           /* $year1course = [];
             foreach($course as $key){
                 if($course[$key][3] == 1){
 
                 }
-            }
-            print_r($course);
+            }*/
+			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
+			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
+		    $course[$counter] = new Course($lecture,$tutorial);
+			$counter++;
 
-            $this->renderPartial('_ajax', array(
-                    'data' => $post_data,
-                )
-            );
+		}
+             print_r($course);
+
+
+			$this->renderPartial('_ajax', array(
+					'data' => $post_data,
+				)
+			);
 
 
     }

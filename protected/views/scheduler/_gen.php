@@ -224,7 +224,7 @@ foreach ($sequence as $year => $sequenceData)
 
 
             $.ajax({
-                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/AjaxExample"); ?>",
+                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/ScheduleValidation"); ?>",
                 type: "POST",
                 data : "myData=" + data,
                 success : function(data)
