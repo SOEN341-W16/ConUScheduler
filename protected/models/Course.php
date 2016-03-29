@@ -28,9 +28,9 @@ class Course extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cType, credits', 'required'),
+			array('cType, credits, course_description, course_code', 'required'),
 			array('ID', 'numerical', 'integerOnly'=>true),
-			array('course_code', 'length', 'max'=>8),
+			array('course_code', 'length', 'max'=>10),
 			array('course_description', 'length', 'max'=>55),
 			array('cType', 'length', 'max'=>10),
 			array('credits', 'length', 'max'=>4),
@@ -60,7 +60,7 @@ class Course extends CActiveRecord
 			'ID' => 'ID',
 			'course_code' => 'Course Code',
 			'course_description' => 'Course Description',
-			'cType' => 'C Type',
+			'cType' => 'Course Type',
 			'credits' => 'Credits',
 		);
 	}

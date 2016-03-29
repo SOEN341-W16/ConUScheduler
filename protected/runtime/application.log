@@ -11672,3 +11672,47 @@ Stack trace:
 REQUEST_URI=/index.php?r=scheduler/ViewSaved
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=scheduler/index
 ---
+2016/03/29 05:38:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php:158
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php(55): CourseController->loadModel('')
+#1 [internal function]: CourseController->actionView('')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(CourseController), Array)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CourseController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/view')
+#14 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=course/view&id=
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/create
+---
+2016/03/29 05:41:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php:158
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php(55): CourseController->loadModel('71')
+#1 [internal function]: CourseController->actionView('71')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(CourseController), Array)
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CourseController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/view')
+#14 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=course/view&id=71
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/create
+---

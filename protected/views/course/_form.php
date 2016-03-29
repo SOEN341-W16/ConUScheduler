@@ -13,7 +13,13 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+));
+
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+	Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
+
+?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -34,8 +40,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'credits'); ?>
-		<?php echo $form->textField($model,'credits',array('size'=>10,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'credits',array('size'=>10,'maxlength'=>3)); ?>
 		<?php echo $form->error($model,'credits'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'cType'); ?>
+		<?php echo $form->dropDownList($model,'cType',array('core'=>'Core','nat'=>'Natural Science', 'gen' => 'General Elective', 'tech' => 'Technical Elective')); ?>
+		<?php echo $form->error($model,'cType'); ?>
 	</div>
 
 	<div class="row buttons">
@@ -45,3 +57,8 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script>
+	$(function(){
+		$(':button, :submit').button(); // create UI buttons;
+	})
+</script>
