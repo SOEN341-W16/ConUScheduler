@@ -318,18 +318,7 @@ class SchedulerController extends Controller
 						->queryRow();
 
 			}
-			/*$course[$counter][0]= $lec;
-            $course[$counter][1]= $tutOrLab;
-            $course[$counter][2]= $currentYear;
-            print_r($course);
-            $counter++;
-            }
-           /* $year1course = [];
-            foreach($course as $key){
-                if($course[$key][3] == 1){
 
-                }
-            }*/
 			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
 			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
 		    $course[$counter] = new Course($lecture,$tutorial);
@@ -337,6 +326,74 @@ class SchedulerController extends Controller
 
 		}
              print_r($course);
+		$something = $course[0].getLecture();
+		$courseYear1Fall = [];
+		$courseYear1Winter = [];
+		$courseYear2Fall = [];
+		$courseYear2Winter = [];
+		$courseYear3Fall = [];
+		$courseYear3Winter = [];
+		$courseYear4Fall = [];
+		$courseYear4Winter = [];
+		$error = [];
+
+		/*foreach($course as $key){
+			print_r($course[$key].getLecture());
+			print_r($course[$key].getTutorial());
+		}
+		/*foreach($course as $key) {
+			if ($course[$key] . getLecture() . getYear() == 1) {
+				if ($course[$key] . getLecture() . getSemester() == 'F') {
+					if (empty($courseYear1Fall))
+						$courseYear1Fall[0] = $course[$key];
+					else
+						$courseYear1Fall[$courseYear1Fall.length()] = $course[$key];
+
+				} elseif ($course[$key] . getLecture() . getSemester() == 'W') {
+					if (empty($courseYear1Winter))
+						$courseYear1Winter[0] = $course[$key];
+
+					else
+						$courseYear1Winter[$courseYear1Winter . length()] = $course[$key];
+				}
+			} elseif ($course[$key] . getLecture() . getYear() == 2) {
+				if ($course[$key] . getLecture() . getSemester() == 'F') {
+					if (empty($courseYear2Fall))
+						$courseYear2Fall[0] = $course[$key];
+					else
+						$courseYear2Fall[$courseYear2Fall . length()] = $course[$key];
+				} elseif ($course[$key] . getLecture() . getSemester() == 'W')
+					if (empty($courseYear2Winter))
+						$courseYear2Winter[0] = $course[$key];
+					else
+						$courseYear2Winter[$courseYear2Winter . length()] = $course[$key];
+			} elseif ($course[$key] . getLecture() . getYear() == 3) {
+				if ($course[$key] . getLecture() . getSemester() == 'F') {
+					if (empty($courseYear3Fall))
+						$courseYear3Fall[0] = $course[$key];
+					else
+						$courseYear3Fall[$courseYear3Fall . length()] = $course[$key];
+
+				} elseif ($course[$key] . getLecture() . getSemester() == 'W') {
+					if (empty($courseYear3Winter))
+						$courseYear3Winter[0] = $course[$key];
+					else
+						$courseYear3Winter[$courseYear3Winter . length()] = $course[$key];
+				}
+			} elseif ($course[$key] . getLecture() . getYear() == 4) {
+				if ($course[$key] . getLecture() . getSemester() == 'F') {
+					if (empty($courseYear4Fall))
+						$courseYear4Fall[0] = $course[$key];
+					else
+						$courseYear4Fall[$courseYear4Fall . length()] = $course[$key];
+				} elseif ($course[$key] . getLecture() . getSemester() == 'W') {
+					if (empty($courseYear4Winter))
+						$courseYear4Winter[0] = $course[$key];
+					else
+						$courseYear4Winter[$courseYear4Winter . length()] = $course[$key];
+				}
+			}
+		}*/
 
 
 			$this->renderPartial('_ajax', array(
