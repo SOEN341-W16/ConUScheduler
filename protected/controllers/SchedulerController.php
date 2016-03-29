@@ -326,7 +326,7 @@ class SchedulerController extends Controller
 
 		}
              print_r($course);
-		$something = $course[0].getLecture();
+		$something = $course[0].getLecture();//ERROR
 		//.getLecture()  creates a Fatal Error when running the code
 		$courseYear1Fall = [];
 		$courseYear1Winter = [];
