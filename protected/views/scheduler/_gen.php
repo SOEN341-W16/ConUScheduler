@@ -58,6 +58,12 @@ foreach ($schedule as $id => $scheduleData)
     {
         $sequence[1]["fall"][] = $scheduleData["course_code"];
     }
+
+    if ($scheduleData["course_type"] == "tech")
+    {
+        $sequence[3]["winter"][] = $scheduleData["course_code"];
+        $sequence[4]["fall"][] = $scheduleData["course_code"];
+    }
 }
 
 ?>
