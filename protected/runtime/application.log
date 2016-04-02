@@ -11945,3 +11945,19 @@ Stack trace:
 REQUEST_URI=/index.php?r=course/index
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/view&id=3
 ---
+2016/04/03 00:47:45 [error] [php] Undefined index: courseID (C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php:306)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/DropCourse
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (306)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)

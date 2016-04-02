@@ -300,6 +300,27 @@ class SchedulerController extends Controller
 
 	}
 
+	public function actionDropCourse()
+	{
+		$scheduleID = $_POST['scheduleID'];
+		$sectionID = $_POST['sectionID'];
+		try
+		{
+			$UserSchedule = new UserSchedule();
+			$UserSchedule->deleteAllByAttributes(array(
+				'scheduleID' => $scheduleID,
+				'sectionID' => $sectionID
+			));
+		}
+		catch(Exception $e)
+		{
+
+			throw $e;
+			echo 0;
+		}
+		echo 1;
+	}
+
 	/**
 	 * @throws Exception
 	 */
