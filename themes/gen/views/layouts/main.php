@@ -40,6 +40,9 @@
 				//array('label'=>'Contact', 'url'=>array('/site/contact')),
 
 				array('label'=>'Courses', 'url'=>array('/Course/index'), 'visible'=> !Yii::app()->user->isGuest && Yii::app()->user->isAdmin() ),
+
+				array('label'=>'Course Browser', 'url'=>array('/Course/index'), 'visible'=> !Yii::app()->user->isGuest && !Yii::app()->user->isAdmin() ),
+
 				array('label'=>'Users', 'url'=>array('/user/index'), 'visible'=> !Yii::app()->user->isGuest &&  Yii::app()->user->isAdmin()),
 
 				array('label'=>'Schedule Planner', 'url'=>array('/scheduler/index'), 'visible'=>!Yii::app()->user->isGuest),

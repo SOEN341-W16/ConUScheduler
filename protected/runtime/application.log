@@ -11727,3 +11727,221 @@ Stack trace:
 REQUEST_URI=/index.php?r=profile/admin
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
 ---
+2016/04/03 00:00:37 [error] [php] Division by zero (C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): ProfileController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): ProfileController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(26): ProfileController->render()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): ProfileController->runAction()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): ProfileController->filterAccessControl()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): ProfileController->runActionWithFilters()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): ProfileController->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=profile/record&added=1
+in C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (26)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 00:00:39 [error] [php] Division by zero (C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): ProfileController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): ProfileController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(26): ProfileController->render()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): ProfileController->runAction()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): ProfileController->filterAccessControl()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): ProfileController->runActionWithFilters()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): ProfileController->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=profile/record&added=1
+in C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (26)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 00:00:40 [error] [php] Division by zero (C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): ProfileController->renderFile()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): ProfileController->renderPartial()
+#2 C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(26): ProfileController->render()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): ProfileController->runAction()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): ProfileController->filterAccessControl()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): ProfileController->runActionWithFilters()
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): ProfileController->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=profile/record
+in C:\xampp\htdocs\ConUScheduler\protected\views\profile\record.php (38)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (26)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 00:02:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/admin')
+#9 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=course/admin
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=Course/index
+---
+2016/04/03 00:02:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/admin')
+#9 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=course/admin
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=Course/index
+---
+2016/04/03 00:03:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/create')
+#9 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=course/create
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=Course/index
+---
+2016/04/03 00:04:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/create')
+#9 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=course/create
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=Course/index
+---
+2016/04/03 00:15:52 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.itemView" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CWidgetFactory.php(161): CComponent->__set('itemView', '_view')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(CourseController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\course\index.php(24): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourseController->actionIndex()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/index')
+#20 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=course/index
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/view&id=3
+---
+2016/04/03 00:15:58 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.itemView" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CWidgetFactory.php(161): CComponent->__set('itemView', '_view')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(CourseController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\course\index.php(29): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourseController->actionIndex()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/index')
+#20 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=course/index
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/view&id=3
+---
+2016/04/03 00:16:00 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.itemView" is not defined.' in C:\xampp\htdocs\ConUScheduler\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CWidgetFactory.php(161): CComponent->__set('itemView', '_view')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(CourseController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\xampp\htdocs\ConUScheduler\protected\views\course\index.php(29): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\ConUScheduler\protected\controllers\CourseController.php(129): CController->render('index', Array)
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): CourseController->actionIndex()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('course/index')
+#20 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=course/index
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/view&id=3
+---

@@ -3,17 +3,17 @@
 /* @var $model Course */
 
 $this->breadcrumbs=array(
-	'Courselists'=>array('index'),
+	'Course Browser'=>array('index'),
 	$model->ID,
 );
 
 
 $this->menu=array(
 	array('label'=>'List Courses', 'url'=>array('index')),
-	array('label'=>'Create Course', 'url'=>array('create')),
-	array('label'=>'Update Course', 'url'=>array('update', 'id'=>$model->ID)),
-	array('label'=>'Delete Course', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Course', 'url'=>array('admin')),
+	array('label'=>'Create Course', 'url'=>array('create'), 'visible'=> Yii::app()->user->isAdmin() ),
+	array('label'=>'Update Course', 'url'=>array('update', 'id'=>$model->ID), 'visible'=> Yii::app()->user->isAdmin() ),
+	array('label'=>'Delete Course', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID),'confirm'=>'Are you sure you want to delete this item?'), 'visible'=> Yii::app()->user->isAdmin() ),
+	array('label'=>'Manage Course', 'url'=>array('admin'), 'visible'=> Yii::app()->user->isAdmin() ),
 );
 ?>
 

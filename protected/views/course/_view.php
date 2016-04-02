@@ -26,6 +26,11 @@ $prerequisitesQuery = Yii::app()->db->createCommand()
 	<?php echo CHtml::encode($data->course_description); ?>
 	<br />
 
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('credits')); ?>:</b>
+	<?php echo CHtml::encode($data->credits); ?>
+	<br />
+
 	<b>Prerequisites:</b>
 	<?php
 	$prerequisites = array();
@@ -37,4 +42,6 @@ $prerequisitesQuery = Yii::app()->db->createCommand()
 	?>
 
 	<br />
+
+
 </div>
