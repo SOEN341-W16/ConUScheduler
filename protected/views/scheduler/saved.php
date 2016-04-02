@@ -31,6 +31,7 @@ Below is a list of your saved schedules
     <?php
     foreach($schedule as $saveId => $data)
     {
+
         $day_format = "<strong>%s</strong> %s - %s";
     ?>
         <tr>
@@ -66,7 +67,7 @@ Below is a list of your saved schedules
                             foreach ($semesterData as $courseID => $courseData)
                             {
                                 ?>
-                                <tr>
+                                <tr id="course_<?php echo $courseData['lecture_id'];?>">
 
                                     <td>
                                         <?php echo $courseData['course_code']. ' - ' . $courseData['course_description'];?>
@@ -83,6 +84,9 @@ Below is a list of your saved schedules
                                     <td>
                                         <?php echo $courseData['credits'];?>
                                     </td>
+                                    <td>
+                                        <a href="javascript:void(0);" id="dropCourse" data-sectionid="<?php echo $courseData['lecture_id'];?>" data-scheduleid="<?php echo $saveId;?>">Drop</a>
+                                    </td>
                                 </tr>
 
                                 <?php
@@ -90,7 +94,7 @@ Below is a list of your saved schedules
                                 foreach($courseData['labs'] as $labID => $lab)
                                 { ?>
 
-                                    <tr>
+                                    <tr id="course_<?php echo $courseData['lecture_id'];?>">
                                         <td>
                                         </td>
                                         <td>
@@ -127,6 +131,10 @@ Below is a list of your saved schedules
 <div id="delete-dialog" title="Delete Schedule" style="display: none;">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div id="delete-dialog-notice"></div></p>
 </div>
+
+<div id="drop-dialog" title="Drop Course" style="display: none;">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div id="drop-dialog-notice"></div></p>
+</div>
 <script>
     $(function(){
         $('a#view').on('click',function(){
@@ -152,7 +160,7 @@ Below is a list of your saved schedules
             $('#delete-dialog-notice').html('Are you sure you want to delete this schedule?');
             $('#delete-dialog').dialog({
                 resizable: false,
-                height: 200,
+                height: 120,
                 width: 400,
                 modal: true,
                 buttons: {
@@ -192,6 +200,55 @@ Below is a list of your saved schedules
                     $('#delete-dialog-notice').html("");
                 }
             });
+        });
+
+        // DROP COURSE
+        $('a#dropCourse').on('click', function(){
+            var sectionID = $(this).data('sectionid');
+            var scheduleID = $(this).data('scheduleid');
+            var $courseTable = $('tr#course_' + sectionID);
+
+            $('#drop-dialog-notice').html('Are you sure you want to drop this course?');
+
+            $('#drop-dialog').dialog({
+                resizable: false,
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Delete": function () {
+                        $('#drop-dialog-notice').html('Deleting...');
+                        $.ajax({
+                            url: "<?php echo Yii::app()->createAbsoluteUrl("scheduler/DropCourse"); ?>",
+                            type: "POST",
+                            cache: false,
+                            data: 'sectionID=' + sectionID + '&scheduleID=' + scheduleID,
+                            success: function (data) {
+                                if (data) {
+                                    $('#drop-dialog').dialog('close');
+                                    $courseTable.remove();
+                                }
+                                else {
+                                    $('#drop-dialog-notice').html(data);
+                                }
+
+                            },
+                            error: function () {
+                                $("#delete-dialog-notice").html("There was an error saving your schedule...");
+                            }
+                        });
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    },
+                },
+                close : function()
+                {
+                    $('#drop-dialog-notice').html("");
+                }
+
+            });
+
         });
     });
 </script>
