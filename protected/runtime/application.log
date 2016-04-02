@@ -11716,3 +11716,14 @@ Stack trace:
 REQUEST_URI=/index.php?r=course/view&id=71
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=course/create
 ---
+2016/04/02 21:06:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\xampp\htdocs\ConUScheduler\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/admin')
+#3 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=profile/admin
+HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/record
+---

@@ -7,6 +7,8 @@
  * @property integer $ID
  * @property integer $userID
  * @property integer $courseID
+ * @property string $Grade
+ * @property double $GPA
  */
 class CompletedCourses extends CActiveRecord
 {
@@ -26,11 +28,13 @@ class CompletedCourses extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userID, courseID', 'required'),
+			array('userID, courseID, Grade', 'required'),
 			array('userID, courseID', 'numerical', 'integerOnly'=>true),
+			array('GPA', 'numerical'),
+			array('Grade', 'length', 'max'=>3),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, userID, courseID', 'safe', 'on'=>'search'),
+			array('ID, userID,courseID, Grade, GPA', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,7 +47,7 @@ class CompletedCourses extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 
-			'course' => array(self::BELONGS_TO, 'Course','ID'),
+			'course' => array(self::BELONGS_TO, 'Course','courseID'),
 		);
 	}
 
@@ -56,6 +60,8 @@ class CompletedCourses extends CActiveRecord
 			'ID' => 'ID',
 			'userID' => 'User',
 			'courseID' => 'Course',
+			'Grade' => 'Grade',
+			'GPA' => 'Gpa',
 		);
 	}
 
@@ -82,8 +88,11 @@ class CompletedCourses extends CActiveRecord
 		//$criteria->compare('ID',$this->ID);
 		$criteria->compare('userID', Yii::app()->user->userID);
 		$criteria->order = 'course.course_code';
-
 		$criteria->with = array('course');
+
+		//$criteria->compare('Grade',$this->Grade,true);
+		//$criteria->compare('GPA',$this->GPA);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
