@@ -21,7 +21,7 @@ class Course
      */
     public function getLecture()
     {
-        return $this->lecture;
+        return $this;
     }
 
     /**
@@ -37,7 +37,7 @@ class Course
      */
     public function getTutorial()
     {
-        return $this->tutorial;
+        return $this;
     }
 
     /**

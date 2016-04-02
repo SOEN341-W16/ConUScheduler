@@ -31,7 +31,7 @@ class TutorialAndLab
      */
     public function getDays()
     {
-        return $this->days;
+        return $this;
     }
 
     /**
@@ -39,7 +39,7 @@ class TutorialAndLab
      */
     public function getStartTime()
     {
-        return $this->startTime;
+        return $this;
     }
 
     /**
@@ -47,7 +47,7 @@ class TutorialAndLab
      */
     public function getSemester()
     {
-        return $this->semester;
+        return $this;
     }
 
     /**
@@ -55,7 +55,7 @@ class TutorialAndLab
      */
     public function getEndTime()
     {
-        return $this->endTime;
+        return $this;
     }
 
     /**
@@ -63,7 +63,7 @@ class TutorialAndLab
      */
     public function getYear()
     {
-        return $this->year;
+        return $this;
     }
 
 }

@@ -33,41 +33,41 @@ class Lecture{
      * @return mixed
      */
     public function getDays()
-{
-    return $this->days;
-}
+    {
+        return $this;
+    }
 
     /**
      * @return mixed
      */
     public function getStartTime()
-{
-    return $this->startTime;
-}
+    {
+        return $this;
+    }
 
     /**
      * @return mixed
      */
     public function getSemester()
-{
-    return $this->semester;
-}
+    {
+        return $this;
+    }
 
     /**
      * @return mixed
      */
     public function getEndTime()
-{
-    return $this->endTime;
-}
+    {
+        return $this;
+    }
 
     /**
      * @return mixed
      */
     public function getYear()
-{
-    return $this->year;
-}
+    {
+        return $this;
+    }
 
 }
 ?>

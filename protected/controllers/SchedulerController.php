@@ -320,12 +320,16 @@ class SchedulerController extends Controller
 			}
 
 			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
+			print_r($lecture->getDays());
+			// WILL ACTUALLY DISPLAY SOMETHING
 			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
 		    $course[$counter] = new Course($lecture,$tutorial);
 			$counter++;
 
 		}
-             print_r($course);
+
+             print_r($course[0]->getLecture()->getDays());
+		//Fatal Error in calling getDays
 
 
 		$courseYear1Fall = [];
