@@ -35,12 +35,14 @@ foreach ($data as $value)
     }
 
 }
-$finalGPA=$sum/$creditTotal;
-$finalGPA=round($finalGPA,2);
-echo "<h2>";
+if($creditTotal>0) {
+    $finalGPA = $sum / $creditTotal;
+    $finalGPA = round($finalGPA, 2);
+    echo "<h2>";
 
-echo "Total GPA: $finalGPA";
-echo "</h2>";
+    echo "Total GPA: $finalGPA";
+    echo "</h2>";
+}
 
 ?>
 
