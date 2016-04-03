@@ -2,6 +2,10 @@
 $this->menu=array(
     array('label'=>'Profile', 'url'=>array('index')),
 );
+
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
 ?>
 
     <h1>Academic Record</h1>
@@ -55,50 +59,52 @@ if($creditTotal>0) {
 $form=$this->beginWidget('CActiveForm');
 
 ?>
-
+        <hr>
+    <h3>Add a course to your record</h3>
     <p class="note">Fields with <span class="required">*</span> are required.</p>
-
     <div class="row">
         <?php echo $form->labelEx($model,'courseID'); ?>
         <?php echo $form->textField($model,'courseID'); ?>
         <?php echo $form->error($model,'courseID'); ?>
     </div>
-
     <div class="row">
         <?php echo $form->labelEx($model,'Grade'); ?>
         <?php echo $form->textField($model,'Grade'); ?>
         <?php echo $form->error($model,'Grade'); ?>
 
     </div>
-
-
     <div class="row buttons">
-        <?php echo CHtml::button('Submit', array('submit' =>  array('profile/AddCompleted'))); ?>
+        <?php echo CHtml::button('Add Course', array('submit' =>  array('profile/AddCompleted'))); ?>
     </div>
 
 <?php $this->endWidget(); ?>
     </div>
 <?php
-/*
+
     if(isset($_REQUEST['added']))
     {
         $get=$_REQUEST['added'];
         echo "<div>";
-        if($_REQUEST['added']='1')
+        if($_REQUEST['added']==1)
         {
-           echo "Class Successfully Added";
-            print_r($_REQUEST);
-            echo $_REQUEST['added'];
+           echo "Class successfully added!";
 
-        }elseif($_REQUEST['added']=-'1')
-        {
-            echo"Invalid Course code";
-        }elseif($_REQUEST['added']='-2')
-        {
-            echo "Invalid Grade";
         }
-        echo "</div";
+        elseif($_REQUEST['added']==-1)
+        {
+            echo"Invalid course code";
+        }
+        elseif($_REQUEST['added']==-2)
+        {
+            echo "Invalid grade";
+        }
+        echo "</div>";
     }
-*/
+
 
 ?>
+<script>
+$(function(){
+   $(':button').button();
+});
+</script>
