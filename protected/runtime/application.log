@@ -11961,3 +11961,105 @@ Stack trace:
 REQUEST_URI=/index.php?r=scheduler/DropCourse
 in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (306)
 in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 05:28:41 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'. The SQL statement executed was: SELECT `id`, `username`, `profile`
+FROM `completed_courses`.
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php (54)
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (27)
+in B:\Program Files\xamp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 05:28:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'. The SQL statement executed was: SELECT `id`, `username`, `profile`
+FROM `completed_courses`' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php(54): CDbCommand->queryRow()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CBaseController.php(126): require('B:\Program File...')
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CBaseController.php(95): CBaseController->renderInternal('B:\Program File...', Array, true)
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(869): CBaseController->renderFile('B:\Program File...', Array, true)
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(782): CController->renderPartial('record', Array, true)
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(27): CController->render('record', Array)
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#15 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('record')
+#17 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/record')
+#18 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=profile/record&added=1
+HTTP_REFERER=http://localhost/index.php?r=profile/record
+---
+2016/04/03 05:46:45 [error] [php] Undefined index: ID (B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php:56)
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(869): ProfileController->renderFile()
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(782): ProfileController->renderPartial()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(27): ProfileController->render()
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): ProfileController->runAction()
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): ProfileController->filterAccessControl()
+#9 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): ProfileController->runActionWithFilters()
+#12 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): ProfileController->run()
+#13 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=profile/record&added=1
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php (56)
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (27)
+in B:\Program Files\xamp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 05:52:20 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'. The SQL statement executed was: SELECT `id`, `username`, `profile`
+FROM `completed_courses`.
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (48)
+in B:\Program Files\xamp\htdocs\ConUScheduler\index.php (13)
+2016/04/03 05:52:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'. The SQL statement executed was: SELECT `id`, `username`, `profile`
+FROM `completed_courses`' in B:\Program Files\xamp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(48): CDbCommand->queryRow()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionAddCompleted()
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('AddCompleted')
+#12 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/AddComp...')
+#13 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=profile/AddCompleted
+HTTP_REFERER=http://localhost/index.php?r=profile/record&added=1
+---
+2016/04/03 07:40:15 [error] [php] Undefined variable: get (B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php:99)
+Stack trace:
+#0 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(869): ProfileController->renderFile()
+#1 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(782): ProfileController->renderPartial()
+#2 B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php(27): ProfileController->render()
+#3 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): ProfileController->actionRecord()
+#4 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): ProfileController->runAction()
+#6 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): ProfileController->filterAccessControl()
+#9 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#11 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CController.php(265): ProfileController->runActionWithFilters()
+#12 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): ProfileController->run()
+#13 B:\Program Files\xamp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 B:\Program Files\xamp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 B:\Program Files\xamp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=profile/record&added=-2
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\views\profile\record.php (99)
+in B:\Program Files\xamp\htdocs\ConUScheduler\protected\controllers\ProfileController.php (27)
+in B:\Program Files\xamp\htdocs\ConUScheduler\index.php (13)
