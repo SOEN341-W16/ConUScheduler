@@ -59,7 +59,7 @@ class CompletedCourses extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'userID' => 'User',
-			'courseID' => 'Course',
+			'courseID' => 'Course Code',
 			'Grade' => 'Grade',
 			'GPA' => 'Gpa',
 		);
