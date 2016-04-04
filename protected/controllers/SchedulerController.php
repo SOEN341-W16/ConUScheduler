@@ -293,7 +293,7 @@ class SchedulerController extends Controller
         $post_data = $_POST['myData'];
         $decodedData = json_decode($post_data, true);
         //$course = [[[]]];
-		$curse=[];
+		$course=[];
         $counter = 0;
         //Save the years associated to sections chosen
 
@@ -323,7 +323,7 @@ class SchedulerController extends Controller
 			print_r($lecture->getDays());
 			// WILL ACTUALLY DISPLAY SOMETHING
 			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
-		    $course[$counter] = new Course($lecture,$tutorial);
+		    $course[$counter] = new CourseObj($lecture,$tutorial);
 			$counter++;
 
 		}
