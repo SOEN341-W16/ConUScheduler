@@ -289,11 +289,11 @@ class SchedulerController extends Controller
 
     public function actionScheduleValidation()
     {
-		print_r("in ajax");
+
         $post_data = $_POST['myData'];
         $decodedData = json_decode($post_data, true);
         //$course = [[[]]];
-		$course=[];
+		$course = array();
         $counter = 0;
         //Save the years associated to sections chosen
 
@@ -320,16 +320,22 @@ class SchedulerController extends Controller
 			}
 
 			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
-			print_r($lecture->getDays());
+
 			// WILL ACTUALLY DISPLAY SOMETHING
 			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
-		    $course[$counter] = new CourseObj($lecture,$tutorial);
+
+
+			$course[] = new CourseObj($lecture,$tutorial);
+
+
+
+
+
 			$counter++;
 
 		}
 
-             print_r($course[0]->getLecture()->getDays());
-		//Fatal Error in calling getDays
+
 
 
 		$courseYear1Fall = [];
@@ -341,6 +347,10 @@ class SchedulerController extends Controller
 		$courseYear4Fall = [];
 		$courseYear4Winter = [];
 		$error = [];
+
+
+
+		//if your course array is empty, you will get an error here
 
 		for($i=0; $i<=count($course); $i++){
 			if ($course[$i]->getLecture() -> getYear() == 1) {
