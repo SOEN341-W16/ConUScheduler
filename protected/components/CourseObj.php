@@ -11,7 +11,7 @@ class CourseObj
     private  $lecture;
     private  $tutorial;
 
-    function _construct(Lecture $lec, Tutorial $tutorial){
+    public function __construct( $lec, $tutorial){
         $this->lecture = $lec;
         $this->tutorial = $tutorial;
     }
@@ -21,7 +21,7 @@ class CourseObj
      */
     public function getLecture()
     {
-        return $this;
+        return $this->lecture;
     }
 
     /**
@@ -37,7 +37,7 @@ class CourseObj
      */
     public function getTutorial()
     {
-        return $this;
+        return $this->tutorial;
     }
 
     /**

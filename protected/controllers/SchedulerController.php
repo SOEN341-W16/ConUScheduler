@@ -289,11 +289,11 @@ class SchedulerController extends Controller
 
     public function actionScheduleValidation()
     {
-		print_r("in ajax");
+
         $post_data = $_POST['myData'];
         $decodedData = json_decode($post_data, true);
         //$course = [[[]]];
-		$course=[];
+		$course = array();
         $counter = 0;
         //Save the years associated to sections chosen
 
@@ -318,22 +318,26 @@ class SchedulerController extends Controller
 						->queryRow();
 
 			}
-			print_r(gettype($lec['start_time']));
+
 			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
-			print_r(gettype($lecture->getStartTime()));
+
 			// WILL ACTUALLY DISPLAY SOMETHING
 			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
-		    $course[$counter] = new CourseObj($lecture,$tutorial);
+
+
+			$course[] = new CourseObj($lecture,$tutorial);
+
+
+
+
+
 			$counter++;
 
 		}
-		print_r($course[0]->getLecture()->getStartTime());
-		//Fatal Error in calling getDays
 
-	/*print_r($course[0]->getLecture()->getYear());
-		print_r(gettype($course[0]->getLecture()->getYear()));
-		/*$num = int($course[0]->getLecture()->getYear());
-		print_r($num);*/
+
+
+
 		$courseYear1Fall = [];
 		$courseYear1Winter = [];
 		$courseYear2Fall = [];
@@ -343,180 +347,64 @@ class SchedulerController extends Controller
 		$courseYear4Fall = [];
 		$courseYear4Winter = [];
 		$error = [];
-		if($course != null) {
-			for ($i = 0; $i < count($course); $i++) {
-				if ($course[$i]->getLecture()->getYear() == '1') {
-					if ($course[$i]->getLecture()->getSemester() == 'F') {
 
-						array_push($courseYear1Fall, $course[$i]);
 
-					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
 
-						array_push($courseYear1Winter, $course[$i]);
-					}
-				} elseif ($course[$i]->getLecture()->getYear() == '2') {
+		//if your course array is empty, you will get an error here
 
-					if ($course[$i]->getLecture()->getSemester() == 'F') {
+		for($i=0; $i<=count($course); $i++){
+			if ($course[$i]->getLecture() -> getYear() == 1) {
+				if ($course[$i]->getLecture() -> getSemester() == 'F') {
 
-						array_push($courseYear2Fall, $course[$i]);
+						array_push($courseYear1Fall,$course[$i]);
 
-					} elseif ($course[$i]->getLecture()->getSemester() == 'W')
+				} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
 
-						array_push($courseYear2Winter, $course[$i]);
+						array_push($courseYear1Winter,$course[$i]);
+				}
+			} elseif ($course[$i]->getLecture()->getYear() == 2) {
 
-				} elseif ($course[$i]->getLecture()->getYear() == '3') {
-					if ($course[$i]->getLecture()->getSemester() == 'F') {
+				if ($course[$i]->getLecture()->getSemester() == 'F') {
 
-						array_push($courseYear3Fall, $course[$i]);
+						array_push($courseYear2Fall,$course[$i]);
 
-					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+				} elseif ($course[$i]->getLecture()->getSemester() == 'W')
 
-						array_push($courseYear3Winter, $course[$i]);
+						array_push($courseYear2Winter,$course[$i]);
 
-					}
+			} elseif ($course[$i]->getLecture()->getYear() == 3) {
+				if ($course[$i]->getLecture()->getSemester() == 'F') {
 
-				} elseif ($course[$i]->getLecture()->getYear() == '4') {
+						array_push($courseYear3Fall,$course[$i]);
 
-					if ($course[$i]->getLecture()->getSemester() == 'F') {
+				} elseif ($course[$i]->getLecture() -> getSemester() == 'W') {
 
-						array_push($courseYear4Fall, $course[$i]);
+						array_push($courseYear3Winter,$course[$i]);
 
-					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+				}
 
-						array_push($courseYear4Winter, $course[$i]);
-					}
+			} elseif ($course[$i]->getLecture()->getYear() == 4) {
+
+				if ($course[$i]->getLecture()->getSemester() == 'F') {
+
+						array_push($courseYear4Fall,$course[$i]);
+
+				} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+
+						array_push($courseYear4Winter,$course[$i]);
 				}
 			}
-			$counter2=0;
-			$errorArr = [];
-			if($courseYear1Fall != null){
-				$fallErr = verification($courseYear1Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
-			}
-			elseif($courseYear1Winter != null) {
-				$winterErr = verification($courseYear1Winter);
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
-			}
-			if($courseYear2Fall != null) {
-				$fallErr  = verification($courseYear2Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
-			}
-			if($courseYear2Winter != null) {
-				$winterErr = verification($courseYear3Fall);
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
-			}
-			if($courseYear3Winter != null) {
-				$fallErr = verification($courseYear3Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
-			}
-			if($courseYear3Fall != null) {
-				$winterErr = verification($courseYear3Winter);
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
-
-			}
-			if($courseYear4Fall != null) {
-				$fallErr = verification($courseYear4Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
-			}
-			if($courseYear4Winter != null) {
-				$winterErr = verification($courseYear4Winter);
-				$errorArr[$counter2] = $winterErr;
-			}
-
-			$this->renderPartial('_ajax', array(
-					'data' => $errorArr,
-				)
-			);
 		}
 
 
-
-			$error = "You have not selected any classes";
 			$this->renderPartial('_ajax', array(
-					'data' => $error,
+					'data' => $post_data,
 				)
 			);
+
+
     }
-	 function verification($arrayOfSemester){
-		 $errorArr = [];
-		for($key = 0 ; $key <count($arrayOfSemester)-1; $key++){
-			$startLecTimeAtKey = $arrayOfSemester[$key]->getLecture() -> getStartTime();
-			$endLecTimeAtKey = $arrayOfSemester[$key]->getLecture()->getEndTime();
-			$startTutTimeAtKey = $arrayOfSemester[$key] -> getTutoial()->getStartTime();
-			$endTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial() -> getEndTime();
-			$dayOfLec = $arrayOfSemester[$key] ->getLecture() -> getDays();
-			$dayOfTut = $arrayOfSemester[$key] ->getTutorial() -> getDays();
-			for($i = 1; $i<count($arrayOfSemester) ; $i++){
-				$startAtILEC = $arrayOfSemester[$i]->getLecture() -> getStartTime();
-				$endAtILEC = $arrayOfSemester[$i]->getLecture()->getEndTime();
-				$startAtITUT = $arrayOfSemester[$i] -> getTutoial()->getStartTime();
-				$endAtITUT = $arrayOfSemester[$i] -> getTutorial() -> getEndTime();
-				$dayOfLecI= $arrayOfSemester[$i] ->getLecture() -> getDays();
-				$dayOfTutI = $arrayOfSemester[$i] ->getTutorial() -> getDays();
-				if($dayOfLec== $dayOfLecI){
-					if($startAtILEC > $startLecTimeAtKey && $startAtILEC < $endLecTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-					elseif($endAtILEC > $startLecTimeAtKey && $endAtILEC <$endLecTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-				}
-				if($dayOfLec == $dayOfTutI){
-					if($startAtITUT > $startLecTimeAtKey && $startAtITUT < $endLecTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-					elseif($endAtITUT > $startLecTimeAtKey && $endAtITUT < $endLecTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
 
-				}
-				if($dayOfTut == $dayOfLecI){
-					if($startAtILEC > $startTutTimeAtKey && $startAtILEC < $endTutTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-					elseif($endAtILEC > $startTutTimeAtKey && $endAtILEC <$endTutTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-
-				}
-				if($dayOfTut == $dayOfTutI){
-					if($startAtITUT > $startTutTimeAtKey && $startAtITUT < $endTutTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-					elseif($endAtITUT > $startTutTimeAtKey && $endAtITUT < $endTutTimeAtKey){
-						$errorArr[$key] = $arrayOfSemester[$key];
-						$errorArr[$i] = $arrayOfSemester[$key+1];
-						break;
-					}
-				}
-
-
-
-			}
-		}
-		 return $errorArr;
-	}
 	/**
 	 * Performs the AJAX validation.
 	 * @param Course $model the model to be validated

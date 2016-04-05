@@ -34,7 +34,7 @@ class Lecture{
      */
     public function getDays()
     {
-        return $this;
+        return $this->days;
     }
 
     /**
