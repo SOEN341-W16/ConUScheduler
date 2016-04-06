@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File 'D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php'" />
-    <option name="defaultScopeName" value="File 'D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php'" />
-    <option name="SEARCH_SCOPE" value="File 'D:\DATA\S_SERVER\xampp\htdocs\ConUScheduler\protected\views\scheduler\_gen.php'" />
+    <option name="customScope" value="Current File" />
+    <option name="defaultScopeName" value="Current File" />
+    <option name="SEARCH_SCOPE" value="Current File" />
   </component>
 </application>
