@@ -1,6 +1,5 @@
 <?php
 /* @var $schedule */
-
 $sequence[1]["fall"][] = "COMP 248";
 $sequence[1]["fall"][] = "COMP 232";
 $sequence[1]["fall"][] = "ENGR 201";
@@ -147,7 +146,7 @@ foreach ($sequence as $year => $sequenceData)
                         </tr>
                         </tbody>
                         </table>
-                        <div id="#ajax-results"><</div>
+
                         <?php
                     }
                 }
@@ -158,6 +157,7 @@ foreach ($sequence as $year => $sequenceData)
 
 }
 ?>
+<div id=ajax-results"></div>
 <div class="row buttons">
     <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
 </div>
@@ -223,11 +223,54 @@ foreach ($sequence as $year => $sequenceData)
             var data = JSON.stringify(data);
 
 
+
+
             $.ajax({
-                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/ScheduleValidation"); ?>",
+                url : "http://conuscheduler.localhost/index.php?r=scheduler/ScheduleValidation",
                 type: "POST",
                 data : "myData=" + data,
                 success : function(data)
+                {
+                    data = JSON.parse(data);
+                    console.log(data);
+
+
+
+                    /* $("table#subsection_table").each(function(){
+                     $(this).css({ 'background-color': 'red'})
+
+                     });*/
+
+
+                   /* if(data == '1')
+                    {
+                        $("span#ajax-results").html("Success gayness 3");
+                    }
+                    else if(data == '0') {
+                        $("span#ajax-results").html("nothing was chosen");
+                        // $("span#ajax-results").html("Success gayness");
+                        /*
+                         $('#ajax-results').dialog({
+                         width: 400,
+                         height: 500
+                         });
+                         */
+
+                    /*}
+                    else{
+                        //$("#ajax-results").html("Invalid.");
+                        // alert("bad!");
+                    }
+                    //alert(data);*/
+                },
+                error: function()
+                {
+                    alert("there was an error")
+                }
+            });
+            //console.log(JSON.stringify(data));
+
+              /*  success : function(data)
                 {
                     alert("in success");
                     alert(data);
@@ -238,13 +281,18 @@ foreach ($sequence as $year => $sequenceData)
                 {
                     alert("there was an error")
                 }
-            })
-            console.log(JSON.stringify(data));
+            });*/
+           // console.log(JSON.stringify(data));
 
-            $('#dialog').html(data).dialog({ width: 500, heigh: 500});
+           // $('#dialog').html(data).dialog({ width: 500, heigh: 500});
         });
 
 
 
     });
+
+
+
+
+
 </script>

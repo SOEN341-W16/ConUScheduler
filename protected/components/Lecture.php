@@ -6,7 +6,7 @@
  * Date: 2016-03-29
  * Time: 11:54 AM
  */
-class Lecture{
+class Lecture extends CApplicationComponent{
     private $courseId;
     private $kind;
     private $days;
@@ -18,17 +18,19 @@ class Lecture{
 
 
 
-    function __construct($courseId, $kind,$days, $start, $end, $sem,$year){
+    public function __construct($courseId, $kind,$days,$start, $end, $sem,$year){
         $this->courseId = $courseId;
         $this->kind = $kind;
         $this->days = $days;
-        $this->startTime = $start;
-        $this->endTime = $end;
+        $this->startTime =(int)$start;
+        $this->endTime = (int)$end;
         $this->semester = $sem;
-        $this->year = $year;
+        $this->year = (int)$year;
     }
 
-
+    public function getDuration(){
+        return endTime - startTime;
+    }
     /**
      * @return mixed
      */
@@ -42,7 +44,7 @@ class Lecture{
      */
     public function getStartTime()
     {
-        return $this;
+        return $this->startTime;
     }
 
     /**
@@ -50,7 +52,7 @@ class Lecture{
      */
     public function getSemester()
     {
-        return $this;
+        return $this->semester;
     }
 
     /**
@@ -58,7 +60,7 @@ class Lecture{
      */
     public function getEndTime()
     {
-        return $this;
+        return $this->endTime;
     }
 
     /**
@@ -66,7 +68,7 @@ class Lecture{
      */
     public function getYear()
     {
-        return $this;
+        return $this->year;
     }
 
 }

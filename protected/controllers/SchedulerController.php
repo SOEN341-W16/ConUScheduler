@@ -2,24 +2,26 @@
 
 class SchedulerController extends Controller
 {
-	public $layout='//layouts/column2';
+	public $msg;
+	public $layout = '//layouts/column2';
+
 	public function actionIndex()
 	{
 		$model = new PreferenceForm();
 		// this is the stuff we pass into the view (index page)
 
 		$this->render('index', array(
-				'model'=> $model
+				'model' => $model
 			)
 		);
 	}
 
-		public function filters()
-    {
-        return array(
-            'accessControl',
-        );
-    }
+	public function filters()
+	{
+		return array(
+			'accessControl',
+		);
+	}
 
 	public function actionViewSaved()
 	{
@@ -63,43 +65,36 @@ class SchedulerController extends Controller
 					LEFT JOIN course ON course.ID = user_schedule.courseID
 														 WHERE userID= :userID 	";
 
-		$pat[":userID"] =  Yii::app()->user->userID;
+		$pat[":userID"] = Yii::app()->user->userID;
 
 		$command = Yii::app()->db->createCommand($sql);
 		$data = $command->query($pat); // query with placeholders
 		$uSchedule = $data->readAll(); // an array of all filtered lectures with given dates
 
-		$sched= array();
+		$sched = array();
 
 		//print_r($uSchedule);
 		//exit;
 
-		foreach($uSchedule as $i => $schedule)
-		{
+		foreach ($uSchedule as $i => $schedule) {
 			$saveID = $schedule['saveId'];
 			$save = &$sched[$saveID];
 			$save['date_created'] = $schedule['date_created'];
 			$save['schedule'] = array();
 
-			foreach ($uSchedule as $schedule_)
-			{
+			foreach ($uSchedule as $schedule_) {
 				$year = $schedule_['year'];
 				$semester = $schedule_['semester'];
 				$save['schedule'][$year][$semester] = array();
 			}
 		}
 
-		foreach($uSchedule as $i => $schedule)
-		{
-			foreach ($sched as $saveID => $saveData)
-			{
-				foreach ($saveData['schedule'] as $year => $semesters)
-				{
-					foreach ($semesters as $semester => $courses)
-					{
+		foreach ($uSchedule as $i => $schedule) {
+			foreach ($sched as $saveID => $saveData) {
+				foreach ($saveData['schedule'] as $year => $semesters) {
+					foreach ($semesters as $semester => $courses) {
 						$course = &$sched[$saveID]['schedule'][$year][$semester];
-						if ($schedule['semester'] == $semester && $schedule['year'] == $year)
-						{
+						if ($schedule['semester'] == $semester && $schedule['year'] == $year) {
 							$course[$schedule['courseID']]['course_code'] = $schedule['course_code'];
 							$course[$schedule['courseID']]['course_description'] = $schedule['course_description'];
 							$course[$schedule['courseID']]['lecture_days'] = $schedule['lecture_days'];
@@ -117,33 +112,27 @@ class SchedulerController extends Controller
 		}
 
 
-			foreach ($sched as $saveID => $saveData)
-			{
-				foreach ($saveData['schedule'] as $year => $yearData)
-				{
-					foreach ($yearData as $semester => $semesterData)
-					{
-						foreach ($semesterData as $courseID => $courseData)
-						{
-							$course = &$sched[$saveID]['schedule'][$year][$semester][$courseID];
-							foreach($uSchedule as $i => $schedule)
-							{
-								if ($schedule['courseID'] == $courseID && $courseData['lecture_id'] == $schedule['lecture_id'] && $schedule['sub_kind'] != $courseData['section_kind'])
-								{
-									$lab = &$course['labs'][$schedule['subsectionID']];
-									$lab['sub_kind'] = $schedule['sub_kind'];
-									$lab['sub_section_name'] = $schedule['sub_section_name'];
-									$lab['sub_days'] = $schedule['sub_days'];
-									$lab['sub_start_time'] = $schedule['sub_start_time'];
-									$lab['sub_end_time'] = $schedule['sub_end_time'];
-								}
+		foreach ($sched as $saveID => $saveData) {
+			foreach ($saveData['schedule'] as $year => $yearData) {
+				foreach ($yearData as $semester => $semesterData) {
+					foreach ($semesterData as $courseID => $courseData) {
+						$course = &$sched[$saveID]['schedule'][$year][$semester][$courseID];
+						foreach ($uSchedule as $i => $schedule) {
+							if ($schedule['courseID'] == $courseID && $courseData['lecture_id'] == $schedule['lecture_id'] && $schedule['sub_kind'] != $courseData['section_kind']) {
+								$lab = &$course['labs'][$schedule['subsectionID']];
+								$lab['sub_kind'] = $schedule['sub_kind'];
+								$lab['sub_section_name'] = $schedule['sub_section_name'];
+								$lab['sub_days'] = $schedule['sub_days'];
+								$lab['sub_start_time'] = $schedule['sub_start_time'];
+								$lab['sub_end_time'] = $schedule['sub_end_time'];
 							}
 						}
-
 					}
 
 				}
+
 			}
+		}
 
 
 		//print_r($sched);
@@ -151,8 +140,8 @@ class SchedulerController extends Controller
 
 		///exit;
 
-		$this->render('saved',array(
-			'schedule'=>$sched,
+		$this->render('saved', array(
+			'schedule' => $sched,
 		));
 
 	}
@@ -182,22 +171,20 @@ class SchedulerController extends Controller
 				LEFT JOIN course ON section.courseID=course.ID ";
 
 
-
 		//which days were selected?
-		($model->dayM == 1 ? $okdays['M'] = array("start_time"=>$model->fromTimeM, "end_time"=> $model->toTimeM) : $nodays[] = 'M' );
-		($model->dayT == 1 ? $okdays['T'] = array("start_time"=>$model->fromTimeT, "end_time"=> $model->toTimeT) : $nodays[] = 'T' );
-		($model->dayW == 1 ? $okdays['W'] = array("start_time"=>$model->fromTimeW, "end_time"=> $model->toTimeW) : $nodays[] = 'W' );
-		($model->dayJ == 1 ? $okdays['J'] = array("start_time"=>$model->fromTimeJ, "end_time"=> $model->toTimeJ) : $nodays[] = 'J' );
-		($model->dayF == 1 ? $okdays['F'] = array("start_time"=>$model->fromTimeF, "end_time"=> $model->toTimeF) : $nodays[] = 'F' );
+		($model->dayM == 1 ? $okdays['M'] = array("start_time" => $model->fromTimeM, "end_time" => $model->toTimeM) : $nodays[] = 'M');
+		($model->dayT == 1 ? $okdays['T'] = array("start_time" => $model->fromTimeT, "end_time" => $model->toTimeT) : $nodays[] = 'T');
+		($model->dayW == 1 ? $okdays['W'] = array("start_time" => $model->fromTimeW, "end_time" => $model->toTimeW) : $nodays[] = 'W');
+		($model->dayJ == 1 ? $okdays['J'] = array("start_time" => $model->fromTimeJ, "end_time" => $model->toTimeJ) : $nodays[] = 'J');
+		($model->dayF == 1 ? $okdays['F'] = array("start_time" => $model->fromTimeF, "end_time" => $model->toTimeF) : $nodays[] = 'F');
 
 
 		// build sql query
 		$msearches = array();
 		$nsearches = array();
 
-		foreach($okdays as $day => $start_end_times)
-		{
-			$pat[":$day"] = '%'.$day.'%';
+		foreach ($okdays as $day => $start_end_times) {
+			$pat[":$day"] = '%' . $day . '%';
 			$pat[":start_$day"] = $start_end_times['start_time'];
 			$pat[":end_$day"] = $start_end_times['end_time'];
 			$msearches[] = "
@@ -209,18 +196,15 @@ class SchedulerController extends Controller
 				AND subsection.end_time<=:end_$day
 			) ";
 		}
-		foreach($nodays as $day)
-		{
-			$pat[":$day"] = '%'.$day.'%';
+		foreach ($nodays as $day) {
+			$pat[":$day"] = '%' . $day . '%';
 			$nsearches[] = " (section.days NOT LIKE :$day AND subsection.days NOT LIKE :$day) ";
 		}
-		if(!empty($okdays))
-		{
+		if (!empty($okdays)) {
 			$sql .= " WHERE (";
 			$sql .= implode(" OR ", $msearches);
 			$sql .= ")";
-			if(!empty($nodays))
-			{
+			if (!empty($nodays)) {
 				$sql .= " AND (";
 				$sql .= implode(" AND ", $nsearches);
 				$sql .= ")";
@@ -237,16 +221,14 @@ class SchedulerController extends Controller
 		$lectures = $data->readAll(); // an array of all filtered lectures with given dates
 
 
-
 		$schedule = array();
-		foreach($lectures as $i =>$lectureData)
-		{
+		foreach ($lectures as $i => $lectureData) {
 			$sectionId = $lectureData["LECTURE_id"];
-		//	$schedule[$sectionId]["labs_tut"] = array();
+			//	$schedule[$sectionId]["labs_tut"] = array();
 
 			$schedule[$sectionId]["course_code"] = $lectureData["course_code"];
 			$schedule[$sectionId]["days"] = $lectureData["LECTURE_days"];
-			$schedule[$sectionId]["semester"]= $lectureData["LECTURE_semester"];
+			$schedule[$sectionId]["semester"] = $lectureData["LECTURE_semester"];
 			$schedule[$sectionId]["start_time"] = $lectureData["LECTURE_start_time"];
 			$schedule[$sectionId]["end_time"] = $lectureData["LECTURE_end_time"];
 			$schedule[$sectionId]["section"] = $lectureData["LECTURE_section"];
@@ -264,7 +246,6 @@ class SchedulerController extends Controller
 			);
 
 
-
 		}
 		// here, we need to further filter $lectures to make sure there is no time overlap etc.
 
@@ -273,31 +254,28 @@ class SchedulerController extends Controller
 		$yearsToShow = array();
 
 
-		($model->year1==1 ? $yearsToShow[] = 1 : "");
-		($model->year2==1 ? $yearsToShow[] = 2 : "");
-		($model->year3==1 ? $yearsToShow[] = 3 : "");
-		($model->year4==1 ? $yearsToShow[] = 4 : "");
+		($model->year1 == 1 ? $yearsToShow[] = 1 : "");
+		($model->year2 == 1 ? $yearsToShow[] = 2 : "");
+		($model->year3 == 1 ? $yearsToShow[] = 3 : "");
+		($model->year4 == 1 ? $yearsToShow[] = 4 : "");
 
 		$this->render('index', array(
-				'model'=> $model,
+				'model' => $model,
 				'schedule' => $schedule,
-				'yearsToShow' =>$yearsToShow
+				'yearsToShow' => $yearsToShow
 			)
 		);
 	}
 
 
-    public function actionScheduleValidation()
-    {
-
-        $post_data = $_POST['myData'];
-        $decodedData = json_decode($post_data, true);
-        //$course = [[[]]];
-		$course = array();
-        $counter = 0;
-        //Save the years associated to sections chosen
-
-        foreach ($decodedData as $key) {
+	public function actionScheduleValidation()
+	{
+		$post_data = $_POST['myData'];
+		$decodedData = json_decode($post_data, true);
+		$course = [];
+		$counter = 0;
+		//Save the years associated to sections chosen
+		foreach ($decodedData as $key) {
 			$tutOrLab = null;
 			$lec = null;
 			$currentYear = null;
@@ -316,28 +294,17 @@ class SchedulerController extends Controller
 						->from($id)
 						->where('id=' . $number)
 						->queryRow();
-
 			}
+			$lecture = new Lecture($lec['courseID'], $lec['kind'], $lec['days'], $lec['start_time'], $lec['end_time'], $lec['semester'], $currentYear);
 
-			$lecture = new Lecture($lec['courseID'],$lec['kind'],$lec['days'],$lec['start_time'],$lec['end_time'],$lec['semester'],$currentYear);
-
-			// WILL ACTUALLY DISPLAY SOMETHING
-			$tutorial = new TutorialAndLab($tutOrLab['courseID'],$tutOrLab['kind'],$tutOrLab['days'],$tutOrLab['start_time'],$tutOrLab['end_time'],$tutOrLab['semester'],$currentYear);
-
-
-			$course[] = new CourseObj($lecture,$tutorial);
-
-
-
-
-
+			$tutorial = new TutorialAndLab($tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+			$course[$counter] = new Courses($lecture, $tutorial);
+			//print_r($course[$counter]->getLecture());
 			$counter++;
-
 		}
-
-
-
-
+		print_r($course[0].getLecture());
+		//print_r(gettype($course[0]));
+		//print_r("hi");
 		$courseYear1Fall = [];
 		$courseYear1Winter = [];
 		$courseYear2Fall = [];
@@ -347,63 +314,167 @@ class SchedulerController extends Controller
 		$courseYear4Fall = [];
 		$courseYear4Winter = [];
 		$error = [];
-
-
-
-		//if your course array is empty, you will get an error here
-
-		for($i=0; $i<=count($course); $i++){
-			if ($course[$i]->getLecture() -> getYear() == 1) {
-				if ($course[$i]->getLecture() -> getSemester() == 'F') {
-
-						array_push($courseYear1Fall,$course[$i]);
-
-				} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
-
-						array_push($courseYear1Winter,$course[$i]);
+		if ($course != null) {
+			//print_r("in if");
+			for ($i = 0; $i < count($course); $i++) {
+				if ($course[$i]->getLecture()->getYear() == '1') {
+					if ($course[$i]->getLecture()->getSemester() == 'F') {
+						array_push($courseYear1Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+						print_r("right here");
+						array_push($courseYear1Winter, $course[$i]);
+					}
+				} elseif ($course[$i]->getLecture()->getYear() == '2') {
+					if ($course[$i]->getLecture()->getSemester() == 'F') {
+						array_push($courseYear2Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'W')
+						array_push($courseYear2Winter, $course[$i]);
+				} elseif ($course[$i]->getLecture()->getYear() == '3') {
+					if ($course[$i]->getLecture()->getSemester() == 'F') {
+						array_push($courseYear3Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+						array_push($courseYear3Winter, $course[$i]);
+					}
+				} elseif ($course[$i]->getLecture()->getYear() == '4') {
+					if ($course[$i]->getLecture()->getSemester() == 'F') {
+						array_push($courseYear4Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
+						array_push($courseYear4Winter, $course[$i]);
+					}
 				}
-			} elseif ($course[$i]->getLecture()->getYear() == 2) {
+			}
 
-				if ($course[$i]->getLecture()->getSemester() == 'F') {
+			$counter2 = 0;
+			$errorArr = [];
+			if (!empty($courseYear1Fall)) {
+				//print_r($courseYear1Fall);
+				$fallErr = $this->verification($courseYear1Fall);
+				$errorArr[$counter2] = $fallErr;
+				$counter2++;
+			} elseif (!empty($courseYear1Winter)) {
+				$winterErr = $this->verification($courseYear1Winter);
+				//print_r($courseYear1Winter);
+				$errorArr[$counter2] = $winterErr;
+				$counter2++;
+			}
+			if (!empty($courseYear2Fall)) {
+				$fallErr = $this->verification($courseYear2Fall);
+				$errorArr[$counter2] = $fallErr;
+				$counter2++;
+			}
+			if (!empty($courseYear2Winter)) {
+				$winterErr = $this->verification($courseYear3Fall);
+				$errorArr[$counter2] = $winterErr;
+				$counter2++;
+			}
+			if ($courseYear3Winter != null) {
+				$fallErr = $this->verification($courseYear3Fall);
+				$errorArr[$counter2] = $fallErr;
+				$counter2++;
+			}
+			if ($courseYear3Fall != null) {
+				$winterErr = $this->verification($courseYear3Winter);
+				$errorArr[$counter2] = $winterErr;
+				$counter2++;
+			}
+			if ($courseYear4Fall != null) {
+				$fallErr = $this->verification($courseYear4Fall);
+				$errorArr[$counter2] = $fallErr;
+				$counter2++;
+			}
+			if ($courseYear4Winter != null) {
+				$winterErr = $this->verification($courseYear4Winter);
+				$errorArr[$counter2] = $winterErr;
+			}
+			if ($errorArr != null) {
+				echo 0;
+				echo json_encode($errorArr);
 
-						array_push($courseYear2Fall,$course[$i]);
 
-				} elseif ($course[$i]->getLecture()->getSemester() == 'W')
+			} else {
+				echo 1;
+			}
 
-						array_push($courseYear2Winter,$course[$i]);
+		} else
+			echo 2;
 
-			} elseif ($course[$i]->getLecture()->getYear() == 3) {
-				if ($course[$i]->getLecture()->getSemester() == 'F') {
+	}
 
-						array_push($courseYear3Fall,$course[$i]);
+	function verification($arrayOfSemester){
 
-				} elseif ($course[$i]->getLecture() -> getSemester() == 'W') {
+		$errorArr = [];
+		for($key = 0 ; $key <count($arrayOfSemester)- 1; $key++){
 
-						array_push($courseYear3Winter,$course[$i]);
+			$startLecTimeAtKey = $arrayOfSemester[$key]->getLecture() -> getStartTime();
+			$endLecTimeAtKey = $arrayOfSemester[$key]->getLecture()->getEndTime();
+			$startTutTimeAtKey = $arrayOfSemester[$key] -> getTutoial()->getStartTime();
+			$endTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial() -> getEndTime();
+			$dayOfLec = $arrayOfSemester[$key] ->getLecture() -> getDays();
+			$dayOfTut = $arrayOfSemester[$key] ->getTutorial() -> getDays();
 
+			for($i = 1; $i<count($arrayOfSemester) ; $i++){
+
+				$startAtILEC = $arrayOfSemester[$i]->getLecture() -> getStartTime();
+				$endAtILEC = $arrayOfSemester[$i]->getLecture()->getEndTime();
+				$startAtITUT = $arrayOfSemester[$i] -> getTutoial()->getStartTime();
+				$endAtITUT = $arrayOfSemester[$i] -> getTutorial() -> getEndTime();
+				$dayOfLecI= $arrayOfSemester[$i] ->getLecture() -> getDays();
+				$dayOfTutI = $arrayOfSemester[$i] ->getTutorial() -> getDays();
+
+				if($dayOfLec== $dayOfLecI){
+
+					if($startAtILEC > $startLecTimeAtKey && $startAtILEC < $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtILEC > $startLecTimeAtKey && $endAtILEC <$endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
 				}
-
-			} elseif ($course[$i]->getLecture()->getYear() == 4) {
-
-				if ($course[$i]->getLecture()->getSemester() == 'F') {
-
-						array_push($courseYear4Fall,$course[$i]);
-
-				} elseif ($course[$i]->getLecture()->getSemester() == 'W') {
-
-						array_push($courseYear4Winter,$course[$i]);
+				if($dayOfLec == $dayOfTutI){
+					if($startAtITUT > $startLecTimeAtKey && $startAtITUT < $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtITUT > $startLecTimeAtKey && $endAtITUT < $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+				if($dayOfTut == $dayOfLecI){
+					if($startAtILEC > $startTutTimeAtKey && $startAtILEC < $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtILEC > $startTutTimeAtKey && $endAtILEC <$endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+				if($dayOfTut == $dayOfTutI){
+					if($startAtITUT > $startTutTimeAtKey && $startAtITUT < $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtITUT > $startTutTimeAtKey && $endAtITUT < $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
 				}
 			}
 		}
-
-
-			$this->renderPartial('_ajax', array(
-					'data' => $post_data,
-				)
-			);
-
-
-    }
+		print_r($errorArr);
+		return $errorArr;
+	}
 
 	/**
 	 * Performs the AJAX validation.

@@ -6,12 +6,12 @@
  * Date: 2016-03-28
  * Time: 2:46 AM
  */
-class CourseObj
+class Courses extends CApplicationComponent
 {
     private  $lecture;
     private  $tutorial;
 
-    public function __construct( $lec, $tutorial){
+    public function __construct(Lecture $lec, TutorialAndLab $tutorial){
         $this->lecture = $lec;
         $this->tutorial = $tutorial;
     }
@@ -37,7 +37,7 @@ class CourseObj
      */
     public function getTutorial()
     {
-        return $this->tutorial;
+        return $this;
     }
 
     /**
@@ -47,6 +47,8 @@ class CourseObj
     {
         $this->tutorial = $tutorial;
     }
+
+
 
 }
 ?>
