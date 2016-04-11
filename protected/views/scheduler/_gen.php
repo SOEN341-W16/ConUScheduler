@@ -46,6 +46,9 @@ $sequence[4]["winter"][] = "SOEN 385";
 $sequence[4]["winter"][] = "ENGR 392";
 $sequence[4]["winter"][] = "SOEN 490";
 
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
 
 foreach ($schedule as $id => $scheduleData)
 {
@@ -158,7 +161,7 @@ foreach ($sequence as $year => $sequenceData)
                                         <td><?php echo $labdata["days"]; ?></td>
                                         <td><?php echo $labdata["start_time"]; ?></td>
                                         <td><?php echo $labdata["end_time"]; ?></td>
-                                        <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-courseid="<?php echo $courseData['courseID']; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
+                                        <td><input name="subsectionID[]" id="subsectionID[]" type="checkbox" data-year="<?php echo $year;?>" data-semester="<?php echo $semester;?>" data-kind="<?php echo $labdata["kind"]; ?>" data-endTime="<?php echo $labdata["end_time"]; ?>" data-startTime="<?php echo $labdata["start_time"]; ?>" data-sectionid="<?php echo $id;?>" data-course="<?php echo $courseData["course_code"]; ?>" value="<?php echo $subsectionID ;?>"></td>
                                     </tr>
                                     <?php
                                 } ?>
@@ -178,23 +181,25 @@ foreach ($sequence as $year => $sequenceData)
     <?php
 }
 ?>
+<div class="row buttons">
+    <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
+    <span id="ajax-results"></span>
 </div>
 <!-- DIALOGS -->
 <div id="dialog-noselection" title="Error" style="display: none;">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>You haven't selected any courses to save!</p>
 </div>
 
+<div class="try"></div>
+<div id="dialog"></div>
+
 <script>
 
     $(function(){
 
         $( "#tabs" ).tabs(); // create tabs
-
-
-
         // event when checkbox is clicked
         $("table#section_table :checkbox").on('click',function(){
-
             var $checkobx = $(this); // cache the checkbox that has just been checked
             var sectionId = $checkobx.data('sectionid');
             var subsectionId = $checkobx.val();
@@ -237,31 +242,68 @@ foreach ($sequence as $year => $sequenceData)
             });
         });
 
+        // VALIDATE
         // collect all the checkboxes
         $('#validate').on('click',function(){
             var data = []; // data container
             // collect all the checked checkboxes and their associated attributes
             $("table#subsection_table input[type='checkbox']:checked").each(function(){
                 data.push({
-                    courseID : $(this).data('courseid'),
-                    subsectionid : $(this).val(),
-                    sectionid : $(this).data('sectionid'),
+                    section : $(this).data('sectionid'),
+                    subsection : $(this).val(),
                     year : $(this).data('year')
                })
            });
-
             // JSON it so that it can be passed via Ajax call to a php page
             var data = JSON.stringify(data);
+            $.ajax({
+                url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/ScheduleValidation"); ?>",
+                type: "POST",
+                data : "myData=" + data,
+                success : function(data)
+                {
+                    if (data === '1')
+                    {
+                        $(".try").html("No error was found");
+                    }
+                    if (data === '2')
+                    {
+                        alert("in 2");
+                        $(".try").html("nothing was chosen");
 
-            console.log(JSON.stringify(data));
+                         $('#ajax-results').dialog({
+                         width: 400,
+                         height: 500
+                         });
+                    }
+                    else
+                    {
+                        var anotherOne = JSON.parse(data);
+                        console.log(data);
+                        console.log(anotherOne);
+                        $("table#section_table").each(function ()
+                        {
+                            for (var i = 0; i < anotherOne.length; i++)
+                            {
+                                if ($(this).data('sectionid') == anotherOne[i])
+                                {
+                                    $(this).css({'background-color': 'red'})
+                                }
+                            }
+                        });
+                    }
+                },
+                error: function()
+                {
+                    alert("there was an error")
+                }
+            });
 
-            $('#dialog').html(data).dialog({ width: 500, height: 500});
         });
 
 
         // when user selects to save schedule
         $('#save').on('click',function() {
-
             // count how many checkboxes clicked
             var selected = 0;
             $("table#subsection_table input[type='checkbox']:checked").each(function(){
@@ -311,6 +353,6 @@ foreach ($sequence as $year => $sequenceData)
                 }
             });
 
-        });
+        })''
     });
 </script>

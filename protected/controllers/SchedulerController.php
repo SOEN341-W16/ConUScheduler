@@ -2,7 +2,9 @@
 
 class SchedulerController extends Controller
 {
-	public $layout='//layouts/column2';
+	public $msg;
+	public $layout = '//layouts/column2';
+
 	public function actionIndex()
 	{
 		$model = new PreferenceForm();
@@ -131,9 +133,7 @@ class SchedulerController extends Controller
 							}
 						}
 					}
-
 				}
-
 			}
 		}
 
@@ -273,6 +273,300 @@ class SchedulerController extends Controller
 		);
 	}
 
+	/**
+	 * Validates schedule chosen
+	 */
+	public function actionScheduleValidation()
+	{
+		$post_data = $_POST['myData'];
+		$decodedData = json_decode($post_data, true);
+		$course = [];
+		//Save the years associated to sections chosen
+		foreach ($decodedData as $key) {
+			$tutOrLab = null;
+			$lec = null;
+			$currentYear = null;
+			foreach ($key as $id => $number) {
+				if ($id == 'year') {
+					$currentYear = $number;
+				} elseif ($id == 'subsection') {
+					$tutOrLab = Yii::app()->db->createCommand()
+						->select('sectionID,courseID,kind,days,start_time,end_time,semester')
+						->from($id)
+						->where('id=' . $number)
+						->queryRow();
+				} else
+					$lec = Yii::app()->db->createCommand()
+						->select('courseID,kind,days,start_time,end_time,semester')
+						->from($id)
+						->where('id=' . $number)
+						->queryRow();
+			}
+			$lecture = new Lecture($lec['courseID'], $lec['kind'], $lec['days'], $lec['start_time'], $lec['end_time'], $lec['semester'], $currentYear);
+
+			$tutorial = new TutorialAndLab($tutOrLab['sectionID'],$tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+			$course[] = new Courses($lecture, $tutorial);
+
+
+		}
+		$courseYear1Fall = [];
+		$courseYear1Winter = [];
+		$courseYear2Fall = [];
+		$courseYear2Winter = [];
+		$courseYear3Fall = [];
+		$courseYear3Winter = [];
+		$courseYear4Fall = [];
+		$courseYear4Winter = [];
+		if (!empty($course)) {
+
+			for ($i = 0; $i < count($course); $i++) {
+				if ($course[$i]->getLecture()->getYear() == '1') {
+					if ($course[$i]->getLecture()->getSemester() == 'fall') {
+						array_push($courseYear1Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'winter') {
+						array_push($courseYear1Winter, $course[$i]);
+					}
+				} elseif ($course[$i]->getLecture()->getYear() == '2') {
+					if ($course[$i]->getLecture()->getSemester() == 'fall') {
+						array_push($courseYear2Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'W')
+						array_push($courseYear2Winter, $course[$i]);
+				} elseif ($course[$i]->getLecture()->getYear() == '3') {
+					if ($course[$i]->getLecture()->getSemester() == 'fall') {
+						array_push($courseYear3Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'winter') {
+						array_push($courseYear3Winter, $course[$i]);
+					}
+				} elseif ($course[$i]->getLecture()->getYear() == '4') {
+					if ($course[$i]->getLecture()->getSemester() == 'fall') {
+						array_push($courseYear4Fall, $course[$i]);
+					} elseif ($course[$i]->getLecture()->getSemester() == 'winter') {
+						array_push($courseYear4Winter, $course[$i]);
+					}
+				}
+			}
+			$errorArr = array();
+			if (!empty($courseYear1Fall)) {
+				$tempReturn = $this->verification($courseYear1Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+			} elseif (!empty($courseYear1Winter)) {
+				$tempReturn = $this->verification($courseYear1Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+			if (!empty($courseYear2Fall)) {
+				$tempReturn = $this->verification($courseYear2Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+			if (!empty($courseYear2Winter)) {
+				$tempReturn= $this->verification($courseYear3Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+
+			}
+			if ($courseYear3Winter != null) {
+				$tempReturn = $this->verification($courseYear3Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+			if ($courseYear3Fall != null) {
+				$tempReturn = $this->verification($courseYear3Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+			if ($courseYear4Fall != null) {
+				$tempReturn = $this->verification($courseYear4Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+			if ($courseYear4Winter != null) {
+				$tempReturn = $this->verification($courseYear4Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+			}
+
+			if (!empty($errorArr))
+			{
+				$courseIDarr = array();
+				foreach($errorArr as $errorIndex => $error)
+				{
+					foreach($error as $course)
+					{
+						//print_r($errorArr[$i][0]->getTutorial());
+						$courseIDarr[] = $course->getTutorial()->getSectionID();
+					}
+				}
+				echo json_encode($courseIDarr);
+			}
+			else if(empty($errorArr))
+			{
+				echo 1;
+			}
+		} else
+			echo 2;
+	}
+
+	/**
+	 * Helper function for schedule verifier
+	 * @param $arrayOfSemester
+	 * @return array
+	 */
+	private function verification(&$arrayOfSemester)
+	{
+
+		$errorArr = [];
+		for($key = 0 ; $key <count($arrayOfSemester)- 1; $key++)
+		{
+
+			$startLecTimeAtKey = $arrayOfSemester[$key]->getLecture() -> getStartTime();
+			$endLecTimeAtKey = $arrayOfSemester[$key]->getLecture()->getEndTime();
+			$startTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial()->getStartTime();
+			$endTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial() -> getEndTime();
+			$dayOfLec = $arrayOfSemester[$key] ->getLecture() -> getDays();
+			$dayOfTut = $arrayOfSemester[$key] ->getTutorial() -> getDays();
+			$daySofLec = array();
+			if(strlen($dayOfLec) >= 2){
+				$daySofLec = str_split($dayOfLec);
+			}
+
+			for($i = 1; $i<count($arrayOfSemester) ; $i++){
+
+				$startAtILEC = $arrayOfSemester[$i]->getLecture() -> getStartTime();
+				$endAtILEC = $arrayOfSemester[$i]->getLecture()->getEndTime();
+				$startAtITUT = $arrayOfSemester[$i] -> getTutorial()->getStartTime();
+				$endAtITUT = $arrayOfSemester[$i] -> getTutorial() -> getEndTime();
+				$dayOfLecI= $arrayOfSemester[$i] ->getLecture() -> getDays();
+				$dayOfTutI = $arrayOfSemester[$i] ->getTutorial() -> getDays();
+				$daySofLecI = array();
+				if(strlen($dayOfLec) >= 2){
+					$daySofLecI = str_split($dayOfLec);
+				}
+
+				if(!empty($daySofLecI)){
+					for($m = 0 ; $m < count( $daySofLecI) ; $m++){
+						if($dayOfLec== $daySofLecI[$m]){
+
+							if($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey){
+								$errorArr[$key] = $arrayOfSemester[$key];
+								$errorArr[$i] = $arrayOfSemester[$key+1];
+								break;
+							}
+							elseif($endAtILEC >= $startLecTimeAtKey && $endAtILEC <=$endLecTimeAtKey){
+								$errorArr[$key] = $arrayOfSemester[$key];
+								$errorArr[$i] = $arrayOfSemester[$key+1];
+								break;
+							}
+							if($dayOfTut == $daySofLecI[$m]){
+								if($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey){
+									$errorArr[$key] = $arrayOfSemester[$key];
+									$errorArr[$i] = $arrayOfSemester[$key+1];
+									break;
+								}
+								elseif($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey){
+									$errorArr[$key] = $arrayOfSemester[$key];
+									$errorArr[$i] = $arrayOfSemester[$key+1];
+									break;
+								}
+							}
+						}
+					}
+				}
+				if(!empty($daySofLec)){
+					for($m = 0 ; $m < count( $daySofLec) ; $m++){
+						if($dayOfLec== $daySofLec[$m]){
+
+							if($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey){
+								$errorArr[$key] = $arrayOfSemester[$key];
+								$errorArr[$i] = $arrayOfSemester[$key+1];
+								break;
+							}
+							elseif($endAtILEC >= $startLecTimeAtKey && $endAtILEC <=$endLecTimeAtKey){
+								$errorArr[$key] = $arrayOfSemester[$key];
+								$errorArr[$i] = $arrayOfSemester[$key+1];
+								break;
+							}
+							if($dayOfTut == $daySofLec[$m]){
+								if($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey){
+									$errorArr[$key] = $arrayOfSemester[$key];
+									$errorArr[$i] = $arrayOfSemester[$key+1];
+									break;
+								}
+								elseif($endAtILEC >= $startTutTimeAtKey && $endAtILEC <=$endTutTimeAtKey){
+									$errorArr[$key] = $arrayOfSemester[$key];
+									$errorArr[$i] = $arrayOfSemester[$key+1];
+									break;
+								}
+							}
+						}
+					}
+				}
+				if($dayOfLec== $dayOfLecI){
+
+					if($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+				if($dayOfLec == $dayOfTutI){
+					if($startAtITUT >= $startLecTimeAtKey && $startAtITUT <= $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtITUT >= $startLecTimeAtKey && $endAtITUT <= $endLecTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+				if($dayOfTut == $dayOfLecI){
+					if($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+				if($dayOfTut == $dayOfTutI){
+					if($startAtITUT >= $startTutTimeAtKey && $startAtITUT <= $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+					elseif($endAtITUT >= $startTutTimeAtKey && $endAtITUT <= $endTutTimeAtKey){
+						$errorArr[$key] = $arrayOfSemester[$key];
+						$errorArr[$i] = $arrayOfSemester[$key+1];
+						break;
+					}
+				}
+			}
+		}
+		return $errorArr;
+	}
+
+	/**
+	 * Deletes a schedule
+	 * @throws Exception 
+	 */
 	public function actionDeleteSchedule()
 	{
 
@@ -320,6 +614,15 @@ class SchedulerController extends Controller
 		}
 		echo 1;
 	}
+	
+	public function actionscheduleAjax()
+	{
+		$id = $_POST["id"];
+		$this->renderPartial('scb', array(
+			'model' => $model,
+
+		));
+	}
 
 	/**
 	 * @throws Exception
@@ -355,7 +658,7 @@ class SchedulerController extends Controller
 			throw $e;
 		}
 	}
-
+	
 	/**
 	 * Performs the AJAX validation.
 	 * @param Course $model the model to be validated
