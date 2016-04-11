@@ -157,10 +157,11 @@ foreach ($sequence as $year => $sequenceData)
 
 }
 ?>
-<div id=ajax-results"></div>
 <div class="row buttons">
     <?php echo CHtml::button('Validate', array('id' => 'validate')); ?>
+    <span id="ajax-results"></span>
 </div>
+<div class="try"></div>
 <div id="dialog"></div>
 <div id="calendar" style="display: none;"></div>
 <script>
@@ -231,44 +232,44 @@ foreach ($sequence as $year => $sequenceData)
                 data : "myData=" + data,
                 success : function(data)
                 {
-                    data = JSON.parse(data);
-                    console.log(data);
 
+                    if (data === '0') {
+                        data = JSON.parse(data.$courseIDarr);
+                        console.log(data.courseIDarr);
+                        for(i=0; i<courseIDarr.length ; i++) {
+                            if ($(this).data('sectionid') == data.$courseIDarr) {
+                                $("table#section_table").each(function () {
+                                    $(this).css({'background-color': 'red'})
 
+                                });
 
-                    /* $("table#subsection_table").each(function(){
-                     $(this).css({ 'background-color': 'red'})
-
-                     });*/
-
-
-                   /* if(data == '1')
-                    {
-                        $("span#ajax-results").html("Success gayness 3");
+                            }
+                        }
                     }
-                    else if(data == '0') {
-                        $("span#ajax-results").html("nothing was chosen");
+                    if (data === '1') {
+                        $(".try").html("No error was found");
+                    }
+                    if (data === '2') {
+                        alert("in 2");
+                        $(".try").html("nothing was chosen");
                         // $("span#ajax-results").html("Success gayness");
-                        /*
+
                          $('#ajax-results').dialog({
                          width: 400,
                          height: 500
                          });
-                         */
 
-                    /*}
-                    else{
-                        //$("#ajax-results").html("Invalid.");
-                        // alert("bad!");
-                    }
-                    //alert(data);*/
+
+                        }
+
+
                 },
                 error: function()
                 {
                     alert("there was an error")
                 }
             });
-            //console.log(JSON.stringify(data));
+            console.log(JSON.stringify(data));
 
               /*  success : function(data)
                 {
@@ -276,15 +277,11 @@ foreach ($sequence as $year => $sequenceData)
                     alert(data);
                     $("#ajax-results").html(data);
                     $("#ajax-results").dialog({ width: 500, height: 500})
-                },
-                error: function()
-                {
-                    alert("there was an error")
-                }
-            });*/
-           // console.log(JSON.stringify(data));
+                },*/
 
-           // $('#dialog').html(data).dialog({ width: 500, heigh: 500});
+
+
+           $('#dialog').html(data).dialog({ width: 500, heigh: 500});
         });
 
 

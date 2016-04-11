@@ -273,7 +273,6 @@ class SchedulerController extends Controller
 		$post_data = $_POST['myData'];
 		$decodedData = json_decode($post_data, true);
 		$course = [];
-		$counter = 0;
 		//Save the years associated to sections chosen
 		foreach ($decodedData as $key) {
 			$tutOrLab = null;
@@ -298,11 +297,10 @@ class SchedulerController extends Controller
 			$lecture = new Lecture($lec['courseID'], $lec['kind'], $lec['days'], $lec['start_time'], $lec['end_time'], $lec['semester'], $currentYear);
 
 			$tutorial = new TutorialAndLab($tutOrLab['sectionID'],$tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
-			$course[$counter] = new Courses($lecture, $tutorial);
+			$course[] = new Courses($lecture, $tutorial);
 
-			$counter++;
+
 		}
-        echo $course[0]->getTutorial()->getSectionID();
 		$courseYear1Fall = [];
 		$courseYear1Winter = [];
 		$courseYear2Fall = [];
@@ -311,7 +309,6 @@ class SchedulerController extends Controller
 		$courseYear3Winter = [];
 		$courseYear4Fall = [];
 		$courseYear4Winter = [];
-		$error = [];
 		if (!empty($course)) {
 
 			for ($i = 0; $i < count($course); $i++) {
@@ -340,80 +337,75 @@ class SchedulerController extends Controller
 					}
 				}
 			}
-			$counter2 = 0;
-			$errorArr = [];
+			$errorArr = array();
 			if (!empty($courseYear1Fall)) {
-				$fallErr = $this->verification($courseYear1Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
+				$tempReturn = $this->verification($courseYear1Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
 			} elseif (!empty($courseYear1Winter)) {
+				$tempReturn = $this->verification($courseYear1Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
 
-				$winterErr = $this->verification($courseYear1Winter);
-
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
 			}
 			if (!empty($courseYear2Fall)) {
-				$fallErr = $this->verification($courseYear2Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
+				$tempReturn = $this->verification($courseYear2Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
 			}
 			if (!empty($courseYear2Winter)) {
-				$winterErr = $this->verification($courseYear3Fall);
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
+				$tempReturn= $this->verification($courseYear3Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
+
 			}
 			if ($courseYear3Winter != null) {
-				$fallErr = $this->verification($courseYear3Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
+				$tempReturn = $this->verification($courseYear3Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
 			}
 			if ($courseYear3Fall != null) {
-				$winterErr = $this->verification($courseYear3Winter);
-				$errorArr[$counter2] = $winterErr;
-				$counter2++;
+				$tempReturn = $this->verification($courseYear3Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
 			}
 			if ($courseYear4Fall != null) {
-				$fallErr = $this->verification($courseYear4Fall);
-				$errorArr[$counter2] = $fallErr;
-				$counter2++;
+				$tempReturn = $this->verification($courseYear4Fall);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
 			}
 			if ($courseYear4Winter != null) {
-				$winterErr = $this->verification($courseYear4Winter);
-				$errorArr[$counter2] = $winterErr;
+				$tempReturn = $this->verification($courseYear4Winter);
+				if(!empty($tempReturn))
+					$errorArr[] = $tempReturn;
+
 			}
-			if ($errorArr != null) {
-                echo "before error";
-                for($i=0; $i<count($errorArr); $i++){
-                    for($m=0; $m<count($errorArr[$m]); $m++) {
 
-                        var_dump($errorArr[$i][0]->getTutorial());
-						echo $errorArr[$i]->getTutorial()->getSectionID();
-
-                    }
-
-                    }
-
-
-
-                var_dump($errorArr);
+			if (!empty($errorArr))
+			{
 				echo 0;
-                $sectionID = array();
-				/*for($i = 0; $i<count($errorArr)){
-                    for($m=0; $m < count($errorArr[]); $m++){
-                        $sectionID[$m] = $errorArr[$i][$m]->getTutorial() -> getSectionID();
-                    }
-                }*/
-                echo json_encode($errorArr);
-
-
-			} else {
+				$courseIDarr = array();
+				foreach($errorArr as $errorIndex => $error)
+				{
+					foreach($error as $course)
+					{
+						//print_r($errorArr[$i][0]->getTutorial());
+						$courseIDarr[] = $course->getTutorial()->getSectionID();
+					}
+				}
+				echo json_encode($courseIDarr);
+			}
+			else if(empty($errorArr))
+			{
 				echo 1;
 			}
-
 		} else
 			echo 2;
-
 	}
 
 	function verification(&$arrayOfSemester){
@@ -422,11 +414,8 @@ class SchedulerController extends Controller
 		for($key = 0 ; $key <count($arrayOfSemester)- 1; $key++){
 
 			$startLecTimeAtKey = $arrayOfSemester[$key]->getLecture() -> getStartTime();
-            echo $startLecTimeAtKey;
-
 			$endLecTimeAtKey = $arrayOfSemester[$key]->getLecture()->getEndTime();
 			$startTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial()->getStartTime();
-			echo $startTutTimeAtKey;
 			$endTutTimeAtKey = $arrayOfSemester[$key] -> getTutorial() -> getEndTime();
             $dayOfLec = $arrayOfSemester[$key] ->getLecture() -> getDays();
 			$dayOfTut = $arrayOfSemester[$key] ->getTutorial() -> getDays();
@@ -557,7 +546,6 @@ class SchedulerController extends Controller
 				}
 			}
 		}
-        print_r('goanna dump');
 		return $errorArr;
 	}
 
