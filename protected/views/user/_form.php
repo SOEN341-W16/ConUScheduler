@@ -13,7 +13,13 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+));
+
+
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+Yii::app()->clientScript->registerCssFile(
+	Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
+?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -64,3 +70,11 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script>
+	$(function(){
+		$(':button, :submit').button(); // create UI buttons
+
+	});
+
+</script>
