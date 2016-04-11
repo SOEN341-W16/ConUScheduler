@@ -34,7 +34,15 @@ return array(
 	'theme' => 'gen',
 	// application components
 	'components'=>array(
-
+		'Courses' => array(
+				'class' =>'ext.components.Courses',
+		),
+		'Lecture' => array(
+			'class' =>'ext.components.Lecture',
+		),
+		'TutorialAndLab' => array(
+			'class' =>'ext.components.TutorialAndLab',
+		),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
