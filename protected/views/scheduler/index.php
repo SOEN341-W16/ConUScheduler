@@ -5,21 +5,17 @@
 /* @var $model
  */
 
-$this->breadcrumbs=array(
-	'Scheduler Planner',
+$this->breadcrumbs = array(
+    'Scheduler Planner',
 );
-$this->menu=array(
-    array('label'=>'View Saved Schedules', 'url'=>array('ViewSaved')),
+$this->menu = array(
+    array('label' => 'View Saved Schedules', 'url' => array('ViewSaved')),
 );
-
 
 Yii::app()->clientScript->registerCoreScript('jquery.ui');
 Yii::app()->clientScript->registerCssFile(
-    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
+    Yii::app()->clientScript->getCoreScriptUrl() . '/jui/css/base/jquery-ui.css');
 ?>
-<script src=""></script>
-
-
 <div id="user-preferences">
     <h3>Select Preferences</h3>
     <?php
@@ -29,11 +25,11 @@ Yii::app()->clientScript->registerCssFile(
 
     ));
     echo "<br><hr>";
-    if(isset($schedule) && !empty($schedule) && !empty($yearsToShow))
+    if (isset($schedule) && !empty($schedule) && !empty($yearsToShow))
     {
 
         $this->renderPartial('_gen', array(
-            'schedule' => $schedule,
+            'schedule'    => $schedule,
             'yearsToShow' => $yearsToShow
 
         ));
@@ -46,10 +42,11 @@ Yii::app()->clientScript->registerCssFile(
     ?>
 </div>
 <script>
-    $(function(){
+    $(function ()
+    {
         $(':button').button(); // create UI buttons
 
-        $(':checkbox').css({ cursor: 'pointer'}); // create UI buttons
+        $(':checkbox').css({cursor: 'pointer'}); // create UI buttons
     });
 
 </script>

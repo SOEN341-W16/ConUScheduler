@@ -7,17 +7,16 @@
  *
  * @var $schedule SchedulerController
  */
-$this->menu=array(
-    array('label'=>'Schedule Planner', 'url'=>array('scheduler/index')),
+$this->menu = array(
+    array('label' => 'Schedule Planner', 'url' => array('scheduler/index')),
 );
-$this->breadcrumbs=array(
+$this->breadcrumbs = array(
     'Scheduler',
     'Saved Schedules',
 );
 Yii::app()->clientScript->registerCoreScript('jquery.ui');
 Yii::app()->clientScript->registerCssFile(
-    Yii::app()->clientScript->getCoreScriptUrl().'/jui/css/base/jquery-ui.css');
-
+    Yii::app()->clientScript->getCoreScriptUrl() . '/jui/css/base/jquery-ui.css');
 
 ?>
 Below is a list of your saved schedules
@@ -29,131 +28,142 @@ Below is a list of your saved schedules
     </thead>
     <tbody>
     <?php
-    foreach($schedule as $saveId => $data)
+    foreach ($schedule as $saveId => $data)
     {
 
         $day_format = "<strong>%s</strong> %s - %s";
-    ?>
+        ?>
         <tr>
-            <td><?php echo $saveId;?></td>
-            <td><?php echo $data["date_created"];?></td>
-            <td><a data-saveid="<?php echo $saveId;?>" href="javascript:void(0);" id="view">View</a> | <a data-saveid="<?php echo $saveId;?>" href="javascript:void(0);" id="delete">Delete</a></td>
+            <td><?php echo $saveId; ?></td>
+            <td><?php echo $data["date_created"]; ?></td>
+            <td><a data-saveid="<?php echo $saveId; ?>" href="javascript:void(0);" id="view">View</a> | <a
+                    data-saveid="<?php echo $saveId; ?>" href="javascript:void(0);" id="delete">Delete</a></td>
         </tr>
         <tr>
             <td colspan="3">
-                <div style="display: none;" id="save_id<?php echo $saveId;?>">
-                <?php
-                foreach($data['schedule'] as $year => $yearData)
-                {
-                    ?>
-
-                    <h2>Year <?php echo $year;?></h2>
+                <div style="display: none;" id="save_id<?php echo $saveId; ?>">
                     <?php
-                    foreach ($yearData as $semester => $semesterData)
+                    foreach ($data['schedule'] as $year => $yearData)
                     {
                         ?>
-                        <h3><?php echo $semester;?></h3>
-                        <table>
-                            <thead>
 
-                            <th>Class</th>
-                            <th>Kind</th>
-                            <th>Days/Times</th>
-                            <th>Section</th>
-                            <th>Credits</th>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($semesterData as $courseID => $courseData)
-                            {
-                                ?>
-                                <tr id="course_<?php echo $courseData['lecture_id'];?>">
+                        <h2>Year <?php echo $year; ?></h2>
+                        <?php
+                        foreach ($yearData as $semester => $semesterData)
+                        {
+                            ?>
+                            <h3><?php echo $semester; ?></h3>
+                            <table>
+                                <thead>
 
-                                    <td>
-                                        <?php echo $courseData['course_code']. ' - ' . $courseData['course_description'];?>
-                                    </td>
-                                    <td>
-                                        <?php echo $courseData['section_kind'];?>
-                                    </td>
-                                    <td>
-                                        <?php echo sprintf($day_format, $courseData['lecture_days'], $courseData['lecture_start_time'], $courseData['lecture_end_time']);
-                                        ?>
-                                    <td>
-                                        <?php echo $courseData['section_name'];?>
-                                    </td>
-                                    <td>
-                                        <?php echo $courseData['credits'];?>
-                                    </td>
-                                    <td>
-                                        <a href="javascript:void(0);" id="dropCourse" data-sectionid="<?php echo $courseData['lecture_id'];?>" data-scheduleid="<?php echo $saveId;?>">Drop</a>
-                                    </td>
-                                </tr>
-
+                                <th>Class</th>
+                                <th>Kind</th>
+                                <th>Days/Times</th>
+                                <th>Section</th>
+                                <th>Credits</th>
+                                </thead>
+                                <tbody>
                                 <?php
+                                foreach ($semesterData as $courseID => $courseData)
+                                {
+                                    ?>
+                                    <tr id="course_<?php echo $courseData['lecture_id']; ?>">
 
-                                foreach($courseData['labs'] as $labID => $lab)
-                                { ?>
-
-                                    <tr id="course_<?php echo $courseData['lecture_id'];?>">
                                         <td>
+                                            <?php echo $courseData['course_code'] . ' - ' . $courseData['course_description']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $lab['sub_kind'];?>
+                                            <?php echo $courseData['section_kind']; ?>
                                         </td>
                                         <td>
-                                            <?php echo sprintf($day_format, $lab['sub_days'], $lab['sub_start_time'], $lab['sub_end_time']);
+                                            <?php echo sprintf($day_format, $courseData['lecture_days'], $courseData['lecture_start_time'], $courseData['lecture_end_time']);
                                             ?>
+                                        <td>
+                                            <?php echo $courseData['section_name']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $lab['sub_section_name'];?>
+                                            <?php echo $courseData['credits']; ?>
                                         </td>
                                         <td>
-
+                                            <a href="javascript:void(0);" id="dropCourse"
+                                               data-sectionid="<?php echo $courseData['lecture_id']; ?>"
+                                               data-scheduleid="<?php echo $saveId; ?>">Drop</a>
                                         </td>
                                     </tr>
+
                                     <?php
-                                }
-                                ?>
-                                <?php
-                            }?>
-                            </tbody>
-                        </table>
-                        <?php
-                    }
-                }?>
+
+                                    foreach ($courseData['labs'] as $labID => $lab)
+                                    { ?>
+
+                                        <tr id="course_<?php echo $courseData['lecture_id']; ?>">
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <?php echo $lab['sub_kind']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo sprintf($day_format, $lab['sub_days'], $lab['sub_start_time'], $lab['sub_end_time']);
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $lab['sub_section_name']; ?>
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php
+                                } ?>
+                                </tbody>
+                            </table>
+                            <?php
+                        }
+                    } ?>
                 </div>
             </td>
         </tr>
-    <?php
-    }?>
+        <?php
+    } ?>
     </tbody>
 </table>
 <div id="delete-dialog" title="Delete Schedule" style="display: none;">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div id="delete-dialog-notice"></div></p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+    <div id="delete-dialog-notice"></div>
+    </p>
 </div>
 
 <div id="drop-dialog" title="Drop Course" style="display: none;">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div id="drop-dialog-notice"></div></p>
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+    <div id="drop-dialog-notice"></div>
+    </p>
 </div>
 <script>
-    $(function(){
-        $('a#view').on('click',function(){
+    $(function ()
+    {
+        $('a#view').on('click', function ()
+        {
 
             var saveid = $(this).data('saveid');
-            $('div#save_id' +saveid).dialog({
-                title : 'Schedule ID# ' +saveid,
+            $('div#save_id' + saveid).dialog({
+                title: 'Schedule ID# ' + saveid,
                 width: 1000,
                 height: 799,
-                modal : true,
+                modal: true,
                 buttons: {
-                    Okay: function() {
-                        $( this ).dialog( "close" );
+                    Okay: function ()
+                    {
+                        $(this).dialog("close");
                     }
                 }
             });
         });
 
-        $('a#delete').on('click',function(){
+        $('a#delete').on('click', function ()
+        {
 
             var saveid = $(this).data('saveid');
             $row = $(this).closest('tr'); // cache the row so we can remove it
@@ -164,16 +174,17 @@ Below is a list of your saved schedules
                 width: 400,
                 modal: true,
                 buttons: {
-                    "Delete": function() {
+                    "Delete": function ()
+                    {
                         $('#delete-dialog-notice').html('Deleting...please wait.')
                         $.ajax({
-                            url : "<?php echo Yii::app()->createAbsoluteUrl("scheduler/DeleteSchedule"); ?>",
+                            url: "<?php echo Yii::app()->createAbsoluteUrl("scheduler/DeleteSchedule"); ?>",
                             type: "POST",
                             cache: false,
-                            data : 'saveid=' + saveid,
-                            success : function(data)
+                            data: 'saveid=' + saveid,
+                            success: function (data)
                             {
-                                if(data)
+                                if (data)
                                 {
                                     $('#delete-dialog').dialog('close');
                                     $row.remove();
@@ -184,18 +195,19 @@ Below is a list of your saved schedules
                                 }
 
                             },
-                            error: function()
+                            error: function ()
                             {
                                 $("#delete-dialog-notice").html("There was an error saving your schedule...");
                             }
                         });
 
                     },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
+                    Cancel: function ()
+                    {
+                        $(this).dialog("close");
                     }
                 },
-                close : function()
+                close: function ()
                 {
                     $('#delete-dialog-notice').html("");
                 }
@@ -203,7 +215,8 @@ Below is a list of your saved schedules
         });
 
         // DROP COURSE
-        $('a#dropCourse').on('click', function(){
+        $('a#dropCourse').on('click', function ()
+        {
             var sectionID = $(this).data('sectionid');
             var scheduleID = $(this).data('scheduleid');
             var $courseTable = $('tr#course_' + sectionID);
@@ -216,33 +229,39 @@ Below is a list of your saved schedules
                 width: 400,
                 modal: true,
                 buttons: {
-                    "Delete": function () {
+                    "Delete": function ()
+                    {
                         $('#drop-dialog-notice').html('Deleting...');
                         $.ajax({
                             url: "<?php echo Yii::app()->createAbsoluteUrl("scheduler/DropCourse"); ?>",
                             type: "POST",
                             cache: false,
                             data: 'sectionID=' + sectionID + '&scheduleID=' + scheduleID,
-                            success: function (data) {
-                                if (data) {
+                            success: function (data)
+                            {
+                                if (data)
+                                {
                                     $('#drop-dialog').dialog('close');
                                     $courseTable.remove();
                                 }
-                                else {
+                                else
+                                {
                                     $('#drop-dialog-notice').html(data);
                                 }
 
                             },
-                            error: function () {
+                            error: function ()
+                            {
                                 $("#delete-dialog-notice").html("There was an error saving your schedule...");
                             }
                         });
                     },
-                    Cancel: function () {
+                    Cancel: function ()
+                    {
                         $(this).dialog("close");
                     },
                 },
-                close : function()
+                close: function ()
                 {
                     $('#drop-dialog-notice').html("");
                 }

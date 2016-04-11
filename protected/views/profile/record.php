@@ -39,16 +39,17 @@ foreach ($data as $value)
     }
 
 }
-if($creditTotal>0) {
+if ($creditTotal > 0)
+{
     $finalGPA = $sum / $creditTotal;
-    $finalGPA = round($finalGPA, 2);
-    echo "<h2>";
-
-    echo "Total GPA: $finalGPA";
-    echo "</h2>";
 }
-
+else
+{
+    $finalGPA = 0;
+}
+$finalGPA = number_format($finalGPA, 1);
 ?>
+<div><h1>Total GPA: <?php echo $finalGPA; ?></h1></div>
 
 
 
