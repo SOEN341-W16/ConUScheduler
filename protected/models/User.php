@@ -42,23 +42,7 @@ class User extends CActiveRecord
 		);
 	}
 
-	/**
-	 * Encrypts password to using MD5 hashing algorithm
-	 */
-	private function encryptPassword()
-	{
-		$this->password = md5($this->password);
-	}
 
-	/**
-	 * Override the beforeSave method to encrypt password prior to saving user
-	 */
-	public function beforeSave()
-	{
-		parent::beforeSave();
-		$this->encryptPassword();
-		return true;
-	}
 
 	/**
 	 * @return array relational rules.

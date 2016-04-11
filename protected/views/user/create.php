@@ -11,6 +11,8 @@ $this->menu=array(
 	array('label'=>'List User', 'url'=>array('index')),
 	array('label'=>'Manage Users', 'url'=>array('admin')),
 );
+
+
 ?>
 
 <h1>Create User</h1>
