@@ -388,7 +388,6 @@ class SchedulerController extends Controller
 
 			if (!empty($errorArr))
 			{
-				echo 0;
 				$courseIDarr = array();
 				foreach($errorArr as $errorIndex => $error)
 				{

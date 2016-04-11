@@ -233,26 +233,13 @@ foreach ($sequence as $year => $sequenceData)
                 success : function(data)
                 {
 
-                    if (data === '0') {
-                        data = JSON.parse(data.$courseIDarr);
-                        console.log(data.courseIDarr);
-                        for(i=0; i<courseIDarr.length ; i++) {
-                            if ($(this).data('sectionid') == data.$courseIDarr) {
-                                $("table#section_table").each(function () {
-                                    $(this).css({'background-color': 'red'})
 
-                                });
-
-                            }
-                        }
-                    }
                     if (data === '1') {
                         $(".try").html("No error was found");
                     }
                     if (data === '2') {
                         alert("in 2");
                         $(".try").html("nothing was chosen");
-                        // $("span#ajax-results").html("Success gayness");
 
                          $('#ajax-results').dialog({
                          width: 400,
@@ -262,26 +249,25 @@ foreach ($sequence as $year => $sequenceData)
 
                         }
 
-
+                    else
+                            var anotherOne = JSON.parse(data);
+                            console.log(data);
+                            console.log(anotherOne);
+                             $("table#section_table").each(function () {
+                                     for(var i=0; i<anotherOne.length ; i++) {
+                                         if ($(this).data('sectionid') == anotherOne[i])
+                                         {
+                                             $(this).css({'background-color': 'red'})
+                                         }
+                                     }
+                             })
                 },
                 error: function()
                 {
                     alert("there was an error")
                 }
             });
-            console.log(JSON.stringify(data));
 
-              /*  success : function(data)
-                {
-                    alert("in success");
-                    alert(data);
-                    $("#ajax-results").html(data);
-                    $("#ajax-results").dialog({ width: 500, height: 500})
-                },*/
-
-
-
-           $('#dialog').html(data).dialog({ width: 500, heigh: 500});
         });
 
 
