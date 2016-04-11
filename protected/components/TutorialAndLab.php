@@ -6,8 +6,9 @@
  * Date: 2016-03-28
  * Time: 2:44 AM
  */
-class TutorialAndLab extends CApplicationComponent
+class TutorialAndLab
 {
+    private $sectionID;
     private $days;
     private $kind;
     private $courseId;
@@ -17,20 +18,23 @@ class TutorialAndLab extends CApplicationComponent
     private $year;
 
 
-    public function __construct($courseId, $kind,$days,$start, $end, $sem,$year){
+    public function __construct($sectionID,$courseId, $kind,$days,$start, $end, $sem,$year){
+        $this->sectionID = $sectionID;
         $this->courseId = $courseId;
         $this->kind = $kind;
         $this->days = $days;
-        $this->startTime =(int)$start;
-        $this->endTime = (int)$end;
+        $this->startTime =(strtotime($start));
+        $this->endTime = (strtotime($end));
         $this->semester = $sem;
         $this->year = (int)$year;
     }
 
-
     /**
      * @return mixed
      */
+    public function getSectionID(){
+        return $this->sectionID;
+    }
     public function getDays()
     {
         return $this->days;

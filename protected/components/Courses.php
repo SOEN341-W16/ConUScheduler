@@ -6,7 +6,7 @@
  * Date: 2016-03-28
  * Time: 2:46 AM
  */
-class Courses extends CApplicationComponent
+class Courses
 {
     private  $lecture;
     private  $tutorial;
@@ -37,7 +37,7 @@ class Courses extends CApplicationComponent
      */
     public function getTutorial()
     {
-        return $this;
+        return $this->tutorial;
     }
 
     /**

@@ -6,7 +6,7 @@
  * Date: 2016-03-29
  * Time: 11:54 AM
  */
-class Lecture extends CApplicationComponent{
+class Lecture   {
     private $courseId;
     private $kind;
     private $days;
@@ -22,15 +22,13 @@ class Lecture extends CApplicationComponent{
         $this->courseId = $courseId;
         $this->kind = $kind;
         $this->days = $days;
-        $this->startTime =(int)$start;
-        $this->endTime = (int)$end;
+        $this->startTime =(strtotime($start));
+        $this->endTime = (strtotime($end));
         $this->semester = $sem;
         $this->year = (int)$year;
     }
 
-    public function getDuration(){
-        return endTime - startTime;
-    }
+
     /**
      * @return mixed
      */
