@@ -288,7 +288,7 @@ class SchedulerController extends Controller
                 {
 
                     $tutOrLab = Yii::app()->db->createCommand()
-                        ->select('sectionID,courseID,kind,days,start_time,end_time,semester')
+                        ->select('ID,sectionID,courseID,kind,days,start_time,end_time,semester')
                         ->from($id)
                         ->where('id=' . $number)
                         ->queryRow();
@@ -303,7 +303,7 @@ class SchedulerController extends Controller
             }
             $lecture = new Lecture($lec['courseID'], $lec['kind'], $lec['days'], $lec['start_time'], $lec['end_time'], $lec['semester'], $currentYear);
 
-            $tutorial = new TutorialAndLab($tutOrLab['sectionID'], $tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+            $tutorial = new TutorialAndLab($tutOrLab['ID'],$tutOrLab['sectionID'], $tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
           /*  if(!empty($course)) {
 
                 for ($i = 0; $i < count($course); $i++) {
@@ -441,7 +441,8 @@ class SchedulerController extends Controller
                     foreach ($error as $course)
                     {
                         //print_r($errorArr[$i][0]->getTutorial());
-                        $courseIDarr[] = $course->getTutorial()->getSectionID();
+                       // $courseIDarr[] = new ErrorScheduler(($course->getTutorial()->getID()),($course->getTutorial()->getSectionID()));
+                        $courseIDarr[]= $course->getTutorial()->getSectionID();
                     }
                 }
                 echo json_encode($courseIDarr);
@@ -480,7 +481,7 @@ class SchedulerController extends Controller
                 $daySofLec = str_split($dayOfLec);
             }
 
-            for ($i = 1; $i < count($arrayOfSemester); $i++) {
+            for ($i = $key+1; $i < count($arrayOfSemester); $i++) {
                 $sectionIDOfCourseI = $arrayOfSemester[$i]->getTutorial()->getSectionID();
                 $startAtILEC = $arrayOfSemester[$i]->getLecture()->getStartTime();
                 $endAtILEC = $arrayOfSemester[$i]->getLecture()->getEndTime();

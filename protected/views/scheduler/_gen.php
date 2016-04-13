@@ -257,17 +257,10 @@ foreach ($schedule as $id => $scheduleData)
             // collect all the checkboxes
             $('#validate').on('click', function ()
             {
-                $("table#section_table").each(function () {
-                    if(  $("table#section_table :checkbox").is(':checked')){
-                        $("table#section_table :checkbox").attr('checked', false);
-                        $("table#section_table :checkbox").prop('disabled', false);
 
-                    }
-
-                });
                 $("table#section_table").each(function ()
                 {
-                    $(this).css({'background-color': 'white'});
+                    $(this).removeClass('unSelectRow');
                 });
 
                 var data = []; // data container
@@ -320,10 +313,30 @@ foreach ($schedule as $id => $scheduleData)
                                 {
                                     if ($(this).data('sectionid') == anotherOne[i])
                                     {
-                                        $(this).css({'background-color': 'red'})
+
+                                        $(this).addClass('unSelectRow');
                                     }
                                 }
+                                /*
+                                $(this).find(':checkbox').each(function(){
+                                    $row = $("table#section_table :checkbox").closest('tr');
+                                    if ($row.hasClass('selectedRow')) {
+                                        $row.removeClass('selectedRow').addClass('unSelectRow');
+                                    }
+                                }
+                                */
                             });
+                            /*
+                            $("table#section_table").each(function () {
+                                if(  $("table#section_table :checkbox").is(':checked')){
+
+                                    $("table#section_table :checkbox").attr('checked', false);
+                                    $("table#section_table :checkbox").prop('disabled', false);
+
+                                }
+
+                            });
+                            */
                         }
                     },
                     error: function ()
@@ -332,11 +345,6 @@ foreach ($schedule as $id => $scheduleData)
                     }
                 });
                 console.log(JSON.stringify(data));
-                if(  $("table#section_table :checkbox").is(':checked'))
-                    {
-                        $("table#section_table :checkbox").attr('checked', false)
-
-                    }
 
 
 
