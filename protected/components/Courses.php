@@ -14,11 +14,13 @@ class Courses
     public function __construct(Lecture $lec, TutorialAndLab $tutorial){
         $this->lecture = $lec;
         $this->tutorial = $tutorial;
+
     }
 
     /**
      * @return mixed
      */
+
     public function getLecture()
     {
         return $this->lecture;

@@ -8,6 +8,7 @@
  */
 class TutorialAndLab
 {
+    private $ID;
     private $sectionID;
     private $days;
     private $kind;
@@ -18,7 +19,8 @@ class TutorialAndLab
     private $year;
 
 
-    public function __construct($sectionID,$courseId, $kind,$days,$start, $end, $sem,$year){
+    public function __construct($ID,$sectionID,$courseId, $kind,$days,$start, $end, $sem,$year){
+        $this->ID= $ID;
         $this->sectionID = $sectionID;
         $this->courseId = $courseId;
         $this->kind = $kind;
@@ -70,6 +72,9 @@ class TutorialAndLab
     public function getYear()
     {
         return $this->year;
+    }
+    public function getID(){
+        return $this->ID;
     }
 
 }
