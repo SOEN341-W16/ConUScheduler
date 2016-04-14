@@ -250,12 +250,19 @@ foreach ($schedule as $id => $scheduleData)
                         });
                     }
                 });
+
             });
 
             // VALIDATE
             // collect all the checkboxes
             $('#validate').on('click', function ()
             {
+
+                $("table#section_table").each(function ()
+                {
+                    $(this).removeClass('unSelectRow');
+                });
+
                 var data = []; // data container
                 // collect all the checked checkboxes and their associated attributes
                 $("table#subsection_table input[type='checkbox']:checked").each(function ()
@@ -306,10 +313,30 @@ foreach ($schedule as $id => $scheduleData)
                                 {
                                     if ($(this).data('sectionid') == anotherOne[i])
                                     {
-                                        $(this).css({'background-color': 'red'})
+
+                                        $(this).addClass('unSelectRow');
                                     }
                                 }
+                                /*
+                                $(this).find(':checkbox').each(function(){
+                                    $row = $("table#section_table :checkbox").closest('tr');
+                                    if ($row.hasClass('selectedRow')) {
+                                        $row.removeClass('selectedRow').addClass('unSelectRow');
+                                    }
+                                }
+                                */
                             });
+                            /*
+                            $("table#section_table").each(function () {
+                                if(  $("table#section_table :checkbox").is(':checked')){
+
+                                    $("table#section_table :checkbox").attr('checked', false);
+                                    $("table#section_table :checkbox").prop('disabled', false);
+
+                                }
+
+                            });
+                            */
                         }
                     },
                     error: function ()
@@ -317,6 +344,20 @@ foreach ($schedule as $id => $scheduleData)
                         alert("A network error occurred")
                     }
                 });
+                console.log(JSON.stringify(data));
+
+
+
+
+
+
+              /*  if(  $("table#section_table :checkbox").is(':checked')) {
+                    $(this).attr('checked', false); // Unchecks it
+                }
+                else
+                    $(this).attr('checked', false); // Unchecks it*/
+
+
 
             });
 

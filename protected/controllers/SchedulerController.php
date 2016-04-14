@@ -269,12 +269,15 @@ class SchedulerController extends Controller
         $post_data = $_POST['myData'];
         $decodedData = json_decode($post_data, true);
         $course = [];
+        $labArr = [];
         //Save the years associated to sections chosen
         foreach ($decodedData as $key)
         {
             $tutOrLab = null;
             $lec = null;
             $currentYear = null;
+            $sectionIDSQL = null;
+            $lab =null;
             foreach ($key as $id => $number)
             {
                 if ($id == 'year')
@@ -283,8 +286,9 @@ class SchedulerController extends Controller
                 }
                 elseif ($id == 'subsection')
                 {
+
                     $tutOrLab = Yii::app()->db->createCommand()
-                        ->select('sectionID,courseID,kind,days,start_time,end_time,semester')
+                        ->select('ID,sectionID,courseID,kind,days,start_time,end_time,semester')
                         ->from($id)
                         ->where('id=' . $number)
                         ->queryRow();
@@ -295,10 +299,24 @@ class SchedulerController extends Controller
                         ->from($id)
                         ->where('id=' . $number)
                         ->queryRow();
+
             }
             $lecture = new Lecture($lec['courseID'], $lec['kind'], $lec['days'], $lec['start_time'], $lec['end_time'], $lec['semester'], $currentYear);
 
-            $tutorial = new TutorialAndLab($tutOrLab['sectionID'], $tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+            $tutorial = new TutorialAndLab($tutOrLab['ID'],$tutOrLab['sectionID'], $tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+          /*  if(!empty($course)) {
+
+                for ($i = 0; $i < count($course); $i++) {
+                    if ($course[$i]->getTutorial()->getSectionID() == $tutOrLab['sectionID']) {
+                        $lab = new TutorialAndLab($tutOrLab['sectionID'], $tutOrLab['courseID'], $tutOrLab['kind'], $tutOrLab['days'], $tutOrLab['start_time'], $tutOrLab['end_time'], $tutOrLab['semester'], $currentYear);
+                        $labArr[] = $lab;
+                        $lecture = null;
+                    } else
+                        $course[] = new Courses($lecture, $tutorial);
+
+                }
+            }
+            else*/
             $course[] = new Courses($lecture, $tutorial);
 
         }
@@ -423,7 +441,8 @@ class SchedulerController extends Controller
                     foreach ($error as $course)
                     {
                         //print_r($errorArr[$i][0]->getTutorial());
-                        $courseIDarr[] = $course->getTutorial()->getSectionID();
+                       // $courseIDarr[] = new ErrorScheduler(($course->getTutorial()->getID()),($course->getTutorial()->getSectionID()));
+                        $courseIDarr[]= $course->getTutorial()->getSectionID();
                     }
                 }
                 echo json_encode($courseIDarr);
@@ -456,14 +475,14 @@ class SchedulerController extends Controller
             $dayOfLec = $arrayOfSemester[$key]->getLecture()->getDays();
             $dayOfTut = $arrayOfSemester[$key]->getTutorial()->getDays();
             $daySofLec = array();
+            $sectionIDOfCourse = $arrayOfSemester[$key]->getTutorial()->getSectionID();
             if (strlen($dayOfLec) >= 2)
             {
                 $daySofLec = str_split($dayOfLec);
             }
 
-            for ($i = 1; $i < count($arrayOfSemester); $i++)
-            {
-
+            for ($i = $key+1; $i < count($arrayOfSemester); $i++) {
+                $sectionIDOfCourseI = $arrayOfSemester[$i]->getTutorial()->getSectionID();
                 $startAtILEC = $arrayOfSemester[$i]->getLecture()->getStartTime();
                 $endAtILEC = $arrayOfSemester[$i]->getLecture()->getEndTime();
                 $startAtITUT = $arrayOfSemester[$i]->getTutorial()->getStartTime();
@@ -471,144 +490,108 @@ class SchedulerController extends Controller
                 $dayOfLecI = $arrayOfSemester[$i]->getLecture()->getDays();
                 $dayOfTutI = $arrayOfSemester[$i]->getTutorial()->getDays();
                 $daySofLecI = array();
-                if (strlen($dayOfLec) >= 2)
-                {
-                    $daySofLecI = str_split($dayOfLec);
+                if (strlen($dayOfLec) >= 2) {
+                        $daySofLecI = str_split($dayOfLec);
                 }
+                if ($sectionIDOfCourse != $sectionIDOfCourseI) {
+                    if (!empty($daySofLecI)) {
+                        for ($m = 0; $m < count($daySofLecI); $m++) {
+                            if ($dayOfLec == $daySofLecI[$m]) {
 
-                if (!empty($daySofLecI))
-                {
-                    for ($m = 0; $m < count($daySofLecI); $m++)
-                    {
-                        if ($dayOfLec == $daySofLecI[$m])
-                        {
-
-                            if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey)
-                            {
-                                $errorArr[$key] = $arrayOfSemester[$key];
-                                $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                break;
-                            }
-                            elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey)
-                            {
-                                $errorArr[$key] = $arrayOfSemester[$key];
-                                $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                break;
-                            }
-                            if ($dayOfTut == $daySofLecI[$m])
-                            {
-                                if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey)
-                                {
+                                if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey) {
+                                    $errorArr[$key] = $arrayOfSemester[$key];
+                                    $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                    break;
+                                } elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey) {
                                     $errorArr[$key] = $arrayOfSemester[$key];
                                     $errorArr[$i] = $arrayOfSemester[$key + 1];
                                     break;
                                 }
-                                elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey)
-                                {
-                                    $errorArr[$key] = $arrayOfSemester[$key];
-                                    $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                    break;
+                                if ($dayOfTut == $daySofLecI[$m]) {
+                                    if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey) {
+                                        $errorArr[$key] = $arrayOfSemester[$key];
+                                        $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                        break;
+                                    } elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey) {
+                                        $errorArr[$key] = $arrayOfSemester[$key];
+                                        $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                        break;
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                if (!empty($daySofLec))
-                {
-                    for ($m = 0; $m < count($daySofLec); $m++)
-                    {
-                        if ($dayOfLec == $daySofLec[$m])
-                        {
+                    if (!empty($daySofLec)) {
+                        for ($m = 0; $m < count($daySofLec); $m++) {
+                            if ($dayOfLec == $daySofLec[$m]) {
 
-                            if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey)
-                            {
-                                $errorArr[$key] = $arrayOfSemester[$key];
-                                $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                break;
-                            }
-                            elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey)
-                            {
-                                $errorArr[$key] = $arrayOfSemester[$key];
-                                $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                break;
-                            }
-                            if ($dayOfTut == $daySofLec[$m])
-                            {
-                                if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey)
-                                {
+                                if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey) {
+                                    $errorArr[$key] = $arrayOfSemester[$key];
+                                    $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                    break;
+                                } elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey) {
                                     $errorArr[$key] = $arrayOfSemester[$key];
                                     $errorArr[$i] = $arrayOfSemester[$key + 1];
                                     break;
                                 }
-                                elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey)
-                                {
-                                    $errorArr[$key] = $arrayOfSemester[$key];
-                                    $errorArr[$i] = $arrayOfSemester[$key + 1];
-                                    break;
+                                if ($dayOfTut == $daySofLec[$m]) {
+                                    if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey) {
+                                        $errorArr[$key] = $arrayOfSemester[$key];
+                                        $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                        break;
+                                    } elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey) {
+                                        $errorArr[$key] = $arrayOfSemester[$key];
+                                        $errorArr[$i] = $arrayOfSemester[$key + 1];
+                                        break;
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                if ($dayOfLec == $dayOfLecI)
-                {
+                    if ($dayOfLec == $dayOfLecI) {
 
-                    if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
+                        if ($startAtILEC >= $startLecTimeAtKey && $startAtILEC <= $endLecTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        } elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        }
                     }
-                    elseif ($endAtILEC >= $startLecTimeAtKey && $endAtILEC <= $endLecTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
+                    if ($dayOfLec == $dayOfTutI) {
+                        if ($startAtITUT >= $startLecTimeAtKey && $startAtITUT <= $endLecTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        } elseif ($endAtITUT >= $startLecTimeAtKey && $endAtITUT <= $endLecTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        }
                     }
-                }
-                if ($dayOfLec == $dayOfTutI)
-                {
-                    if ($startAtITUT >= $startLecTimeAtKey && $startAtITUT <= $endLecTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
+                    if ($dayOfTut == $dayOfLecI) {
+                        if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        } elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        }
                     }
-                    elseif ($endAtITUT >= $startLecTimeAtKey && $endAtITUT <= $endLecTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
-                    }
-                }
-                if ($dayOfTut == $dayOfLecI)
-                {
-                    if ($startAtILEC >= $startTutTimeAtKey && $startAtILEC <= $endTutTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
-                    }
-                    elseif ($endAtILEC >= $startTutTimeAtKey && $endAtILEC <= $endTutTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
-                    }
-                }
-                if ($dayOfTut == $dayOfTutI)
-                {
-                    if ($startAtITUT >= $startTutTimeAtKey && $startAtITUT <= $endTutTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
-                    }
-                    elseif ($endAtITUT >= $startTutTimeAtKey && $endAtITUT <= $endTutTimeAtKey)
-                    {
-                        $errorArr[$key] = $arrayOfSemester[$key];
-                        $errorArr[$i] = $arrayOfSemester[$key + 1];
-                        break;
+                    if ($dayOfTut == $dayOfTutI) {
+                        if ($startAtITUT >= $startTutTimeAtKey && $startAtITUT <= $endTutTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        } elseif ($endAtITUT >= $startTutTimeAtKey && $endAtITUT <= $endTutTimeAtKey) {
+                            $errorArr[$key] = $arrayOfSemester[$key];
+                            $errorArr[$i] = $arrayOfSemester[$key + 1];
+                            break;
+                        }
                     }
                 }
             }

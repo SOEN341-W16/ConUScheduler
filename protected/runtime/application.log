@@ -12140,3 +12140,85 @@ Stack trace:
 REQUEST_URI=/index.php?r=profile/record
 HTTP_REFERER=http://www.conuscheduler.localhost/index.php?r=profile/index
 ---
+2016/04/12 04:02:31 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT `sectionID`, `courseID`, `kind`, `days`, `start_time`, `end_time`, `semester`
+FROM `subsection`
+WHERE id=.
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (290)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/12 04:02:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT `sectionID`, `courseID`, `kind`, `days`, `start_time`, `end_time`, `semester`
+FROM `subsection`
+WHERE id=' in C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php(290): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\actions\CInlineAction.php(49): SchedulerController->actionScheduleValidation()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): CController->run('ScheduleValidat...')
+#12 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController('scheduler/Sched...')
+#13 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ConUScheduler\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=scheduler/ScheduleValidation
+HTTP_REFERER=http://conuscheduler.localhost/index.php?r=scheduler/generate
+---
+2016/04/12 04:35:44 [error] [php] Argument 3 passed to Courses::__construct() must be an instance of TutorialAndLab, none given, called in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php on line 302 and defined (C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ScheduleValidation
+in C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php (15)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (302)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/12 04:39:05 [error] [php] Argument 3 passed to Courses::__construct() must be an instance of TutorialAndLab, none given, called in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php on line 302 and defined (C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ScheduleValidation
+in C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php (15)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (302)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
+2016/04/12 14:37:54 [error] [php] Argument 3 passed to Courses::__construct() must be an instance of TutorialAndLab, none given, called in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php on line 302 and defined (C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(133): SchedulerController->runAction()
+#2 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CInlineFilter.php(58): SchedulerController->filterAccessControl()
+#5 C:\xampp\htdocs\ConUScheduler\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ConUScheduler\framework\web\CController.php(265): SchedulerController->runActionWithFilters()
+#8 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(282): SchedulerController->run()
+#9 C:\xampp\htdocs\ConUScheduler\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ConUScheduler\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ConUScheduler\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=scheduler/ScheduleValidation
+in C:\xampp\htdocs\ConUScheduler\protected\components\Courses.php (15)
+in C:\xampp\htdocs\ConUScheduler\protected\controllers\SchedulerController.php (302)
+in C:\xampp\htdocs\ConUScheduler\index.php (13)
