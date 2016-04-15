@@ -35,6 +35,17 @@
 # IntelliJ
 /out/
 
+/vcs.xml
+/code.style.schemes.xml
+/colors.scheme.xml
+/web-browsers.xml
+/ignore.xml
+/databaseDrivers.xml
+/filetypes.xml
+/IntelliLang.xml
+/debugger.xml
+/diff.xml
+/_windows
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
